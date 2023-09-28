@@ -1,0 +1,5 @@
+timeout 180 'brightnessctl -s && brightnessctl s 15%' resume 'brightnessctl -r' 
+timeout 300 'swaylock'
+timeout 350 'brightnessctl s 0%' resume 'brightnessctl -r'
+timeout 420 'systemctl suspend'
+before-sleep 'swaylock'

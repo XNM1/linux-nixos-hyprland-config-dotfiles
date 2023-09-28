@@ -1,0 +1,21 @@
+[Desktop Entry]
+Version=1.0
+Name=Gammastep Indicator
+Name[pt_BR]=Indicador Gammastep
+Name[tr]=Gammastep Göstergesi
+GenericName=Indicator for color temperature adjustment
+GenericName[es]=Ajuste de la temperatura de color
+GenericName[pt_BR]=Indicador para ajuse de temperatura de cor
+Comment=Indicator for color temperature adjustment
+Comment[es]=Ajuste de la temperatura de color
+Comment[pt_BR]=Indicador para ajuse de temperatura de cor
+Keywords=display;color;soft;hue;temperature;eyes;strain;
+Exec=/nix/store/493kwp484ij7fs68wb5wyhd0w3cl577n-gammastep-2.0.9/bin/gammastep-indicator
+Icon=gammastep
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=true
+Hidden=true
+X-GNOME-Autostart-enabled=false
+

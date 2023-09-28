@@ -1,0 +1,159 @@
+# This is a default config file for bottom.  All of the settings are commented
+# out by default; if you wish to change them uncomment and modify as you see
+# fit.
+
+# This group of options represents a command-line flag/option.  Flags explicitly
+# added when running (ie: btm -a) will override this config file if an option
+# is also set here.
+
+[flags]
+# Whether to hide the average cpu entry.
+#hide_avg_cpu = false
+# Whether to use dot markers rather than braille.
+#dot_marker = false
+# The update rate of the application.
+#rate = 1000
+# Whether to put the CPU legend to the left.
+#left_legend = false
+# Whether to set CPU% on a process to be based on the total CPU or just current usage.
+#current_usage = false
+# Whether to group processes with the same name together by default.
+#group_processes = false
+# Whether to make process searching case sensitive by default.
+#case_sensitive = false
+# Whether to make process searching look for matching the entire word by default.
+#whole_word = false
+# Whether to make process searching use regex by default.
+#regex = false
+# Defaults to Celsius.  Temperature is one of:
+#temperature_type = "k"
+#temperature_type = "f"
+#temperature_type = "c"
+#temperature_type = "kelvin"
+#temperature_type = "fahrenheit"
+#temperature_type = "celsius"
+# The default time interval (in milliseconds).
+#default_time_value = 60000
+# The time delta on each zoom in/out action (in milliseconds).
+#time_delta = 15000
+# Hides the time scale.
+#hide_time = false
+# Override layout default widget
+#default_widget_type = "proc"
+#default_widget_count = 1
+# Use basic mode
+#basic = false
+# Use the old network legend style
+#use_old_network_legend = false
+# Remove space in tables
+#hide_table_gap = false
+# Show the battery widgets
+#battery = false
+# Disable mouse clicks
+#disable_click = false
+# Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light", "nord", "nord-light"
+#color = "default"
+# Show memory values in the processes widget as values by default
+#mem_as_value = false
+# Show tree mode by default in the processes widget.
+#tree = false
+# Shows an indicator in table widgets tracking where in the list you are.
+#show_table_scroll_position = false
+# Show processes as their commands by default in the process widget.
+#process_command = false
+# Displays the network widget with binary prefixes.
+#network_use_binary_prefix = false
+# Displays the network widget using bytes.
+#network_use_bytes = false
+# Displays the network widget with a log scale.
+#network_use_log = false
+# Hides advanced options to stop a process on Unix-like systems.
+#disable_advanced_kill = false
+
+# These are all the components that support custom theming.  Note that colour support
+# will depend on terminal support.
+
+[colors]
+table_header_color = "#f4dbd6"
+all_cpu_color = "#f4dbd6"
+avg_cpu_color = "#ee99a0"
+cpu_core_colors = ["#ed8796","#f5a97f","#eed49f","#a6da95","#7dc4e4","#c6a0f6"]
+ram_color = "#a6da95"
+swap_color = "#f5a97f"
+rx_color = "#a6da95"
+tx_color = "#ed8796"
+widget_title_color = "#f0c6c6"
+border_color = "#5b6078"
+highlighted_border_color = "#f5bde6"
+text_color = "#cad3f5"
+graph_color = "#a5adcb"
+cursor_color = "#f5bde6"
+selected_text_color = "#181926"
+selected_bg_color = "#c6a0f6"
+high_battery_color = "#a6da95"
+medium_battery_color = "#eed49f"
+low_battery_color = "#ed8796"
+gpu_core_colors = ["#7dc4e4","#c6a0f6","#ed8796","#f5a97f","#eed49f","#a6da95"]
+arc_color = "#91d7e3"
+
+# Layout - layouts follow a pattern like this:
+# [[row]] represents a row in the application.
+# [[row.child]] represents either a widget or a column.
+# [[row.child.child]] represents a widget.
+#
+# All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
+# All layout components have a ratio value - if this is not set, then it defaults to 1.
+# The default widget layout:
+#[[row]]
+#  ratio=30
+#  [[row.child]]
+#  type="cpu"
+#[[row]]
+#    ratio=40
+#    [[row.child]]
+#      ratio=4
+#      type="mem"
+#    [[row.child]]
+#      ratio=3
+#      [[row.child.child]]
+#        type="temp"
+#      [[row.child.child]]
+#        type="disk"
+#[[row]]
+#  ratio=30
+#  [[row.child]]
+#    type="net"
+#  [[row.child]]
+#    type="proc"
+#    default=true
+
+
+# Filters - you can hide specific temperature sensors, network interfaces, and disks using filters.  This is admittedly
+# a bit hard to use as of now, and there is a planned in-app interface for managing this in the future:
+#[disk_filter]
+#is_list_ignored = true
+#list = ["/dev/sda\\d+", "/dev/nvme0n1p2"]
+#regex = true
+#case_sensitive = false
+#whole_word = false
+
+#[mount_filter]
+#is_list_ignored = true
+#list = ["/mnt/.*", "/boot"]
+#regex = true
+#case_sensitive = false
+#whole_word = false
+
+#[temp_filter]
+#is_list_ignored = true
+#list = ["cpu", "wifi"]
+#regex = false
+#case_sensitive = false
+#whole_word = false
+
+#[net_filter]
+#is_list_ignored = true
+#list = ["virbr0.*"]
+#regex = true
+#case_sensitive = false
+#whole_word = false

@@ -1,0 +1,9 @@
+[user]
+	email = artem.shv@proton.me
+	name = XNM
+[credential "https://github.com"]
+	helper = 
+	helper = !/run/current-system/sw/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/run/current-system/sw/bin/gh auth git-credential

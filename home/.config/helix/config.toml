@@ -1,0 +1,36 @@
+theme = "catppuccin_macchiato_transparent"
+
+[editor]
+shell = ["fish", "-c"]
+line-number = "relative"
+cursorline = true
+color-modes = true
+auto-save = true
+idle-timeout = 0
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "separator", "total-line-numbers", "separator", "version-control"]
+right = ["diagnostics", "separator", "selections", "separator", "position", "position-percentage", "spacer", "separator", "file-encoding", "file-line-ending", "separator", "file-type"]
+separator = "│"
+
+[editor.lsp]
+display-messages = true
+# display-inlay-hints = true
+
+# [editor.file-picker]
+# max-depth = 10
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+backspace = { w = ":w", c = ":bc", q = ":q", A-q = ":q!" }

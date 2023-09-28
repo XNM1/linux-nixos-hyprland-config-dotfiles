@@ -1,0 +1,12 @@
+gtk-theme-name="Catppuccin-Macchiato-Standard-Teal-dark"
+gtk-icon-theme-name="Colloid-teal-dark"
+gtk-cursor-theme-name="Catppuccin-Macchiato-Teal-Cursors"
+gtk-font-name="JetBrains Mono 11"
+gtk-menu-images=0
+gtk-cursor-theme-size=24
+gtk-button-images=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="none"
+gtk-xft-dpi=98304
