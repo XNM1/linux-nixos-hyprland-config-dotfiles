@@ -45,6 +45,7 @@ This repository contains my NixOS Linux configuration with the Hyprland window m
 | Image Editor          | Swappy                      |
 | Screenshot            | Grim + Slurp                |
 | Recorder              | Wf-recorder                 |
+| Color Picker          | Hyprpicker                  |
 | Clipboard             | Wl-clipboard + Cliphist + Clipboard-jh |
 | Idle                  | Swayidle                    |
 | Lock                  | Swaylock                    |
