@@ -1,5 +1,5 @@
 <div align="center"><img width="350" height="350" src="home/.config/neofetch/Makima_nixos.png"></div>
-<h1 align="center">NixOS & Hyprland with Catppuccin Macchiato theme Configuration</h1>
+<h1 align="center">NixOS & Hyprland with Catppuccin Macchiato Theme Configuration</h1>
 
 <div align="center">
 <img src="https://img.shields.io/static/v1?label=Hyprland&message=Stable&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>
@@ -72,7 +72,7 @@ And many other useful utilities. The full list can be found in the system config
 2. Temporarily install ripgrep and fish using the command: `nix-shell -p ripgrep fish --run fish`. You can also use classic bash and grep for the next step without installing fish and ripgrep.
 3. Run the command `rg --hidden FIXME` and change/add lines to match your device, swaps, partitions, and file systems in the configuration files (`/etc/nixos/configuration.nix` & `/etc/nixos/hardware-configuration.nix`).
 4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. Make sure to change the username to match yours to avoid login issues.
-5. Copy all files (with replacements) from the home directory to your `$HOME` directory in Linux.
+5. Copy all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
 6. Copy all files (with replacements) from the `nixos` directory to `/etc/nixos/`. It's recommended not to copy and replace `hardware-configuration.nix`; only copy it if you have already change it for your hardware.
 7. Run the command `sudo nixos-rebuild switch`. After this, you will have a complete system. You can also use flakes after first setup by running `sudo nixos-rebuild switch --flake .#` if needed.
 
