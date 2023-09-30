@@ -1,5 +1,5 @@
 <div align="center"><img width="350" height="350" src="home/.config/neofetch/Makima_nixos.png"></div>
-<h1 align="center">NixOS & Hyprland & Catppuccin Macchiato Configuration</h1>
+<h1 align="center">NixOS & Hyprland with Catppuccin Macchiato theme Configuration</h1>
 
 <div align="center">
 <img src="https://img.shields.io/static/v1?label=Hyprland&message=Stable&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>

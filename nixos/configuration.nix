@@ -560,7 +560,6 @@
     wlogout
     wpaperd
     # swww
-    lz4
     gifsicle
 
     nuspell
