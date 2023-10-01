@@ -16,6 +16,8 @@ This repository contains my NixOS Linux configuration with the Hyprland window m
 
 ![Screenshot 1](home/Pictures/Screenshots/screenshot-1.png)
 ![Screenshot 2](home/Pictures/Screenshots/screenshot-2.png)
+![Screenshot 3](home/Pictures/Screenshots/screenshot-3.png)
+![Screenshot 4](home/Pictures/Screenshots/screenshot-4.png)
 [Showcase Video](home/Videos/Records/record.mp4)
 
 ## 🔧 Components
