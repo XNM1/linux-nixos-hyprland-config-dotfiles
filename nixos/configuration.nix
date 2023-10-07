@@ -88,8 +88,8 @@
   # };
 
   # Enable Theme
-  environment.variables.GTK_THEME = "Catppuccin-Macchiato-Standard-Teal-dark";
-  environment.variables.XCURSOR_THEME = "Catppuccin-Macchiato-Teal-Cursors";
+  environment.variables.GTK_THEME = "Catppuccin-Macchiato-Standard-Teal-Dark";
+  environment.variables.XCURSOR_THEME = "Catppuccin-Macchiato-Teal";
   environment.variables.XCURSOR_SIZE = "24";
   console = {
     earlySetup = true;
