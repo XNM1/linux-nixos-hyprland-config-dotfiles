@@ -453,6 +453,7 @@
     cargo-zigbuild
     cargo-nextest
     cargo-spellcheck
+    cargo-modules
     # cargo
     bacon
     taplo #toml formatter & lsp
