@@ -446,6 +446,13 @@
     cargo-deny
     cargo-audit
     cargo-update
+    cargo-edit
+    cargo-outdated
+    cargo-license
+    cargo-cross
+    cargo-zigbuild
+    cargo-nextest
+    cargo-spellcheck
     # cargo
     bacon
     taplo #toml formatter & lsp
@@ -578,6 +585,7 @@
     # clinfo
     # vdpauinfo
     # libva-utils
+    # nvtop
     usbutils
     dig
     speedtest-rs
