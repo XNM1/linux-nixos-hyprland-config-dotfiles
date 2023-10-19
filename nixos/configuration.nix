@@ -428,6 +428,7 @@
     (python311Full.withPackages(ps: with ps; [ pygobject3 gobject-introspection pyqt6-sip]))
     nodejs_20
     bun
+    zig
 
     python311Packages.python-lsp-server
     nodePackages_latest.nodemon
@@ -449,11 +450,13 @@
     cargo-edit
     cargo-outdated
     cargo-license
+    cargo-tarpaulin
     cargo-cross
     cargo-zigbuild
     cargo-nextest
     cargo-spellcheck
     cargo-modules
+    cargo-bloat
     # cargo
     bacon
     taplo #toml formatter & lsp
