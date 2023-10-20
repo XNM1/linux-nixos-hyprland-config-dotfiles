@@ -429,6 +429,7 @@
     nodejs_20
     bun
     zig
+    vlang
 
     python311Packages.python-lsp-server
     nodePackages_latest.nodemon
@@ -440,9 +441,10 @@
     sumneko-lua-language-server
     marksman
     nil
+    zls
 
     rustup
-    # evcxr #rust repl
+    evcxr #rust repl
     rust-analyzer
     cargo-deny
     cargo-audit
