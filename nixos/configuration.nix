@@ -429,7 +429,6 @@
     nodejs_20
     bun
     zig
-    vlang
 
     python311Packages.python-lsp-server
     nodePackages_latest.nodemon
