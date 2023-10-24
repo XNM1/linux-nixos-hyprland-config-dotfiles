@@ -385,6 +385,7 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       spotify
+      youtube-music
       discord
       tdesktop
       vscode

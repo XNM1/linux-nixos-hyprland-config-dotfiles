@@ -1,0 +1,206 @@
+{
+	"window-size": {
+		"width": 1500,
+		"height": 803
+	},
+	"url": "https://music.youtube.com",
+	"options": {
+		"tray": false,
+		"appVisible": true,
+		"autoUpdates": false,
+		"hideMenu": false,
+		"startAtLogin": false,
+		"disableHardwareAcceleration": false,
+		"restartOnConfigChanges": false,
+		"trayClickPlayPause": false,
+		"autoResetAppCache": false,
+		"resumeOnStart": true,
+		"proxy": "",
+		"startingPage": "",
+		"themes": [
+			"/home/xnm/.config/YouTube Music/macchiato.css"
+		]
+	},
+	"plugins": {
+		"navigation": {
+			"enabled": true
+		},
+		"adblocker": {
+			"enabled": true,
+			"cache": true,
+			"additionalBlockLists": []
+		},
+		"shortcuts": {
+			"enabled": false,
+			"overrideMediaKeys": false
+		},
+		"downloader": {
+			"enabled": false,
+			"ffmpegArgs": [],
+			"preset": "mp3"
+		},
+		"last-fm": {
+			"enabled": false,
+			"api_root": "http://ws.audioscrobbler.com/2.0/",
+			"api_key": "",
+			"secret": ""
+		},
+		"discord": {
+			"enabled": false,
+			"autoReconnect": true,
+			"activityTimoutEnabled": true,
+			"activityTimoutTime": 600000,
+			"listenAlong": true,
+			"hideDurationLeft": false
+		},
+		"notifications": {
+			"enabled": true,
+			"unpauseNotification": false,
+			"urgency": "normal",
+			"interactive": true,
+			"toastStyle": 1,
+			"refreshOnPlayPause": false,
+			"trayControls": true,
+			"hideButtonText": false
+		},
+		"precise-volume": {
+			"enabled": false,
+			"steps": 1,
+			"arrowsShortcut": true,
+			"globalShortcuts": {
+				"volumeUp": "",
+				"volumeDown": ""
+			}
+		},
+		"sponsorblock": {
+			"enabled": false,
+			"apiURL": "https://sponsor.ajay.app",
+			"categories": [
+				"sponsor",
+				"intro",
+				"outro",
+				"interaction",
+				"selfpromo",
+				"music_offtopic"
+			]
+		},
+		"video-toggle": {
+			"enabled": false,
+			"mode": "custom",
+			"forceHide": false
+		},
+		"picture-in-picture": {
+			"enabled": false,
+			"alwaysOnTop": true,
+			"savePosition": true,
+			"saveSize": false,
+			"hotkey": "P"
+		},
+		"captions-selector": {
+			"enabled": false,
+			"disableCaptions": false
+		},
+		"skip-silences": {
+			"onlySkipBeginning": false
+		},
+		"crossfade": {
+			"enabled": false,
+			"fadeInDuration": 1500,
+			"fadeOutDuration": 5000,
+			"secondsBeforeEnd": 10,
+			"fadeScaling": "linear"
+		},
+		"visualizer": {
+			"enabled": false,
+			"type": "butterchurn",
+			"butterchurn": {
+				"preset": "martin [shadow harlequins shape code] - fata morgana",
+				"renderingFrequencyInMs": 500,
+				"blendTimeInSeconds": 2.7
+			},
+			"vudio": {
+				"effect": "lighting",
+				"accuracy": 128,
+				"lighting": {
+					"maxHeight": 160,
+					"maxSize": 12,
+					"lineWidth": 1,
+					"color": "#49f3f7",
+					"shadowBlur": 2,
+					"shadowColor": "rgba(244,244,244,.5)",
+					"fadeSide": true,
+					"prettify": false,
+					"horizontalAlign": "center",
+					"verticalAlign": "middle",
+					"dottify": true
+				}
+			},
+			"wave": {
+				"animations": [
+					{
+						"type": "Cubes",
+						"config": {
+							"bottom": true,
+							"count": 30,
+							"cubeHeight": 5,
+							"fillColor": {
+								"gradient": [
+									"#FAD961",
+									"#F76B1C"
+								]
+							},
+							"lineColor": "rgba(0,0,0,0)",
+							"radius": 20
+						}
+					},
+					{
+						"type": "Cubes",
+						"config": {
+							"top": true,
+							"count": 12,
+							"cubeHeight": 5,
+							"fillColor": {
+								"gradient": [
+									"#FAD961",
+									"#F76B1C"
+								]
+							},
+							"lineColor": "rgba(0,0,0,0)",
+							"radius": 10
+						}
+					},
+					{
+						"type": "Circles",
+						"config": {
+							"lineColor": {
+								"gradient": [
+									"#FAD961",
+									"#FAD961",
+									"#F76B1C"
+								],
+								"rotate": 90
+							},
+							"lineWidth": 4,
+							"diameter": 20,
+							"count": 10,
+							"frequencyBand": "base"
+						}
+					}
+				]
+			}
+		},
+		"in-app-menu": {
+			"enabled": true
+		}
+	},
+	"__internal__": {
+		"migrations": {
+			"version": "1.20.0"
+		}
+	},
+	"window-maximized": false,
+	"window-position": {
+		"x": 0,
+		"y": 0
+	}
+}

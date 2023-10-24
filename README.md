@@ -40,7 +40,7 @@ This repository contains my NixOS Linux configuration with the Hyprland window m
 | Theme                 | Catppuccin Macchiato        |
 | Icons                 | Colloid-teal-dark, Numix-Circle |
 | Font                  | JetBrains Mono + Nerd Font Patch |
-| Player                | Spotify                     |
+| Player                | Youtube Music + Spotify     |
 | File Browser          | Thunar                      |
 | Internet Browser      | Qutebrowser, Brave + Vimium + NightTab |
 | Mimetypes             | MPV, Imv, Zathura            |
