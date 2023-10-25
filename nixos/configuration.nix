@@ -471,6 +471,7 @@
 
     xh
     wezterm
+    cool-retro-term
     # mcfly # terminal history
     starship
     zellij
