@@ -823,7 +823,7 @@
     "name": "Github Catppuccin",
     "updateDate": 1698243112279,
     "_id": "942b2272-4772-41b7-b97c-848a6b3b1d85",
-    "_rev": 1698243112279,
+    "_rev": 1698245003066,
     "id": 5
   },
   {
@@ -1342,5 +1342,34 @@
     "_id": "394d935b-9e6c-4e0e-8adf-6ee7777aed72",
     "_rev": 1698243289587,
     "id": 8
+  },
+  {
+    "enabled": false,
+    "updateUrl": "https://cdn.jsdelivr.net/gh/33kk/uso-archive@flomaster/data/usercss/163453.user.css",
+    "url": "https://uso.kkx.one/style/163453",
+    "installDate": 1698245439316,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name         Dark NixOS\n@namespace    USO Archive\n@author       x75tiger75x\n@description  Darkened NixOS Website\n@version      20180819.01.46\n@license      NONE\n@preprocessor uso\n==/UserStyle== */\n@-moz-document domain(\"nixos.org\") {\nbody {\n    color: #d5d5d5;\n    background-color: #1a1a1a;\n}\n.navbar-inner {\n    background-image: linear-gradient(to bottom, #2f2f2f, #212121);\n    background-repeat: repeat-x;\n    border: 1px solid #1d1d1d;\n}\n.navbar .brand {\n    color: #b7b7b7;\n    text-shadow: 0 1px 0 #141414;\n}\n.navbar .brand > a:hover {\n    color: #e1e1e1;\n}\n.navbar .nav > li > a {\n    color: #b7b7b7;\n    text-shadow: 0 1px 0 #141414;\n}\n.navbar .nav > li > a:hover {\n    color: #e1e1e1;\n    text-shadow: 0 1px 0 #141414;\n}\ntextarea,\ninput[type=\"text\"],\ninput[type=\"password\"],\ninput[type=\"datetime\"],\ninput[type=\"datetime-local\"],\ninput[type=\"date\"],\ninput[type=\"month\"],\ninput[type=\"time\"],\ninput[type=\"week\"],\ninput[type=\"number\"],\ninput[type=\"email\"],\ninput[type=\"url\"],\ninput[type=\"search\"],\ninput[type=\"tel\"],\ninput[type=\"color\"],\n.uneditable-input {\n    background-color: #212121;\n    border: 1px solid #333;\n    color: white;\n}\nul.nixos-blogs > li:nth-child(2n+1) {\n    background-color: rgb(39, 39, 39);\n}\nul.nixos-blogs > li {\n    border-top: 1px solid rgb(66, 66, 66);\n}\nul.nixos-commits > li:nth-child(2n+1) {\n    background-color: rgb(39, 39, 39);\n}\nul.nixos-commits > li {\n    border-top: 1px solid rgb(66, 66, 66);\n}\npre {\n    background-color: #111;\n    box-shadow: 0.1em 0.1em 0.5em #0c0c0c;\n}\ncode,\npre {\n    color: #999;\n}\ntable#search-results tr.odd > td {\n    background-color: #292929;\n}\ntable#search-results tr.even:hover > td {\n    background-color: #292929;\n}\n.table th,\n.table td {\n    border-top: 1px solid #3c3c3c;\n}\n.pager li > a,\n.pager li > span {\n    background-color: #2d2d2d;\n    border: 1px solid #3c3c3c;\n}\n.pager:hover li > a:hover,\n.pager li > span {\n    background-color: #5f5f5f;\n    border: 1px solid #3c3c3c;\n}\n.pager .disabled > a,\n.pager .disabled > a:hover,\n.pager .disabled > a:focus,\n.pager .disabled > span {\n    background-color: #2d2d2d;\n}\n.alert {\n    text-shadow: 0 1px 0 rgba(66, 66, 66, 0.5);\n    background-color: #3b382d;\n    border: 1px solid #44403b;\n}\n.hljs {\n    color: #0051bd;\n}\n.alert-info {\n    color: #3a87ad;\n    background-color: #1b2930 !important;\n    border-color: #273336 !important;\n}\n.table-striped tbody > tr:nth-child(2n+1) > td,\n.table-striped tbody > tr:nth-child(2n+1) > th {\n    background-color: #232323;\n}\n.dropdown-menu {\n    background-color: #272727;\n}\n.dropdown-menu > li > a {\n    color: #909090;\n}\n.dropdown-menu .divider {\n    *width: 100%;\n    height: 1px;\n    margin: 9px 1px;\n    *margin: -5px 0 5px;\n    overflow: hidden;\n    background-color: #606060;\n    border-bottom: 1px solid #606060;\n}\n.news-short {\n    color: #fcfcfc;\n}\nhr {\n    border-top: 1px solid #656565;\n    border-bottom: 1px solid #656565;\n}\n\n.hljs {\n\tbackground: #0e0e0e;\n}\n}",
+    "usercssData": {
+      "name": "Dark NixOS",
+      "namespace": "USO Archive",
+      "author": "x75tiger75x",
+      "description": "Darkened NixOS Website",
+      "version": "20180819.01.46",
+      "license": "NONE",
+      "preprocessor": "uso"
+    },
+    "author": "x75tiger75x",
+    "description": "Darkened NixOS Website",
+    "name": "Dark NixOS",
+    "originalDigest": "320c15d7c6497b600a750f87d10774e7f42304ff",
+    "_id": "1129d226-3ef7-41d3-938e-9757e3408b54",
+    "_rev": 1698245479188,
+    "installationUrl": "https://uso.kkx.one/style/163453",
+    "id": 9
   }
 ]
