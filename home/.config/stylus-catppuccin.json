@@ -155,7 +155,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -184,7 +184,7 @@
           "type": "select",
           "label": "Accent",
           "name": "accentColor",
-          "value": null,
+          "value": "teal",
           "default": "blue",
           "options": [
             {
@@ -271,8 +271,9 @@
     "name": "NixOS Search Catppuccin",
     "updateDate": 1698242852272,
     "_id": "c79c1637-d3ba-4bdb-b460-bb9367f36c9c",
-    "_rev": 1698242852272,
-    "id": 1
+    "_rev": 1698246584343,
+    "id": 1,
+    "originalDigest": "80d5a4e3c912f408fac5d90654b237799b9f0ede"
   },
   {
     "enabled": true,
@@ -329,7 +330,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -361,8 +362,9 @@
     "name": "Brave Search Catppuccin",
     "updateDate": 1698242913743,
     "_id": "32352688-6557-43a8-ac09-6f44295035d0",
-    "_rev": 1698242913744,
-    "id": 2
+    "_rev": 1698246681932,
+    "id": 2,
+    "originalDigest": "55e3a4dea507a21a7e96b92ad850f26c9ff97de4"
   },
   {
     "enabled": true,
@@ -419,7 +421,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -451,8 +453,9 @@
     "name": "ChatGPT Catppuccin",
     "updateDate": 1698242984808,
     "_id": "b053cab5-a06a-4e0b-92a6-85a53326e988",
-    "_rev": 1698242984808,
-    "id": 3
+    "_rev": 1698246673806,
+    "id": 3,
+    "originalDigest": "5d47ec0f3b8896c6a05adafab16bb038707f8cc0"
   },
   {
     "enabled": true,
@@ -509,7 +512,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -538,7 +541,7 @@
           "type": "select",
           "label": "Accent",
           "name": "accentColor",
-          "value": null,
+          "value": "teal",
           "default": "blue",
           "options": [
             {
@@ -622,7 +625,7 @@
           "type": "checkbox",
           "label": "Zen Mode",
           "name": "zenMode",
-          "value": null,
+          "value": "1",
           "default": "0",
           "options": null
         }
@@ -633,8 +636,9 @@
     "name": "DeepL Catppuccin",
     "updateDate": 1698243065084,
     "_id": "e083a452-5ef6-4812-8b76-5970f5c98476",
-    "_rev": 1698243065085,
-    "id": 4
+    "_rev": 1698246840126,
+    "id": 4,
+    "originalDigest": "46bdedc85d758b8d5b90a32d825c8cd858a5d8c9"
   },
   {
     "enabled": true,
@@ -662,7 +666,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "latte",
           "default": "latte",
           "options": [
             {
@@ -691,7 +695,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -720,7 +724,7 @@
           "type": "select",
           "label": "Accent",
           "name": "accentColor",
-          "value": null,
+          "value": "teal",
           "default": "rosewater",
           "options": [
             {
@@ -812,7 +816,7 @@
           "type": "checkbox",
           "label": "Use Inter font",
           "name": "usefont",
-          "value": null,
+          "value": "0",
           "default": "0",
           "options": null
         }
@@ -823,8 +827,9 @@
     "name": "Github Catppuccin",
     "updateDate": 1698243112279,
     "_id": "942b2272-4772-41b7-b97c-848a6b3b1d85",
-    "_rev": 1698245003066,
-    "id": 5
+    "_rev": 1698246200389,
+    "id": 5,
+    "originalDigest": "787d014964a4790fef94fef37ff0fa3c02857474"
   },
   {
     "enabled": true,
@@ -852,7 +857,7 @@
           "type": "select",
           "label": "Flavor",
           "name": "flavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -881,7 +886,7 @@
           "type": "select",
           "label": "Accent",
           "name": "accentColor",
-          "value": null,
+          "value": "mauve",
           "default": "red",
           "options": [
             {
@@ -968,8 +973,9 @@
     "name": "Proton Catppuccin",
     "updateDate": 1698243214442,
     "_id": "25aa2163-58b2-45e3-92f2-43e0627cd34c",
-    "_rev": 1698243214442,
-    "id": 6
+    "_rev": 1698246558215,
+    "id": 6,
+    "originalDigest": "f6f23d633047a27d25ec50ee686ad7a20bf4565e"
   },
   {
     "enabled": true,
@@ -1026,7 +1032,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -1055,7 +1061,7 @@
           "type": "select",
           "label": "Accent",
           "name": "accentColor",
-          "value": null,
+          "value": "teal",
           "default": "sapphire",
           "options": [
             {
@@ -1142,8 +1148,9 @@
     "name": "Stylus Catppuccin",
     "updateDate": 1698243263899,
     "_id": "6b26ec88-4cef-48be-bdbf-8a4dcb334a9e",
-    "_rev": 1698243263899,
-    "id": 7
+    "_rev": 1698246250293,
+    "id": 7,
+    "originalDigest": "3ab7d23410f90edc5f5018656fe8ebd21217d4cc"
   },
   {
     "enabled": true,
@@ -1200,7 +1207,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": null,
+          "value": "macchiato",
           "default": "mocha",
           "options": [
             {
@@ -1229,7 +1236,7 @@
           "type": "select",
           "label": "Accent",
           "name": "accentColor",
-          "value": null,
+          "value": "red",
           "default": "red",
           "options": [
             {
@@ -1313,7 +1320,7 @@
           "type": "checkbox",
           "label": "Logo",
           "name": "logo",
-          "value": null,
+          "value": "0",
           "default": "0",
           "options": null
         },
@@ -1321,7 +1328,7 @@
           "type": "checkbox",
           "label": "Enable black bars",
           "name": "oledOn",
-          "value": null,
+          "value": "0",
           "default": "0",
           "options": null
         },
@@ -1340,8 +1347,9 @@
     "name": "YouTube Catppuccin",
     "updateDate": 1698243289587,
     "_id": "394d935b-9e6c-4e0e-8adf-6ee7777aed72",
-    "_rev": 1698243289587,
-    "id": 8
+    "_rev": 1698246371878,
+    "id": 8,
+    "originalDigest": "ec3d24e62be39d971060d0f70a25bc4036c9dcbe"
   },
   {
     "enabled": false,
