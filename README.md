@@ -42,7 +42,7 @@ This repository contains my NixOS Linux configuration with the Hyprland window m
 | Font                  | JetBrains Mono + Nerd Font Patch |
 | Player                | Youtube Music + Spotify     |
 | File Browser          | Thunar                      |
-| Internet Browser      | Qutebrowser, Brave + Vimium + NightTab |
+| Internet Browser      | Qutebrowser, Brave + Vimium + NightTab + Stylus |
 | Mimetypes             | MPV, Imv, Zathura            |
 | Image Editor          | Swappy                      |
 | Screenshot            | Grim + Slurp                |
