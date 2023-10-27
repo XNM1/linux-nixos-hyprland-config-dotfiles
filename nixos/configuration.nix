@@ -466,6 +466,7 @@
     lldb
     gcc13
     wasmedge
+    lunatic
     license-generator
     git-ignore
 
