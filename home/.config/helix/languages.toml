@@ -14,9 +14,8 @@ auto-format = true
 name = "tsx"
 auto-format = true
 
-[[language]]
-name = "rust"
-config = { checkOnSave = { command = "clippy" } }
+[language-server.rust-analyzer.config]
+checkOnSave = { command = "clippy" }
 
 [[language]]
 name = "config"
