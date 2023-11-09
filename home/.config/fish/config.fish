@@ -5,7 +5,7 @@ end
 alias conf="z ~/.config"
 alias nixos="z /etc/nixos"
 alias store="z /nix/store"
-alias rustenv = "nix-shell -p pkg-config openssl sqlite --run fish" # run this command first if you have trouble with openssl or sqlite during compiling a rust project (more https://nixos.wiki/wiki/Rust#Building_Rust_crates_that_require_external_system_libraries)
+alias rustenv="nix-shell -p pkg-config openssl sqlite --run fish" # run this command first if you have trouble with openssl or sqlite during compiling a rust project (more https://nixos.wiki/wiki/Rust#Building_Rust_crates_that_require_external_system_libraries)
 alias nswitch="sudo nixos-rebuild switch --flake /etc/nixos"
 alias nswitchu="sudo nixos-rebuild switch --flake /etc/nixos --upgrade --update-input nixpkgs --update-input rust-overlay --commit-lock-file"
 alias ncsu="sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos"
