@@ -155,7 +155,7 @@
     enable = true;
     operation = "switch"; # If you don't want to apply updates immediately, only after rebooting, use `boot` option in this case
     flake = "/etc/nixos";
-    flags = [ "--update-input" "nixpkgs" "--commit-lock-file" ];
+    flags = [ "--update-input" "nixpkgs" "--update-input" "rust-overlay" "--commit-lock-file" ];
     dates = "daily";
     # channel = "https://nixos.org/channels/nixos-unstable";
   };
@@ -343,7 +343,7 @@
       "gammastep" = {
         isAllowed = true;
         isSystem = false;
-        users = [ "1000" ];
+        users = [ "1000" ]; # FIXME: set your user id (to get user id use command 'id -u "your_user_name"')
       };
     };
   };
@@ -445,6 +445,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    gcc13
     jdk11
     gleam
     rebar3
@@ -469,9 +470,8 @@
     nil
     zls
 
-    rustup
     evcxr #rust repl
-    rust-analyzer
+    taplo #toml formatter & lsp
     cargo-deny
     cargo-audit
     cargo-update
@@ -486,11 +486,7 @@
     cargo-modules
     cargo-bloat
     bacon
-    taplo #toml formatter & lsp
-
-    lldb
-    llvmPackages.bintools
-    gcc13
+    lldb_16
 
     wasmedge
     lunatic
