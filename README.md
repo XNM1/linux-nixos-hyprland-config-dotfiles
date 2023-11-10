@@ -153,9 +153,9 @@ Here are some tips to enhance your Rust experience on this system:
 
    - If you are working on multiple projects with distinct `rust-toolchain.toml` files or need to switch between stable and nightly Rust versions, consider the following options:
    
-     - Install `rustup` through `configuration.nix` and nixpkgs for a system-wide Rust setup. This allows you to manage Rust versions globally through `rustup`.
-     
-     - Alternatively, you can set up a Nix environment using `flake.nix` and [rust-overlay](https://github.com/oxalica/rust-overlay) for each project separately. Utilize `nix develop` to manage project-specific Rust environments.
+     - Set up a Nix environment using `flake.nix` and [rust-overlay](https://github.com/oxalica/rust-overlay) for each project separately. Utilize `nix develop` to manage project-specific Rust environments.
+
+     - Alternatively, you can install `rustup` through `configuration.nix` and nixpkgs for a system-wide Rust setup. This allows you to manage Rust versions globally through `rustup`.
 
 2. **Troubleshooting Compilation Issues:**
    If you encounter problems during Rust compilation, especially those related to OpenSSL or SQLite (refer [here](https://nixos.wiki/wiki/Rust#Building_Rust_crates_that_require_external_system_libraries)), leverage the `rustenv` fish function. This function is an alias for the `nix-shell -p pkg-config openssl sqlite --run fish` command, opening a Nix shell with the necessary dependencies for seamless code compilation. Additionally, if you use Nix shell, compilation will occur in the runtime directory, which might be insufficient for some projects. You can adjust the runtime directory size in `configuration.nix` under `services.logind.extraConfig="RuntimeDirectorySize=4G"`.
