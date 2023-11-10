@@ -116,7 +116,7 @@
   # Setup Env Variables
   environment.variables.SPOTIFY_PATH = "${pkgs.spotify}/";
   environment.variables.JDK_PATH = "${pkgs.jdk11}/";
-  environment.variables.NODEJS_PATH = "${pkgs.nodejs_20}/";
+  environment.variables.NODEJS_PATH = "${pkgs.nodePackages_latest.nodejs}/";
 
   environment.variables.CI = "1";
   # environment.variables.CLIPBOARD_EDITOR = "hx";
@@ -454,7 +454,7 @@
     gopls
     delve
     (python311Full.withPackages(ps: with ps; [ pygobject3 gobject-introspection pyqt6-sip]))
-    nodejs_20
+    nodePackages_latest.nodejs
     bun
     zig
 
