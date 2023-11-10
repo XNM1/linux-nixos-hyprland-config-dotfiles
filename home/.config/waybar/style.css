@@ -71,7 +71,7 @@ window.bottom_bar .modules-right {
 }
 
 #workspaces button.active {
-  color: @maroon;
+  color: @peach;
 }
 
 #workspaces button {
