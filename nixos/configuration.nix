@@ -489,6 +489,7 @@
     lldb_16
 
     wasmedge
+    wasmer
     lunatic
     wasmi
     # wasm3
