@@ -490,6 +490,7 @@
 
     wasmedge
     lunatic
+    wasmi
     # wasm3
 
     license-generator
