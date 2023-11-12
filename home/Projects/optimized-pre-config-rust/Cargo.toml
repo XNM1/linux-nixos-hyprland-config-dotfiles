@@ -1,0 +1,20 @@
+### Cargo code snippets for different optimizations
+
+## Dev build compilation speed optimization (more https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent)
+# Work only with nightly version of Rust by the time when it was written, also DON'T use it in production for now
+cargo-features = ["codegen-backend"]
+# Important: It provides less useful error messages during compilation
+[profile.dev]
+opt-level = 1
+codegen-backend = "cranelift"
+[profile.dev.package."*"]
+opt-level = 3
+codegen-backend = "cranelift"
+
+## Release build size optimization (more https://github.com/johnthagen/min-sized-rust)
+[profile.release]
+strip = true
+opt-level = "z" # Also can try 's' instead of 'z'
+lto = true
+codegen-units = 1
+panic = "abort"
