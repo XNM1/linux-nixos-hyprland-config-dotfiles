@@ -615,13 +615,17 @@
     clamav       #scan command: sudo freshcalm; clamscan [options] [file/directory/-]
     chkrootkit   #scan command: sudo chkrootkit
 
-    pass
+    # passphrase2pgp
+    pass-wayland
+    pass2csv
     passExtensions.pass-tomb
     passExtensions.pass-update
     passExtensions.pass-otp
     passExtensions.pass-import
     passExtensions.pass-audit
     tomb
+    docker-credential-helpers
+    pass-git-helper
 
     # vulkan-tools
     # opencl-info
