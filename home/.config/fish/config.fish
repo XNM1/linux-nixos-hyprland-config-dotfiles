@@ -3,6 +3,8 @@ if status is-interactive
 end
 
 alias cl="clear"
+alias lgit="lazygit"
+alias ldocker="lazydocker"
 alias conf="z ~/.config"
 alias nixos="z /etc/nixos"
 alias store="z /nix/store"
@@ -33,3 +35,4 @@ set -Ux FZF_DEFAULT_OPTS "\
 
 starship init fish | source
 zoxide init fish | source
+direnv hook fish | source

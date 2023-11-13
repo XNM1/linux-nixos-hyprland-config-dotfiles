@@ -352,6 +352,7 @@
   #   nssmdns = true;
   # };
   programs.browserpass.enable = true;
+  programs.direnv.enable = true;
   services.upower.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
