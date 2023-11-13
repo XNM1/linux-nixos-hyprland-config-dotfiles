@@ -499,6 +499,7 @@
 
     license-generator
     git-ignore
+    just
     xh
     wezterm
     cool-retro-term
