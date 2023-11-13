@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+alias cl="clear"
 alias conf="z ~/.config"
 alias nixos="z /etc/nixos"
 alias store="z /nix/store"
