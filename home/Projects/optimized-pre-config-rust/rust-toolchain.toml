@@ -2,6 +2,7 @@
 channel = "nightly"
 components = [ "rust-src", "rust-analyzer", "rustc-codegen-cranelift", "miri", "llvm-tools", "rust-docs-json" ]
 targets = [
+    "wasm32-unknown-unknown",
     "wasm32-wasi",
     "wasm32-wasi-preview1-threads",
     "x86_64-pc-windows-gnu",

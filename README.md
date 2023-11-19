@@ -2,8 +2,13 @@
 <h1 align="center">NixOS & Hyprland with Catppuccin Macchiato Theme Configuration</h1>
 
 <div align="center">
-<img src="https://img.shields.io/static/v1?label=Hyprland&message=Stable&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>
-<img src="https://img.shields.io/badge/NixOS-Unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
+
+![nixos](https://img.shields.io/badge/NixOS-24273A.svg?style=flat&logo=nixos&logoColor=CAD3F5)
+![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
+![linux kernel](https://img.shields.io/badge/linux_kernel-mainline-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
+![hyprland](https://img.shields.io/badge/hyprland-development-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
+![rust](https://img.shields.io/badge/rust-nightly-informational.svg?style=flat&logo=rust&logoColor=f5a97f&colorA=24273A&colorB=f5a97f)
+
 </div>
 
 ![Showcase Gif](home/Pictures/Records/record.gif)
@@ -24,6 +29,17 @@ This repository houses my NixOS Linux configuration, featuring the Hyprland wind
 
 🚨It's essential to note that this configuration is not minimalistic or lightweight and may require some disk space and knowledge to understand. If you're looking for something simpler, this configuration may not be suitable for you.
 
+This system leverages cutting-edge channels and versions of software to provide you with the latest updates and features. Notably, it utilizes:
+
+- **nixpkgs**: unstable
+- **hyprland**: development version
+- **linux kernel**: mainline
+- **rust**: nightly version
+
+This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system. 
+
+You have the flexibility to customize these configurations according to your needs by modifying the respective configuration files.
+
 ## 🌟 Showcase
 
 The showcased images do not reflect the latest version of the system's appearance. The final setup may vary slightly.
@@ -39,7 +55,7 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Component             | Version/Name                |
 |-----------------------|-----------------------------|
 | Distro                | NixOS                       |
-| Kernel                | Zen                         |
+| Kernel                | Mainline                    |
 | Shell                 | Fish                        |
 | Display Server        | Wayland                     |
 | WM (Compositor)       | Hyprland                    |
@@ -86,10 +102,12 @@ And many other useful utilities. The full list can be found in the system config
 
 1. Download and Install NixOS from the [official site](https://nixos.org/download).
 2. Temporarily install ripgrep and fish using the command: `nix-shell -p ripgrep fish --run fish`. You can also use classic bash and grep for the next step without installing fish and ripgrep.
-3. Run the command `rg --hidden FIXME` and change/add lines to match your device, swaps, partitions, and file systems in the configuration files (`/etc/nixos/configuration.nix` & `/etc/nixos/hardware-configuration.nix`).
+3. Run the command `rg --hidden FIXME` and change/add lines to match your device, swaps, partitions, and file systems in the configuration files (`/etc/nixos/configuration.nix` & `/etc/nixos/hardware-configuration.nix`). 🚨Ensure that you configure USBGuard in the `configuration.nix` file to avoid potential issues. By default, USBGuard blocks all USB devices, which can lead to the disabling of crucial hardware components such as the integrated camera, bluetooth, wifi, etc. To configure USBGuard properly, add your trusted USB devices to the configuration. You can obtain a list of all connected devices by using the `lsusb` command from the usbutils package.
+Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`.
+This step ensures that USBGuard is not actively blocking any USB devices.
 4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. Make sure to change the username to match yours to avoid login issues.
 5. Copy all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
-6. Copy all files (with replacements) from the `nixos` directory to `/etc/nixos/`. It's recommended not to copy and replace `hardware-configuration.nix`; only copy it if you have already change it for your hardware.
+6. Copy all files (with replacements) from the `nixos` directory to `/etc/nixos/`. 🚨It's recommended not to copy and replace `hardware-configuration.nix`; use default generated one, or only copy my `hardware-configuration.nix` if you have already change it for your hardware.
 7. Run the command `sudo nixos-rebuild switch`. After this, you will have a complete system. You can also use flakes after first setup by running `sudo nixos-rebuild switch --flake /etc/nixos` if needed.
 
 ## ⌨️ Keybindings
@@ -109,6 +127,11 @@ And many other useful utilities. The full list can be found in the system config
 | SUPER + SHIFT + O      | Toggle split                 |
 | SUPER + SHIFT + P      | Toggle pseudo                |
 | SUPER + SHIFT + M      | Exit from `hyprland`         |
+| SUPER + CTRL + E       | Expose all windows using `pyprland` |
+| SUPER + CTRL + M       | Expose all minimized windows using `pyprland` |
+| SUPER + M              | Minimize or restore a window using `pyprland` |
+| SUPER + CTRL + T       | Launch scratchpad with `wezterm` using `pyprland` |
+| SUPER + CTRL + V       | Launch scratchpad with `pavucontrol` using `pyprland` |
 | SUPER + T              | Launch `wezterm`             |
 | SUPER + D              | Launch `rofi -drun`          |
 | SUPER + B              | Launch `qutebrowser`         |
@@ -124,7 +147,8 @@ And many other useful utilities. The full list can be found in the system config
 | SUPER + E              | Launch `swappy` to edit last taken screenshot |
 | SUPER + R              | Record screen area (MP4)     |
 | SUPER + SHIFT + R      | Record screen area (GIF)     |
-| SUPER + C              | Color picker                 |
+| SUPER + C              | Launch color picker (using `hyperpicer`) |
+| SUPER + Z              | Toggle Zoom (with `pyprland`)|
 | SUPER + V              | Launch clipboard menu (`rofi -dmenu`) |
 | SUPER + SHIFT + V      | Launch clipboard menu (`rofi -dmenu`) (copy to clipboard) |
 | SUPER + X              | Launch clipboard deletion item menu (`rofi -dmenu`) |
@@ -153,12 +177,13 @@ Here are some tips to enhance your Rust experience on this system:
 
    - If you are working on multiple projects with distinct `rust-toolchain.toml` files or need to switch between stable and nightly Rust versions, consider the following options:
    
-     - Set up a Nix environment using `flake.nix` and [rust-overlay](https://github.com/oxalica/rust-overlay) for each project separately. Utilize `nix develop` to manage project-specific Rust environments.
+     - Set up a Nix environment using `flake.nix` and [rust-overlay](https://github.com/oxalica/rust-overlay) for each project separately. Utilize `nix develop` or `direnv` to manage project-specific Rust environments.
 
      - Alternatively, you can install `rustup` through `configuration.nix` and nixpkgs for a system-wide Rust setup. This allows you to manage Rust versions globally through `rustup`.
 
 2. **Troubleshooting Compilation Issues:**
-   If you encounter problems during Rust compilation, especially those related to OpenSSL or SQLite (refer [here](https://nixos.wiki/wiki/Rust#Building_Rust_crates_that_require_external_system_libraries)), leverage the `rustenv` fish function. This function is an alias for the `nix-shell -p pkg-config openssl sqlite protobuf --run fish` command, opening a Nix shell with the necessary dependencies for seamless code compilation. Additionally, if you use Nix shell, compilation will occur in the runtime directory, which might be insufficient for some projects. You can adjust the runtime directory size in `configuration.nix` under `services.logind.extraConfig="RuntimeDirectorySize=8G"`.
+   If you encounter issues during Rust compilation, particularly those related to OpenSSL, SQLite, Wayland, or any other program utilized by `pkg-config` in the compilation process (see [here](https://nixos.wiki/wiki/Rust#Building_Rust_crates_that_require_external_system_libraries)), you can employ the `nix-shell -p pkg-config {your_dependency} [other_dependencies] --run fish` command. This command opens a Nix shell with the necessary dependencies, facilitating seamless code compilation.
+   Moreover, when using the Nix shell, be aware that the compilation takes place in the runtime directory, which might be insufficient for certain projects. To address this, you can adjust the runtime directory size in the `configuration.nix` file under `services.logind.extraConfig="RuntimeDirectorySize=8G"`.
 
 3. **Cross-Compilation:**
    For cross-compilation, consider using tools like `zigbuild` or `cross`. Personally, I find `zigbuild` preferable, but both are valuable options for your cross-compilation needs.
@@ -182,7 +207,7 @@ Here are some tips to enhance your Rust experience on this system:
    - `bacon`
 
 5. **Environment Setup:**
-   You can set up your Rust project environment on this system using `nix develop` or `nix-shell` with `default.nix`, `shell.nix`, or `flake.nix` to create a tailored environment for your Rust project.
+   You can set up your Rust project environment on this system using `nix develop` or `nix-shell` with `default.nix`, `shell.nix`, or `flake.nix` to create a tailored environment for your Rust project (Also, I personally recommend using it alongside with [direnv](https://direnv.net/)).
 
 ## 📜 License
 

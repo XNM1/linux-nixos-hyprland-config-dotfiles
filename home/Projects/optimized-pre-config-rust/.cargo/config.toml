@@ -1,1 +1,1 @@
-rustflags = ["-C", "link-arg=-fuse-ld=/path/to/mold", "-Zcodegen-backend=cranelift" ] # Change '/path/to/mold' and DON'T use it in production, only for dev needs
+rustflags = ["-C", "link-arg=-fuse-ld=/path/to/mold", "-Z", "threads=8" ] # Change '/path/to/mold', use with nightly version of Rust

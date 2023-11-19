@@ -1,4 +1,5 @@
-function startup
+function autostart
+    pypr & \
     wpaperd & \
     waybar & \
     poweralertd & \

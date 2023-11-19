@@ -57,5 +57,6 @@ syntax_highlight: true
 # For more details, see https://docs.rs/termion/1.5.6/termion/color/index.html
 color:
   dir_fg: LightCyan
+  dirty_fg: LightGreen
   file_fg: LightWhite
   symlink_fg: LightYellow

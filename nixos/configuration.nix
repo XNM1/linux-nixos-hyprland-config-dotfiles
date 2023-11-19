@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   imports =
@@ -49,7 +49,10 @@
   };
 
   # # Enable Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
@@ -130,6 +133,8 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];    
     auto-optimise-store = true;
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
   
   # Optimize storage and automatic scheduled GC running
@@ -141,7 +146,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 15d";
+    options = "--delete-older-than 7d";
   };
 
   # Change runtime directory size
@@ -155,13 +160,14 @@
     enable = true;
     operation = "switch"; # If you don't want to apply updates immediately, only after rebooting, use `boot` option in this case
     flake = "/etc/nixos";
-    flags = [ "--update-input" "nixpkgs" "--update-input" "rust-overlay" "--commit-lock-file" ];
+    flags = [ "--update-input" "nixpkgs" "--update-input" "rust-overlay" "--update-input" "hyprland" "--commit-lock-file" ];
     dates = "daily";
     # channel = "https://nixos.org/channels/nixos-unstable";
   };
 
+
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
 
   # Enable networking
   networking.networkmanager = {
@@ -299,9 +305,10 @@
     enable = true;
     dbus.enable = true;
     implicitPolicyTarget = "block";
-    # FIXME: set yours pref USB devices
+    # FIXME: set yours pref USB devices (change {id} to your trusted USB device), use `lsusb` command (from usbutils package) to get list of all connected USB devices including integrated devices like camera, bluetooth, wifi, etc. with their IDs
     rules = ''
-      allow id {id}
+      allow id {id} # device 1
+      allow id {id} # device 2
     '';
   };
   services.clamav = {
@@ -552,6 +559,7 @@
     htop
     bottom
     btop
+    kmon
 
     cmatrix
     pipes-rs
@@ -598,6 +606,7 @@
     wtype
     wlrctl
     hyprpicker
+    pyprland
     waybar
     rofi-wayland
     dunst

@@ -4,6 +4,7 @@
   inputs = {
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       rust-overlay.url = "github:oxalica/rust-overlay";
+      hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { nixpkgs, rust-overlay, ... } @ inputs:
