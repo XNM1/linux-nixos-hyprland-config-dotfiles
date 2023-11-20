@@ -467,6 +467,7 @@
     nodePackages_latest.nodejs
     bun
     zig
+    numbat
 
     python311Packages.python-lsp-server
     nodePackages_latest.nodemon
