@@ -167,7 +167,7 @@
 
 
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   # Enable networking
   networking.networkmanager = {
@@ -496,8 +496,10 @@
     cargo-spellcheck
     cargo-modules
     cargo-bloat
+    cargo-unused-features
     bacon
     lldb_16
+    upx
 
     wasmedge
     wasmer

@@ -5,7 +5,7 @@
 
 ![nixos](https://img.shields.io/badge/NixOS-24273A.svg?style=flat&logo=nixos&logoColor=CAD3F5)
 ![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
-![linux kernel](https://img.shields.io/badge/linux_kernel-mainline-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
+![linux kernel](https://img.shields.io/badge/linux_kernel-zen--latest-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
 ![hyprland](https://img.shields.io/badge/hyprland-development-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
 ![rust](https://img.shields.io/badge/rust-nightly-informational.svg?style=flat&logo=rust&logoColor=f5a97f&colorA=24273A&colorB=f5a97f)
 
@@ -33,7 +33,7 @@ This system leverages cutting-edge channels and versions of software to provide 
 
 - **nixpkgs**: unstable
 - **hyprland**: development version
-- **linux kernel**: mainline
+- **linux kernel**: zen-latest
 - **rust**: nightly version
 
 This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system. 
@@ -55,7 +55,7 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Component             | Version/Name                |
 |-----------------------|-----------------------------|
 | Distro                | NixOS                       |
-| Kernel                | Mainline                    |
+| Kernel                | Zen                         |
 | Shell                 | Fish                        |
 | Display Server        | Wayland                     |
 | WM (Compositor)       | Hyprland                    |
@@ -110,7 +110,7 @@ And many other useful utilities. The full list can be found in the system config
 
 4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. Make sure to change the username to match yours to avoid login issues.
 5. Copy all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
-6. Copy all files (with replacements) from the `nixos` directory to `/etc/nixos/`. 🚨It's recommended not to copy and replace `hardware-configuration.nix`; use default generated one, or only copy my `hardware-configuration.nix` if you have already change it for your hardware.
+6. Copy all files (with replacements) from the `nixos` directory to `/etc/nixos/`. 🚨It's recommended NOT to copy and replace `hardware-configuration.nix`; use default generated one, or only copy my `hardware-configuration.nix` if you have already change it for your hardware.
 7. Run the command `sudo nixos-rebuild switch`. After this, you will have a complete system. You can also use flakes after first setup by running `sudo nixos-rebuild switch --flake /etc/nixos` if needed.
 
 ## ⌨️ Keybindings
