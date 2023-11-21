@@ -167,7 +167,7 @@
 
 
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
 
   # Enable networking
   networking.networkmanager = {
@@ -457,15 +457,13 @@
     mold
     gcc13
     jdk11
-    gleam
-    rebar3
-    erlang
     go
     gopls
     delve
     (python311Full.withPackages(ps: with ps; [ pygobject3 gobject-introspection pyqt6-sip]))
     nodePackages_latest.nodejs
     bun
+    lua
     zig
     numbat
 

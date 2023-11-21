@@ -5,7 +5,7 @@
 
 ![nixos](https://img.shields.io/badge/NixOS-24273A.svg?style=flat&logo=nixos&logoColor=CAD3F5)
 ![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
-![linux kernel](https://img.shields.io/badge/linux_kernel-zen--latest-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
+![linux kernel](https://img.shields.io/badge/linux_kernel-mainline-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
 ![hyprland](https://img.shields.io/badge/hyprland-development-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
 ![rust](https://img.shields.io/badge/rust-nightly-informational.svg?style=flat&logo=rust&logoColor=f5a97f&colorA=24273A&colorB=f5a97f)
 
@@ -33,7 +33,7 @@ This system leverages cutting-edge channels and versions of software to provide 
 
 - **nixpkgs**: unstable
 - **hyprland**: development version
-- **linux kernel**: zen-latest
+- **linux kernel**: mainline
 - **rust**: nightly version
 
 This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system. 
@@ -55,7 +55,7 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Component             | Version/Name                |
 |-----------------------|-----------------------------|
 | Distro                | NixOS                       |
-| Kernel                | Zen                         |
+| Kernel                | Mainline                    |
 | Shell                 | Fish                        |
 | Display Server        | Wayland                     |
 | WM (Compositor)       | Hyprland                    |
