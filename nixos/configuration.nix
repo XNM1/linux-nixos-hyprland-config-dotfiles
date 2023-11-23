@@ -432,7 +432,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # Apply the overlay to the package set
-  # nixpkgs.overlays = [ spotifyOverlay ];
+  nixpkgs.overlays = [
+    inputs.rust-overlay.overlays.default
+  ];
 
   # Override packages
   nixpkgs.config.packageOverrides = pkgs: {
@@ -479,6 +481,7 @@
     nil
     zls
 
+    (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
     evcxr #rust repl
     taplo #toml formatter & lsp
     cargo-deny
