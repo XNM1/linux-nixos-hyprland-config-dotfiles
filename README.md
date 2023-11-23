@@ -108,7 +108,7 @@ And many other useful utilities. The full list can be found in the system config
 
     Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`. This step ensures that USBGuard is not actively blocking any USB devices.
 
-4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. Make sure to change the username to match yours to avoid login issues.
+4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. Make sure to change the username to match yours to avoid login issues. 🚨Also, don't forget to change the git settings to yours in `home/.gitconfig` file.
 5. Copy all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
 6. Copy all files (with replacements) from the `nixos` directory to `/etc/nixos/`. 🚨It's recommended NOT to copy and replace `hardware-configuration.nix`; use default generated one, or only copy my `hardware-configuration.nix` if you have already change it for your hardware.
 7. Run the command `sudo nixos-rebuild switch`. After this, you will have a complete system. You can also use flakes after first setup by running `sudo nixos-rebuild switch --flake /etc/nixos` if needed.
