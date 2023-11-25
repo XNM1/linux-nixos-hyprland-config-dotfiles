@@ -391,8 +391,26 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   
-  # Enable docker
-  virtualisation.docker.enable = true;
+  # Enable container manager
+  # Enable Docker
+  # virtualisation.docker.enable = true;
+  # virtualisation.docker.rootless = {
+  #   enable = true;
+  #   setSocketVariable = true;
+  # };
+  # users.extraGroups.docker.members = [ "xnm" ];
+  # Enable Podman
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
  
   # Enable sound with pipewire.
   sound.enable = true;
@@ -416,7 +434,7 @@
   users.users.xnm = {
     isNormalUser = true;
     description = "xnm";
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "docker" "tss" ];
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
     shell = pkgs.fish;
     packages = with pkgs; [
       spotify
@@ -512,6 +530,9 @@
     git-ignore
     just
     xh
+    tgpt
+    distrobox
+    qemu
     wezterm
     cool-retro-term
     # mcfly # terminal history
@@ -551,6 +572,9 @@
     tre-command
     felix-fm
     chafa
+
+    podman-compose
+    podman-tui
 
     lazydocker
     lazygit

@@ -38,6 +38,8 @@ This system leverages cutting-edge channels and versions of software to provide 
 
 This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system. 
 
+🚨Please note that the system utilizes **Podman** instead of **Docker** for containerization due to various reasons, primarily related to security (rootless and daemonless containers), easier migration to Kubernetes, availability of pods, compatibility with systemd, and better security for `distrobox`. If you prefer to use **Docker** instead of **Podman**, you can make the switch by commenting out the **Podman** section in the `configuration.nix` file and uncommenting the **Docker** section. More details on **Docker** configuration in NixOS can be found [here](https://nixos.wiki/wiki/Docker).
+
 You have the flexibility to customize these configurations according to your needs by modifying the respective configuration files.
 
 ## 🌟 Showcase
@@ -85,6 +87,7 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Wallpaper             | Wpaperd                     |
 | Graphical Boot        | Plymouth + Catppuccin-plymouth |
 | Display Manager       | Greetd + Tuigreet           |
+| Containerization      | Podman                      |
 
 And many other useful utilities. The full list can be found in the system configuration at `/nixos/configuration.nix` file.
 
@@ -207,6 +210,7 @@ Here are some tips to enhance your Rust experience on this system:
    - `cargo-spellcheck`
    - `cargo-modules`
    - `cargo-bloat`
+   - `cargo-unused-features`
    - `bacon`
 
 5. **Environment Setup:**
