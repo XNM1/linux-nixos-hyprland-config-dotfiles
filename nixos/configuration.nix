@@ -17,7 +17,6 @@
   boot.loader.timeout = 2;
   boot.initrd.enable = true;
   boot.initrd.systemd.enable = true;
-  boot.kernelParams = [ "quiet" "fbcon=nodefer" "vt.global_cursor_default=0" "kernel.modules_disabled=1" "lsm=landlock,lockdown,yama,integrity,apparmor,bpf" "usbcore.autosuspend=-1" "video4linux" "acpi_rev_override=5" ];
   boot.plymouth = {
     enable = true;
     # logo = pkgs.fetchurl {
@@ -168,6 +167,28 @@
 
   # Linux Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+  boot.kernelParams = [ 
+    "quiet"
+    "fbcon=nodefer"
+    "vt.global_cursor_default=0"
+    "kernel.modules_disabled=1"
+    "lsm=landlock,lockdown,yama,integrity,apparmor,bpf,tomoyo,selinux"
+    "usbcore.autosuspend=-1"
+    "video4linux"
+    "acpi_rev_override=5"
+    "security=selinux"
+  ];
+  # boot.kernelPatches = [ {
+  #      name = "selinux-config";
+  #      patch = null;
+  #      extraConfig = '' 
+  #              SECURITY_SELINUX y
+  #              SECURITY_SELINUX_BOOTPARAM n
+  #              SECURITY_SELINUX_DEVELOP y
+  #              SECURITY_SELINUX_AVC_STATS y
+  #              DEFAULT_SECURITY_SELINUX n
+  #            '';
+  # } ];
 
   # Enable networking
   networking.networkmanager = {
@@ -271,6 +292,10 @@
     StateDirectory = "dnscrypt-proxy";
   };
 
+  # Enable Mullvad VPN
+  # services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.package = pkgs.mullvad; # `pkgs.mullvad` only provides the CLI tool, use `pkgs.mullvad-vpn` instead if you want to use the CLI and the GUI.
+
   # Enable MAC Randomize
   # systemd.services.macchanger = {
   #   enable = true;
@@ -339,6 +364,7 @@
   };
 
   # Systemd services setup
+  systemd.package = pkgs.systemd.override { withSelinux = true; };
   systemd.packages = with pkgs; [
     auto-cpufreq
   ];
@@ -391,7 +417,11 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   
-  # Enable container manager
+  ### Enable container manager
+
+  # Enable Containerd
+  # virtualisation.containerd.enable = true;
+
   # Enable Docker
   # virtualisation.docker.enable = true;
   # virtualisation.docker.rootless = {
@@ -399,6 +429,7 @@
   #   setSocketVariable = true;
   # };
   # users.extraGroups.docker.members = [ "xnm" ];
+
   # Enable Podman
   virtualisation = {
     podman = {
@@ -474,6 +505,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    policycoreutils
     mold
     gcc13
     jdk11
@@ -526,13 +558,12 @@
     wasmi
     # wasm3
 
+    # mullvad-closest
     license-generator
     git-ignore
     just
     xh
     tgpt
-    distrobox
-    qemu
     wezterm
     cool-retro-term
     # mcfly # terminal history
@@ -573,6 +604,12 @@
     felix-fm
     chafa
 
+    # nerdctl
+    # firecracker
+    # firectl
+    # flintlock
+    distrobox
+    qemu
     podman-compose
     podman-tui
 
