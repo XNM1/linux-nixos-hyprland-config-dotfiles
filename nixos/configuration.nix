@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -19,10 +19,6 @@
   boot.initrd.systemd.enable = true;
   boot.plymouth = {
     enable = true;
-    # logo = pkgs.fetchurl {
-    #         url = "https://pluspng.com/img-png/black-lagoon-png-revy-1-png-1594-1080-anime-boysdjblack-lagoon-1594.png";
-    #         sha256 = "e0CZmXTVIJv6BDXXYksTsncl9t/QGkYC/BavNy4fcnQ=";
-    #       };
     font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
     themePackages = [ pkgs.catppuccin-plymouth ];
     theme = "catppuccin-macchiato";
@@ -48,20 +44,9 @@
   };
 
   # # Enable Hyprland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
+  programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
-
-  # services.xserver.enable = true;
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.displayManager.lightdm.greeters.enso.enable = true;
-  # services.xserver.displayManager.lightdm.greeters.enso.theme.name = "Catppuccin-Teal-Dark";
-  # services.xserver.displayManager.lightdm.greeters.enso.iconTheme.name = "Colloid-teal-dark";
-  # services.xserver.displayManager.lightdm.greeters.enso.cursorTheme.name = "Catppuccin-Macchiato-Teal-Cursors";
-  # services.xserver.displayManager.lightdm.background = "$HOME/.config/wezterm/lain.png";
 
   # Enable Gnome
   # services.xserver.enable = true;
@@ -132,8 +117,6 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];    
     auto-optimise-store = true;
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
   
   # Optimize storage and automatic scheduled GC running
@@ -159,14 +142,14 @@
     enable = true;
     operation = "switch"; # If you don't want to apply updates immediately, only after rebooting, use `boot` option in this case
     flake = "/etc/nixos";
-    flags = [ "--update-input" "nixpkgs" "--update-input" "rust-overlay" "--update-input" "hyprland" "--commit-lock-file" ];
+    flags = [ "--update-input" "nixpkgs" "--update-input" "rust-overlay" "--commit-lock-file" ];
     dates = "daily";
     # channel = "https://nixos.org/channels/nixos-unstable";
   };
 
 
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
   boot.kernelParams = [ 
     "quiet"
     "fbcon=nodefer"
@@ -534,6 +517,7 @@
     (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
     evcxr #rust repl
     taplo #toml formatter & lsp
+    cargo-watch
     cargo-deny
     cargo-audit
     cargo-update

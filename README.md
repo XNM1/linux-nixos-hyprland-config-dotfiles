@@ -5,8 +5,8 @@
 
 ![nixos](https://img.shields.io/badge/NixOS-24273A.svg?style=flat&logo=nixos&logoColor=CAD3F5)
 ![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
-![linux kernel](https://img.shields.io/badge/linux_kernel-mainline-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
-![hyprland](https://img.shields.io/badge/hyprland-development-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
+![linux kernel](https://img.shields.io/badge/kernel-liquorix-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
+![hyprland](https://img.shields.io/badge/hyprland-stable-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
 ![rust](https://img.shields.io/badge/rust-nightly-informational.svg?style=flat&logo=rust&logoColor=f5a97f&colorA=24273A&colorB=f5a97f)
 
 </div>
@@ -32,11 +32,9 @@ This repository houses my NixOS Linux configuration, featuring the Hyprland wind
 This system leverages cutting-edge channels and versions of software to provide you with the latest updates and features. Notably, it utilizes:
 
 - **nixpkgs**: unstable
-- **hyprland**: development version
-- **linux kernel**: mainline
 - **rust**: nightly version
 
-This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system. 
+This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system.
 
 🚨Please note that the system utilizes **Podman** instead of **Docker** for containerization due to various reasons, primarily related to security (rootless and daemonless containers), easier migration to Kubernetes, availability of pods, compatibility with systemd, and better security for `distrobox`. If you prefer to use **Docker** instead of **Podman**, you can make the switch by commenting out the **Podman** section in the `configuration.nix` file and uncommenting the **Docker** section. More details on **Docker** configuration in NixOS can be found [here](https://nixos.wiki/wiki/Docker).
 
@@ -59,7 +57,7 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Component             | Version/Name                |
 |-----------------------|-----------------------------|
 | Distro                | NixOS                       |
-| Kernel                | Mainline                    |
+| Kernel                | Liquorix                    |
 | Shell                 | Fish                        |
 | Display Server        | Wayland                     |
 | WM (Compositor)       | Hyprland                    |
@@ -199,6 +197,7 @@ Here are some tips to enhance your Rust experience on this system:
 4. **Cargo and Rust Tools:**
    This system comes equipped with a variety of cargo and rust tools to ensure a smooth Rust development experience. Some of these tools include:
    - `rust-analyzer`
+   - `cargo-watch`
    - `cargo-deny`
    - `cargo-audit`
    - `cargo-update`
