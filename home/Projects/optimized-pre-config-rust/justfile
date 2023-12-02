@@ -1,0 +1,42 @@
+set export
+
+set shell := ["fish", "-c"]
+
+alias w := watch
+alias b := build
+alias r := release
+alias l := lint
+alias t := test
+alias c := coverage
+
+# run `just --list` for project
+default: 
+	just --list
+
+# run `cargo watch` for project
+watch:
+	cargo watch
+
+# run `cargo build` for project
+build:
+	cargo build
+
+# run `cargo build --release` for project
+release: test
+    cargo build --release
+
+# run `cargo zigbuild --target {target} --release` for project
+cross target: test
+	cargo zigbuild --target $target --release
+
+# run `cargo clippy` for project
+lint:
+	cargo clippy
+
+# run `carog nextest run` for project
+test:
+	cargo nextest run
+
+# run `cargo tarpaulin` for project
+coverage:
+	cargo tarpaulin

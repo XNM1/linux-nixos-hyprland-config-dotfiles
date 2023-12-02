@@ -1,1 +1,0 @@
-rustflags = ["-C", "link-arg=-fuse-ld=/path/to/mold", "-Z", "threads=8" ] # Change '/path/to/mold', use with nightly version of Rust

@@ -1,8 +1,8 @@
 ### Cargo code snippets for different optimizations
 
 ## Dev build compilation speed optimization (more https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent)
-# Work only with nightly version of Rust by the time when it was written, also DON'T use it in production for now
-cargo-features = ["codegen-backend"]
+# Work only with the nightly version of Rust by the time it was written; it is recommended NOT to use it in production for now
+cargo-features = [ "codegen-backend", "profile-rustflags" ]
 # Important: It provides less useful error messages during compilation
 [profile.dev]
 opt-level = 1
@@ -11,10 +11,17 @@ codegen-backend = "cranelift"
 opt-level = 3
 codegen-backend = "cranelift"
 
+[profile.dev.build-override]
+rustflags = [ "-Z", "threads=8", "-C", "link-arg=-fuse-ld=/run/current-system/sw/bin/mold" ] # `/run/current-system/sw/bin/mold` is an absolute path to the mold executable
+
 ## Release build size optimization (more https://github.com/johnthagen/min-sized-rust)
+# You can also use programs such as `upx` for size optimization
 [profile.release]
 strip = true
-opt-level = "z" # Also can try 's' instead of 'z'
+opt-level = "z" # You can try 's' instead of 'z' if you want to optimize for speed
 lto = true
 codegen-units = 1
-panic = "abort"
+panic = "abort" # DELETE extra unwinding code that provides helpful backtrace information for runtime errors
+
+[profile.release.build-override]
+rustflags = [ "-Z", "location-detail=none" ] # DELETE a useful traceback information such as file, line, and column information for panic!() and [track_caller]

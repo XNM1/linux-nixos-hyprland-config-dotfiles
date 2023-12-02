@@ -7,7 +7,7 @@
     flake-utils.url  = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
+  outputs = { nixpkgs, rust-overlay, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
@@ -19,12 +19,11 @@
       {
         devShells.default = mkShell {
           buildInputs = [
+            just
             (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
             mold
-            pkg-config
-            openssl
-            sqlite
             cargo-deny
+            cargo-watch
             cargo-audit
             cargo-update
             cargo-edit
@@ -37,9 +36,13 @@
             cargo-spellcheck
             cargo-modules
             cargo-bloat
+            cargo-unused-features
             taplo
             bacon
             helix
+            pkg-config
+            openssl
+            sqlite
           ];
         };
       }
