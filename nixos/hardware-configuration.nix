@@ -10,12 +10,12 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ]; # Disable NVIDIA video cards
   boot.kernelParams = [ "i915.enable_guc=2" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  # FIXME: setup file systems, swap devices, luks and so on
+ # FIXME: Use your auto-generated `hardware-configuration.nix` instead of this file, you can tweak your `hardware-configuration.nix` using snippets from this file
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

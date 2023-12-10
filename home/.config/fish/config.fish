@@ -10,9 +10,9 @@ alias nixos="z /etc/nixos"
 alias store="z /nix/store"
 alias nswitch="sudo nixos-rebuild switch --flake /etc/nixos"
 alias nswitchu="sudo nixos-rebuild switch --flake /etc/nixos --update-input nixpkgs --update-input rust-overlay --commit-lock-file --upgrade"
-alias ncsu="sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos"
+alias nau="sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos"
 alias nsgc="sudo nix-store --gc"
-alias ncg="sudo nix-collect-garbage -d"
+alias ngc="sudo nix-collect-garbage -d"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
