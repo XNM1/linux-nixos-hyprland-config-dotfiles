@@ -8,7 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
-    evcxr #rust repl
+    lldb_16
     taplo #toml formatter & lsp
     cargo-watch
     cargo-deny
@@ -26,6 +26,6 @@
     cargo-bloat
     cargo-unused-features
     bacon
-    lldb_16
+    evcxr #rust repl
   ];
 }
