@@ -1,4 +1,4 @@
-<div align="center"><img width="350" height="350" src="home/.config/neofetch/Makima_nixos.png"></div>
+<div align="center"><img src="home/.config/neofetch/logo_nixos.png"></div>
 <h1 align="center">NixOS & Hyprland with Catppuccin Macchiato Theme Configuration</h1>
 
 <div align="center">
