@@ -122,7 +122,7 @@ And many other useful utilities. The full list can be found in the system config
 5. Enable `flake` support (more [here](https://nixos.wiki/wiki/Flakes#Enable_flakes_temporarily)) on your current system. Don't forget to run `sudo nixos-rebuild switch` after enabling `flake` in your `/etc/configuration.nix`.
 6. Copy all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
 7. Copy all files (with replacements) EXCEPT `hardware-configuration.nix` from the `nixos` directory to `/etc/nixos/`. 🚨It's recommended NOT to copy and replace `hardware-configuration.nix`; use default generated one, or only copy my `hardware-configuration.nix` if you have already change it for your hardware. 🚨Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file.
-8. Run the command `sudo nixos-rebuild switch --flake /etc/nixos`. After this, you will have a complete system.
+8. Run the command `sudo nixos-rebuild switch --flake /etc/nixos#your-hostname`. Replace `your-hostname` with your hostname before running the command; by default, it is set to `isitreal-laptop`. After this, you will have a complete system.
 9. For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
 
  - Websites in your browser (Brave, Firefox, Chromium):
