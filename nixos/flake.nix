@@ -14,6 +14,7 @@
         ./configuration.nix
         ./hardware-configuration.nix
         # ./fingerprint-scanner.nix
+        ./yubikey.nix
         ./sound.nix
         ./usb.nix
         ./time.nix
@@ -51,6 +52,7 @@
         ./info-fetchers.nix
         ./utils.nix
         ./terminal-utils.nix
+        ./work.nix
       ];
     };
   };
