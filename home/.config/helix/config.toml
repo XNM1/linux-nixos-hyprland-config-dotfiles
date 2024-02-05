@@ -33,4 +33,4 @@ display-messages = true
 enable = true
 
 [keys.normal]
-backspace = { w = ":w", c = ":bc", q = ":q", A-q = ":q!" }
+backspace = { w = ":w", c = ":bc", q = ":q", A-q = ":q!", A-c = ":bc!" }

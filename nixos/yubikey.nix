@@ -8,7 +8,6 @@
     enableSSHSupport = true;
   };
 
-  # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
@@ -24,6 +23,7 @@
        RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   '';
 
+  # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
   environment.systemPackages = with pkgs; [
     pam_u2f
   ];
