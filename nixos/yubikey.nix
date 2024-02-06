@@ -8,6 +8,7 @@
     enableSSHSupport = true;
   };
 
+  # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
   security.pam.u2f = {
     enable = true;
     cue = true;
@@ -19,9 +20,4 @@
     sudo.u2fAuth = true;
     swaylock.u2fAuth = true;
   };
-
-  # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
-  environment.systemPackages = with pkgs; [
-    pam_u2f
-  ];
 }
