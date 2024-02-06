@@ -8,20 +8,17 @@
     enableSSHSupport = true;
   };
 
-  security.pam.services = {
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
+  security.pam.u2f = {
+    enable = true;
+    cue = true;
+    control = "sufficient";
   };
 
-  # FIXME Replace [your_yubikey_model_id] with the actual model ID of your YubiKey. You can find the model ID using the `lsusb` command, typically available as a part of the `usbutils` package
-  services.udev.extraRules = ''
-      ACTION=="remove",\
-       ENV{ID_BUS}=="usb",\
-       ENV{ID_MODEL_ID}=="your_yubikey_model_id",\
-       ENV{ID_VENDOR_ID}=="1050",\
-       ENV{ID_VENDOR}=="Yubico",\
-       RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
-  '';
+  security.pam.services = {
+    greetd.u2fAuth = true;
+    sudo.u2fAuth = true;
+    swaylock.u2fAuth = true;
+  };
 
   # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
   environment.systemPackages = with pkgs; [
