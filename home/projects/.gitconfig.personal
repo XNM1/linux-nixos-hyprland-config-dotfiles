@@ -1,0 +1,10 @@
+[user]
+	email = artem.shv@proton.me
+	name = xnm
+	signingkey = ~/.ssh/github.pub
+
+[github]
+	user = "XNM1"
+
+[core]
+	sshCommand = "ssh -i ~/.ssh/github"

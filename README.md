@@ -268,7 +268,7 @@ Here are some tips to enhance your Rust experience on this system:
 This repo contains a NixOS configuration file (`nixos/yubikey.nix`) enabling:
 
   - Yubikey authentication with pam_u2f
-  - Passwordless login in greetd, sudo, and swaylock
+  - Passwordless login in greetd, sudo, ssh, and swaylock
 
 🚨 Personal Recommendation:  While convenient, using a Yubikey for display managers (like greetd) and screen lockers (like swaylock) without  additional two-factor or multi-factor authentication (2FA/MFA) has risks. If your Yubikey is lost or stolen, someone could gain full system access before you reset keys. Yubikeys excel at protecting against online attacks but are less secure against offline attacks.
 
