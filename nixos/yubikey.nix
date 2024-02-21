@@ -3,10 +3,7 @@
 {
   services.udev.packages = [ pkgs.yubikey-personalization ];
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+  programs.ssh.startAgent = true;
 
   # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
   security.pam.u2f = {
