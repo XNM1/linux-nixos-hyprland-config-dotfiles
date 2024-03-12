@@ -3,8 +3,8 @@
 {
   # Select internationalisation properties.
   services.xserver = {
-    layout = "us,ua,ru";
-    xkbOptions = "grp:alt_shift_toggle";
+    xkb.layout = "us,ua,ru";
+    xkb.options = "grp:alt_shift_toggle";
   };
   
   i18n.supportedLocales = [

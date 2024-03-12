@@ -4,4 +4,3 @@
 "contracts-node 0.35.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["substrate-contracts-node"]
 "dylint-link 2.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["dylint-link"]
 "ink-lsp-server 0.2.15 (registry+https://github.com/rust-lang/crates.io-index)" = ["ink-lsp-server"]
-"spacetimedb-cli 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["spacetime"]

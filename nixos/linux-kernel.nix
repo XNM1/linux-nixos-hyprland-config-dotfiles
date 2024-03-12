@@ -2,7 +2,7 @@
 
 {
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   boot.kernelParams = [ 
     "quiet"
     "fbcon=nodefer"
