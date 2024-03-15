@@ -40,6 +40,7 @@
     mdcat
     pandoc
     lsd
+    lsof
     gping
     viu
     tre-command

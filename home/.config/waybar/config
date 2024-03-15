@@ -164,6 +164,8 @@
     "group/misc": {
         "orientation": "horizontal",
         "modules": [
+            "pulseaudio#microphone_indicator",
+            "custom/webcam",
             "custom/recording",
             "custom/geo",
             "custom/media",
@@ -172,6 +174,19 @@
             "custom/airplane_mode",
             "idle_inhibitor",
         ],
+    },
+
+    "pulseaudio#microphone_indicator": {
+        "format": "{format_source}",
+        "format-source": "󰍬",
+        "format-source-muted": "",
+        "tooltip-format": "microphone on",
+    },
+
+    "custom/webcam": {
+        "interval": 1,
+        "exec": "fish -c check_webcam",
+        "return-type": "json",
     },
 
     "custom/recording": {

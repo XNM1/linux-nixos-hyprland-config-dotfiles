@@ -208,6 +208,16 @@ window.top_bar .modules-center {
   color: @subtext0;
 }
 
+#pulseaudio.microphone_indicator {
+  color: @pink;
+  margin-right: 4;
+}
+
+#custom-webcam {
+  color: @maroon;
+  margin-right: 4;
+}
+
 #custom-recording {
   color: @red;
   margin-right: 4;
