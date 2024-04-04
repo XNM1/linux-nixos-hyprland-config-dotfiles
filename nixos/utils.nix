@@ -5,5 +5,9 @@
     mold
     gcc13
     jdk11
+    dioxus-cli
+    surrealdb
+    surrealdb-migrations
+    surrealist
   ];
 }
