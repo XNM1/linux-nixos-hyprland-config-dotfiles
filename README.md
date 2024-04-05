@@ -130,10 +130,6 @@ And many other useful utilities. The full list can be found in the system config
    - Install the Stylus Extension from its [official website](https://add0n.com/stylus.html).
    - Open the extension's settings page and navigate to the Backup section.
    - Click "Import" and select the file `home/.config/stylus-catppuccin.json`.
- - DuckDuckGo in any browser:
-   - Follow the [official guide](https://github.com/catppuccin/duckduckgo) provided by Catppuccin.
-
-   **Note**: Qutebrowser users can follow the same DuckDuckGo guide for customization, as installation doesn't require the Stylus Extension, which is not yet compatible with Qutebrowser.
 
  - Cool-Retro-Term:
    - Launch Cool-Retro-Term.
