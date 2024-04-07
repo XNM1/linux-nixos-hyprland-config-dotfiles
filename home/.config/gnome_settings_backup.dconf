@@ -1,0 +1,35 @@
+[org/blueman/plugins/powermanager]
+auto-power-on=@mb false
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='Catppuccin-Macchiato-Teal-Cursors'
+document-font-name='JetBrains Mono 11'
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='JetBrains Mono 11'
+gtk-theme='Catppuccin-Macchiato-Standard-Teal-Dark'
+icon-theme='Colloid-teal-dark'
+monospace-font-name='JetBrains Mono 11'
+
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/wm/preferences]
+focus-mode='sloppy'
+titlebar-font='JetBrains Mono Bold 11'
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=true
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'

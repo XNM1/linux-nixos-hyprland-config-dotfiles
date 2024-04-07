@@ -19,6 +19,7 @@
   ];
   services.mpd.enable = true;
   programs.thunar.enable = true;
+  programs.xfconf.enable = true;
   services.tumbler.enable = true; 
   services.fwupd.enable = true;
   services.auto-cpufreq.enable = true;

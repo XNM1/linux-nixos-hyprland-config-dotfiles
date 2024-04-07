@@ -50,8 +50,8 @@
 
     # gnome.gnome-tweaks
     # gnome.gnome-shell
-    # xsettingsd
     # gnome.gnome-shell-extensions
+    # xsettingsd
     # themechanger
   ];
 }
