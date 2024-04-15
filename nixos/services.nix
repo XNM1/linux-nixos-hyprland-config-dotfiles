@@ -23,7 +23,6 @@
   services.tumbler.enable = true; 
   services.fwupd.enable = true;
   services.auto-cpufreq.enable = true;
-  hardware.opengl.enable = true;
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   environment.systemPackages = with pkgs; [

@@ -34,7 +34,7 @@ This repository houses my NixOS Linux ❄️ flake configuration, featuring the 
 This system leverages cutting-edge channels and versions of software to provide you with the latest updates and features. Notably, it utilizes:
 
 - **flake** (An experimental feature of the Nix package manager)
-- **nur** (The Nix User Repository)
+- ~~**nur** (The Nix User Repository)~~ *currently disabled
 - **nixpkgs**: unstable
 - **rust**: nightly version
 
@@ -270,8 +270,6 @@ This repo contains a NixOS configuration file (`nixos/yubikey.nix`) enabling:
 
 🛡️ For enhanced security and a passwordless experience:
   You can consider a YubiKey Bio Series device. These keys support FIDO2/WebAuthn and FIDO U2F and has built in fingerprint scanner for strong authentication. Please note, they do not offer Smart card, OpenPGP, or OTP functionality.
-
-⚠️ Important Note:  From personal experience, YubiKey integration on NixOS can sometimes be buggy or unstable. Experiment with caution, especially when combining different configurations and Linux programs.
 
 ## 📜 License
 
