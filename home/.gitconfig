@@ -11,4 +11,4 @@
 	format = ssh
 
 [commit]
-    gpgsign = true
+	gpgsign = true
