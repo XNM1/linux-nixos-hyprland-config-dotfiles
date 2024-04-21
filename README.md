@@ -119,24 +119,36 @@ And many other useful utilities. The full list can be found in the system config
 
    Alternatively, you can set it up manually or use [swap encryption with a random key](https://nixos.wiki/wiki/Swap#Encrypt_swap_with_random_key).
 
-4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. Make sure to change the username to match yours to avoid login issues. 🚨 Also, don't forget to change the git settings to yours in `home/.gitconfig` file.
+4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. 🚨 Make sure to change the username to match yours set during installation to avoid login issues. 🚨 Also, don't forget to delete or change to yours the git settings in `home/.gitconfig`, `home/projects/.gitconfig.personal`, and `home/work/.gitconfig.work` files, as they are configured for my personal use.
 5. Enable `flake` support (more [here](https://nixos.wiki/wiki/Flakes#Enable_flakes_temporarily)) on your current system. Don't forget to run `sudo nixos-rebuild switch` after enabling `flake` in your `/etc/configuration.nix`.
-6. Copy all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
-7. Copy all files (with replacements) EXCEPT `hardware-configuration.nix` from the `nixos` directory to `/etc/nixos/`. 🚨 It's recommended NOT to copy and replace `hardware-configuration.nix`; use default generated one, or only copy my `hardware-configuration.nix` if you have already change it for your hardware. 🚨 Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file.
-8. Run the command `sudo nixos-rebuild switch --flake /etc/nixos#your-hostname`. Replace `your-hostname` with your hostname before running the command; by default, it is set to `isitreal-laptop`. After this, you will have a complete system.
-9. For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
+6. Copy or move all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
+7. Copy or move all files (with replacements and **sudo** permissions) from the `nixos` directory to `/etc/nixos/`. 🚨 Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file. 🚨 Also, for security reasons, ensure all files in the `/etc/nixos` directory are owned by **root**. If not, change ownership using the command: `sudo chown -R root:root /etc/nixos`.
+8. Run the command `sudo nixos-rebuild switch --flake /etc/nixos#your-hostname`. Replace `your-hostname` with your hostname before running the command; by default, it is set to `isitreal-laptop`.
+9. Post-installation configuration:
 
- - Websites in your browser (Brave, Firefox, Chromium):
+ - Import GNOME settings along with the theme by executing the following command: `dconf load / < home/.config/gnome_settings_backup.dconf`. Additionally, you can use tools like **gnome-tweaks** or **themechanger** to fine-tune specific theme preferences to your liking.
+
+ - Install dictionaries for spellchecking in Qutebrowser by using the similar command in **bash**: `$(find $(nix-store --query --outputs $(which qutebrowser)) -iname '*dictcli.py*' | head -1) install en-US hi-IN`.
+  To obtain a list of all available dictionaries, run: `$(find $(nix-store --query --outputs $(which qutebrowser)) -iname '*dictcli.py*' | head -1) list` in **bash**. 
+  For more information, visit [the Qutebrowser page on the nixos wiki](https://wiki.nixos.org/wiki/Qutebrowser).
+
+ - Apply Catppuccin theme for websites in your browser (Brave, Firefox, Chromium):
    - Install the Stylus Extension from its [official website](https://add0n.com/stylus.html).
    - Open the extension's settings page and navigate to the Backup section.
    - Click "Import" and select the file `home/.config/stylus-catppuccin.json`.
 
- - Cool-Retro-Term:
+ - Apply Catppuccin theme for Cool-Retro-Term:
    - Launch Cool-Retro-Term.
    - Right-click on the window and select "Settings".
    - In the General panel, click "Import" and select the file `home/.config/cool-retro-term-style.json`.
    - Select the imported profile named "new-catppuccin-theme".
-   - Click "Load" and exit from "Settings"
+   - Click "Load" and exit from "Settings".
+
+  - Login to your accounts.
+
+  - Customize graphical applications to suit your preferences.
+
+  After this, you will have a complete system.
 
 ## ⌨️ Keybindings
 
