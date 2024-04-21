@@ -47,8 +47,6 @@
     xdg-utils
     wtype
     wlrctl
-    hyprpicker
-    pyprland
     waybar
     rofi-wayland
     dunst
