@@ -13,6 +13,9 @@
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
+        # ./nvidia.nix
+        # ./disable-nvidia.nix
+        ./opengl.nix
         # ./fingerprint-scanner.nix
         ./yubikey.nix
         ./sound.nix
