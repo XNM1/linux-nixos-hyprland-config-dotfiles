@@ -1,7 +1,7 @@
 [style.description]
 underline = false
 bold = false
-italic = false
+italic = true
 
 [style.command_name]
 foreground = "cyan"
@@ -16,15 +16,15 @@ bold = false
 italic = false
 
 [style.example_code]
-foreground = "cyan"
+foreground = "yellow"
 underline = false
 bold = false
-italic = false
+italic = true
 
 [style.example_variable]
-foreground = "cyan"
-underline = true
-bold = false
+foreground = "blue"
+underline = false
+bold = true
 italic = false
 
 [display]
@@ -32,7 +32,7 @@ compact = false
 use_pager = false
 
 [updates]
-auto_update = false
+auto_update = true
 auto_update_interval_hours = 720
 
 [directories]
