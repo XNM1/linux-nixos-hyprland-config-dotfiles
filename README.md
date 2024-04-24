@@ -85,10 +85,10 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Recorder              | Wf-recorder                 |
 | Color Picker          | Hyprpicker                  |
 | Clipboard             | Wl-clipboard + Cliphist + Clipboard-jh |
-| Idle                  | Swayidle                    |
-| Lock                  | Swaylock                    |
+| Idle                  | Hypridle                    |
+| Lock                  | Hyprlock                    |
 | Logout menu           | Wlogout                     |
-| Wallpaper             | Wpaperd                     |
+| Wallpaper             | Hyprpaper                   |
 | Graphical Boot        | Plymouth + Catppuccin-plymouth |
 | Display Manager       | Greetd + Tuigreet           |
 | Containerization      | Podman                      |
@@ -182,7 +182,7 @@ And many other useful utilities. The full list can be found in the system config
 | SUPER + Y              | Launch `youtube-music`       |
 | SUPER + SHIFT + D      | Launch `discord`             |
 | SUPER + SHIFT + T      | Launch `telegram`            |
-| SUPER + SHIFT + L      | Launch `swaylock`            |
+| SUPER + SHIFT + L      | Launch `hyprlock`            |
 | SUPER + SHIFT + S      | Take screenshot              |
 | SUPER + E              | Launch `swappy` to edit last taken screenshot |
 | SUPER + R              | Record screen area (MP4)     |
@@ -276,9 +276,9 @@ Here are some tips to enhance your Rust experience on this system:
 This repo contains a NixOS configuration file (`nixos/yubikey.nix`) enabling:
 
   - Yubikey authentication with pam_u2f
-  - Passwordless login in greetd, sudo, ssh, and swaylock
+  - Passwordless login in greetd, sudo, ssh, and hyprlock
 
-🚨 Personal Recommendation:  While convenient, using a Yubikey for display managers (like greetd) and screen lockers (like swaylock) without  additional two-factor or multi-factor authentication (2FA/MFA) has risks. If your Yubikey is lost or stolen, someone could gain full system access before you reset keys. Yubikeys excel at protecting against online attacks but are less secure against offline attacks.
+🚨 Personal Recommendation:  While convenient, using a Yubikey for display managers (like greetd) and screen lockers (like hyprlock) without  additional two-factor or multi-factor authentication (2FA/MFA) has risks. If your Yubikey is lost or stolen, someone could gain full system access before you reset keys. Yubikeys excel at protecting against online attacks but are less secure against offline attacks.
 
 🛡️ For enhanced security and a passwordless experience:
   You can consider a YubiKey Bio Series device. These keys support FIDO2/WebAuthn and FIDO U2F and has built in fingerprint scanner for strong authentication. Please note, they do not offer Smart card, OpenPGP, or OTP functionality.

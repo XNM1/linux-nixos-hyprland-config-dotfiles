@@ -24,7 +24,7 @@ separator = "│"
 
 [editor.lsp]
 display-messages = true
-# display-inlay-hints = true
+display-inlay-hints = true
 
 # [editor.file-picker]
 # max-depth = 10

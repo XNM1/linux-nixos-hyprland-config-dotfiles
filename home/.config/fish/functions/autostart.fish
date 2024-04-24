@@ -1,10 +1,3 @@
 function autostart
-    pypr & \
-    wpaperd & \
-    waybar & \
-    poweralertd & \
-    wl-paste --watch cliphist store & \
-    avizo-service & \
-    systemctl --user start psi-notify &\
-    swayidle -w
+    pypr & hyprpaper & waybar & poweralertd & wl-paste --watch cliphist store & avizo-service & systemctl --user start psi-notify & hypridle -w
 end

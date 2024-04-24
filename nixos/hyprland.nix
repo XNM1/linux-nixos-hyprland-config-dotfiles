@@ -10,6 +10,9 @@
     pyprland
     hyprpicker
     hyprcursor
+    hyprlock
+    hypridle
+    hyprpaper
 
     wezterm
     cool-retro-term

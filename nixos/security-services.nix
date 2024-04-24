@@ -24,7 +24,7 @@
     ];
   };
   services.fail2ban.enable = true;
-  security.pam.services.swaylock = {};
+  security.pam.services.hyprlock = {};
   # security.polkit.enable = true;
   programs.browserpass.enable = true;
   services.clamav = {

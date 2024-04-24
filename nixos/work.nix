@@ -7,5 +7,6 @@
     awscli2
     cargo-lambda
     gnumake
+    cmake
   ];
 }

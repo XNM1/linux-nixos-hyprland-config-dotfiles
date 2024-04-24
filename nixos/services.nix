@@ -30,8 +30,6 @@
     qt6.qtwayland
     psi-notify
     poweralertd
-    swaylock-effects
-    swayidle
     playerctl
     psmisc
     grim
@@ -52,8 +50,6 @@
     dunst
     avizo
     wlogout
-    wpaperd
-    # swww
     gifsicle
   ];
 }

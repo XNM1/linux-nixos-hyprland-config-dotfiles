@@ -26,7 +26,7 @@
         ./nix-settings.nix
         ./nixpkgs.nix
         ./gc.nix
-        ./auto-upgrade.nix
+        # ./auto-upgrade.nix
         ./linux-kernel.nix
         ./screen.nix
         ./display-manager.nix
