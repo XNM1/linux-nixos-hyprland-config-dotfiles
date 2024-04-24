@@ -17,4 +17,8 @@
     sudo.u2fAuth = true;
     hyprlock.u2fAuth = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    yubikey-manager
+  ];
 }
