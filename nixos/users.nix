@@ -12,7 +12,7 @@
       youtube-music
       discord
       tdesktop
-      vscode
+      vscodium
       brave
     ];
   };

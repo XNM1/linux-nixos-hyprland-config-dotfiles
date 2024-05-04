@@ -29,6 +29,8 @@
   programs.browserpass.enable = true;
   services.clamav = {
     daemon.enable = true;
+    fangfrisch.enable = true;
+    fangfrisch.interval = "daily";
     updater.enable = true;
     updater.interval = "daily"; #man systemd.time
     updater.frequency = 12;
@@ -50,6 +52,31 @@
       };
       discord = {
         executable = "${lib.getBin pkgs.discord}/bin/discord";
+        profile = "${pkgs.firejail}/etc/firejail/discord.profile";
+      };
+      slack = {
+        executable = "${lib.getBin pkgs.slack}/bin/slack";
+        profile = "${pkgs.firejail}/etc/firejail/slack.profile";
+      };
+      telegram-desktop = {
+        executable = "${lib.getBin pkgs.tdesktop}/bin/telegram-desktop";
+        profile = "${pkgs.firejail}/etc/firejail/telegram-desktop.profile";
+      };
+      brave = {
+        executable = "${lib.getBin pkgs.brave}/bin/brave";
+        profile = "${pkgs.firejail}/etc/firejail/brave.profile";
+      };
+      qutebrowser = {
+        executable = "${lib.getBin pkgs.qutebrowser}/bin/qutebrowser";
+        profile = "${pkgs.firejail}/etc/firejail/qutebrowser.profile";
+      };
+      thunar = {
+        executable = "${lib.getBin pkgs.xfce.thunar}/bin/thunar";
+        profile = "${pkgs.firejail}/etc/firejail/thunar.profile";
+      };
+      vscodium = {
+        executable = "${lib.getBin pkgs.vscodium}/bin/vscodium";
+        profile = "${pkgs.firejail}/etc/firejail/vscodium.profile";
       };
     };
   };

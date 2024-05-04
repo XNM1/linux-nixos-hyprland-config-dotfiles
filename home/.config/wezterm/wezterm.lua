@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 return {
+  enable_wayland = true;
   color_scheme = 'Catppuccin Macchiato',
   enable_tab_bar = false,
   inactive_pane_hsb = {

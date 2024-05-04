@@ -17,6 +17,7 @@
         # ./disable-nvidia.nix
         ./opengl.nix
         # ./fingerprint-scanner.nix
+        # ./clamav-scanner.nix
         ./yubikey.nix
         ./sound.nix
         ./usb.nix

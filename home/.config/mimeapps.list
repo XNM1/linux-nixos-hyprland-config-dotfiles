@@ -17,12 +17,12 @@ image/x-tga=imv-folder.desktop
 image/x-xbitmap=imv-folder.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
 image/svg+xml=imv-folder.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-ULF1Y1.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 text/plain=Helix.desktop
 
 [Added Associations]
 image/bmp=imv-folder.desktop;
-image/gif=imv.desktop;imv-folder.desktop;
+image/gif=mpv.desktop;imv.desktop;imv-folder.desktop;
 image/jpg=imv-folder.desktop;
 image/pjpeg=imv-folder.desktop;
 image/png=imv.desktop;imv-folder.desktop;
@@ -38,7 +38,7 @@ image/x-tga=imv-folder.desktop;
 image/x-xbitmap=imv-folder.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/svg+xml=code.desktop;imv-folder.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-ULF1Y1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-ULF1Y1.desktop;org.telegram.desktop.desktop;
 text/plain=Helix.desktop;
 image/jpeg=imv.desktop;
 video/mp4=umpv.desktop;
