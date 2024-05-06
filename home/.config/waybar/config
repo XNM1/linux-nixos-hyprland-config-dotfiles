@@ -191,7 +191,7 @@
 
     "custom/recording": {
         "interval": 1,
-        "exec-if": "pgrep wf-recorder",
+        "exec-if": "pgrep wl-screenrec",
         "exec": "fish -c check_recording",
         "return-type": "json",
     },

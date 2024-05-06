@@ -82,9 +82,9 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Mimetypes             | MPV, Imv, Zathura            |
 | Image Editor          | Swappy                      |
 | Screenshot            | Grim + Slurp                |
-| Recorder              | Wf-recorder                 |
+| Recorder              | Wl-screenrec                 |
 | Color Picker          | Hyprpicker                  |
-| Clipboard             | Wl-clipboard + Cliphist + Clipboard-jh |
+| Clipboard             | Wl-clipboard + Cliphist + Wl-clip-persist    |
 | Idle                  | Hypridle                    |
 | Lock                  | Hyprlock                    |
 | Logout menu           | Wlogout                     |

@@ -37,11 +37,10 @@
     imagemagick
     swappy
     ffmpeg_6-full
-    # wl-screenrec
-    wf-recorder
+    wl-screenrec
     wl-clipboard
+    wl-clip-persist
     cliphist
-    clipboard-jh
     xdg-utils
     wtype
     wlrctl
