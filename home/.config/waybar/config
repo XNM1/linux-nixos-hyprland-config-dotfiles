@@ -164,8 +164,8 @@
     "group/misc": {
         "orientation": "horizontal",
         "modules": [
-            "pulseaudio#microphone_indicator",
             "custom/webcam",
+            "privacy",
             "custom/recording",
             "custom/geo",
             "custom/media",
@@ -176,17 +176,24 @@
         ],
     },
 
-    "pulseaudio#microphone_indicator": {
-        "format": "{format_source}",
-        "format-source": "󰍬",
-        "format-source-muted": "",
-        "tooltip-format": "microphone on",
-    },
-
     "custom/webcam": {
         "interval": 1,
         "exec": "fish -c check_webcam",
         "return-type": "json",
+    },
+
+    "privacy": {
+        "icon-spacing": 1,
+        "icon-size": 12,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "audio-in",
+            },
+            {
+                "type": "screenshare",
+            },
+        ]
     },
 
     "custom/recording": {
@@ -267,6 +274,7 @@
         "format-en": "🇺🇸 ENG (US)",
         "format-uk": "🇺🇦 UKR",
         "format-ru": "🇷🇺 RUS",
+        "keyboard-name": "at-translated-set-2-keyboard",
         "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
     },
 
@@ -298,7 +306,7 @@
     "margin-top": 10,
     "margin-bottom": 10,
     "modules-left": ["wlr/taskbar"],
-    "modules-center": ["cpu", "memory", "disk", "temperature", "battery", "backlight", "pulseaudio"],
+    "modules-center": ["cpu", "memory", "disk", "temperature", "battery", "backlight", "pulseaudio", "systemd-failed-units"],
     "modules-right": ["tray"],
 
     // Modules Config
@@ -444,6 +452,10 @@
         "reverse-scrolling": true,
         "reverse-mouse-scrolling": true,
         "on-click": "pavucontrol",
+    },
+
+    "systemd-failed-units": {
+        "format": "✗ {nr_failed}",
     },
 },
 ]
