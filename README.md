@@ -221,7 +221,9 @@ NixOS-specific commands:
 - `nswitchu`: rebuild and update your system using the current flake
 - `nau`: add the unstable channel to the package manager
 - `nsgc`: optimize the nix store and remove unreferenced and obsolete store paths (equivalent to `sudo nix-store --gc`)
-- `ngc`: delete old generations of user profiles (equivalent to `sudo nix-collect-garbage -d`)
+- `ngc`: delete all old generations of user profiles (equivalent to `sudo nix-collect-garbage -d`)
+- `ngc7`: delete generations of user profiles older than 7 days (equivalent to `sudo nix-collect-garbage --delete-older-than 7d`)
+- `ngc14`: delete generations of user profiles older than 14 days (equivalent to `sudo nix-collect-garbage --delete-older-than 14d`)
 - `nixos`: navigate to the `/etc/nixos` directory
 - `store`: navigate to the `/nix/store` directory
 
