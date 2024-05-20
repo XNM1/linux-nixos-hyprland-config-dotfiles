@@ -49,11 +49,13 @@
     },
 
     "custom/separator": {
-        "format": "|",  
+        "format": "|",
+        "tooltip": false,
     },
 
     "custom/separator_dot": {
-        "format": "•",  
+        "format": "•",
+        "tooltip": false,
     },
 
     "clock#week": {
