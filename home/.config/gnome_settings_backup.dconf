@@ -1,6 +1,39 @@
 [org/blueman/plugins/powermanager]
 auto-power-on=@mb false
 
+[org/gnome/Extensions]
+window-maximized=true
+
+[org/gnome/Geary]
+migrated-config=true
+
+[org/gnome/calendar]
+active-view='month'
+window-maximized=true
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'us'), ('xkb', 'ua'), ('xkb', 'ru')]
+xkb-options=['grp:alt_shift_toggle']
+
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 cursor-theme='Catppuccin-Macchiato-Teal-Cursors'
@@ -20,6 +53,25 @@ two-finger-scrolling-enabled=true
 focus-mode='sloppy'
 titlebar-font='JetBrains Mono Bold 11'
 
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/nautilus/preferences]
+migrated-gtk-settings=true
+
+[org/gnome/shell]
+enabled-extensions=['true', 'user-theme@gnome-shell-extensions.gcampax.github.com']
+welcome-dialog-last-shown-version='46.2'
+
+[org/gnome/shell/extensions/user-theme]
+name='catppuccin-macchiato-teal-standard+default'
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gnome/tweaks]
+show-extensions-notice=false
+
 [org/gtk/gtk4/settings/file-chooser]
 show-hidden=true
 
@@ -33,3 +85,4 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
+window-position=(0, 0)

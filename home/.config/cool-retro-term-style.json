@@ -22,6 +22,6 @@
   "margin": 0.1028,
   "blinkingCursor": true,
   "frameMargin": 0,
-  "name": "new-catppuccin-theme",
-  "version": 2
+  "version": 2,
+  "name": "catppuccin-theme"
 }

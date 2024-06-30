@@ -21,6 +21,7 @@
     # vdpauinfo
     # libva-utils
     # nvtop
+    gpu-viewer
     dig
     speedtest-rs
   ];
