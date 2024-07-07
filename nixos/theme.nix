@@ -2,7 +2,7 @@
 
 {
   # Enable Theme
-  environment.variables.GTK_THEME = "catppuccin-macchiato-teal-standard+default";
+  environment.variables.GTK_THEME = "catppuccin-macchiato-teal-standard";
   environment.variables.XCURSOR_THEME = "Catppuccin-Macchiato-Teal";
   environment.variables.XCURSOR_SIZE = "24";
   environment.variables.HYPRCURSOR_THEME = "Catppuccin-Macchiato-Teal";

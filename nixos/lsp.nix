@@ -9,6 +9,7 @@
     nodePackages_latest.vscode-langservers-extracted
     nodePackages_latest.yaml-language-server
     nodePackages_latest.dockerfile-language-server-nodejs
+    vue-language-server
     sumneko-lua-language-server
     marksman
     nil

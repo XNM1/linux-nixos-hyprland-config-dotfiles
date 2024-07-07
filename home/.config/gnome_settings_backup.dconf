@@ -64,7 +64,7 @@ enabled-extensions=['true', 'user-theme@gnome-shell-extensions.gcampax.github.co
 welcome-dialog-last-shown-version='46.2'
 
 [org/gnome/shell/extensions/user-theme]
-name='catppuccin-macchiato-teal-standard+default'
+name='catppuccin-macchiato-teal-standard'
 
 [org/gnome/shell/world-clocks]
 locations=@av []
