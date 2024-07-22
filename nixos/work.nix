@@ -8,5 +8,6 @@
     cargo-lambda
     gnumake
     cmake
+    firebase-tools
   ];
 }
