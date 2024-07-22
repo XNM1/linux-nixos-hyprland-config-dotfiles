@@ -70,12 +70,17 @@ window.bottom_bar .modules-right {
   margin-left: 10;
 }
 
-#workspaces button.active {
-  color: @peach;
-}
-
 #workspaces button {
   color: @text;
+  font-size: 1.25rem;
+}
+
+#workspaces button.empty {
+  color: @overlay0;
+}
+
+#workspaces button.active {
+  color: @peach;
 }
 
 #submap {
