@@ -9,5 +9,6 @@
     surrealdb
     surrealdb-migrations
     surrealist
+    trunk
   ];
 }

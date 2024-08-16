@@ -7,6 +7,7 @@
     lazygit
     license-generator
     git-ignore
+    gitleaks
     pass-git-helper
     just
     xh

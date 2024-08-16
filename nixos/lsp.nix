@@ -16,5 +16,6 @@
     zls
     gopls
     delve
+    emmet-language-server
   ];  
 }
