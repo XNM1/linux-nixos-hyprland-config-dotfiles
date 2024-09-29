@@ -20,7 +20,8 @@
     # clinfo
     # vdpauinfo
     # libva-utils
-    # nvtop
+    nvtopPackages.nvidia
+    nvtopPackages.intel
     wlr-randr
     gpu-viewer
     dig

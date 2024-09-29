@@ -57,6 +57,7 @@
         ./info-fetchers.nix
         ./utils.nix
         ./terminal-utils.nix
+        ./llm.nix
         ./work.nix
       ];
     };
