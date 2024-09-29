@@ -3,7 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     mold
-    gcc13
+    gcc
+    clang
+    lld
+    lldb
+    musl
     jdk11
     dioxus-cli
     surrealdb

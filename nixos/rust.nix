@@ -8,7 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
-    lldb_16
     taplo #toml formatter & lsp
     cargo-watch
     cargo-deny

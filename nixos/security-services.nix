@@ -95,5 +95,7 @@
     passExtensions.pass-import
     passExtensions.pass-audit
     tomb
+    pwgen
+    pwgen-secure
   ];
 }

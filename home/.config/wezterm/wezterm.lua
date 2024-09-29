@@ -1,8 +1,12 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
+local gpus = wezterm.gui.enumerate_gpus()
 
 return {
-  enable_wayland = true;
+  enable_wayland = true,
+  prefer_egl = true,
+  front_end = "WebGpu",
+  webgpu_preferred_adapter = gpus[2],
   color_scheme = 'Catppuccin Macchiato',
   enable_tab_bar = false,
   inactive_pane_hsb = {
@@ -25,8 +29,8 @@ return {
       opacity = 0.05,
       vertical_align = "Middle",
       horizontal_align = "Center",
-      height = "1424",
-      width = "2024",
+      height = "1824",
+      width = "2724",
       repeat_y = "NoRepeat",
       repeat_x = "NoRepeat",
     },

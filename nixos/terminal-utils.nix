@@ -8,6 +8,7 @@
     license-generator
     git-ignore
     gitleaks
+    git-secrets
     pass-git-helper
     just
     xh

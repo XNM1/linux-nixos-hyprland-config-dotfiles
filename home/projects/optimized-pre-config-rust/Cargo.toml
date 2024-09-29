@@ -7,6 +7,12 @@ cargo-features = [ "codegen-backend", "profile-rustflags" ]
 [profile.dev]
 opt-level = 1
 codegen-backend = "cranelift"
+rustflags = [
+    "-Z", "threads=8", # Enable parallel frontend compiling
+    "-C", "linker=clang", # Use clang as the linker
+    "-C", "link-arg=-fuse-ld=mold",  # Use mold as the linker backend
+    "-C", "link-arg=-static",
+]
 [profile.dev.package."*"]
 opt-level = 3
 codegen-backend = "cranelift"

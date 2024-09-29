@@ -42,7 +42,7 @@ font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='JetBrains Mono 11'
 gtk-theme='Catppuccin-Macchiato-Standard-Teal-Dark'
-icon-theme='Colloid-teal-dark'
+icon-theme='Colloid-Teal-Dark'
 monospace-font-name='JetBrains Mono 11'
 
 [org/gnome/desktop/peripherals/touchpad]

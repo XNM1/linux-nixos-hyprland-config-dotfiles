@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   # Enable Hyprland
@@ -14,7 +14,7 @@
     hypridle
     hyprpaper
 
-    wezterm
+    inputs.wezterm.packages.${pkgs.system}.default
     cool-retro-term
 
     starship
