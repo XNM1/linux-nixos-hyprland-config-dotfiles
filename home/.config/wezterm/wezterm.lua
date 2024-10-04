@@ -26,7 +26,7 @@ return {
       source = {
         File = '/home/xnm/.config/wezterm/lain.gif',
       },
-      opacity = 0.05,
+      opacity = 0.02,
       vertical_align = "Middle",
       horizontal_align = "Center",
       height = "1824",
