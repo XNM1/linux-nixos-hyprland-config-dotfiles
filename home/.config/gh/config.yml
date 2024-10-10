@@ -1,5 +1,5 @@
 # What protocol to use when performing git operations. Supported values: ssh, https
-git_protocol: https
+git_protocol: ssh
 # What editor gh should run when creating issues, pull requests, etc. If blank, will refer to environment.
 editor: hx
 # When to interactively prompt. This is a global config that cannot be overridden by hostname. Supported values: enabled, disabled

@@ -146,7 +146,7 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t({device_battery_percentage}%)",
         "max-length": 35,
         "on-click": "fish -c bluetooth_toggle",
-        "on-click-right": "blueman-manager",
+        "on-click-right": "overskride",
     },
 
     "network": {

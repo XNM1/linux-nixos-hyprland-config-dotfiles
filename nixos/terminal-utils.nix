@@ -2,9 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
+    file
     upx
     git
     lazygit
+    delta
     license-generator
     git-ignore
     gitleaks
@@ -12,7 +14,7 @@
     pass-git-helper
     just
     xh
-    tgpt
+    process-compose
     # mcfly # terminal history
     zellij
     progress
@@ -46,7 +48,7 @@
     gping
     viu
     tre-command
-    felix-fm
+    yazi
     chafa
 
     cmatrix

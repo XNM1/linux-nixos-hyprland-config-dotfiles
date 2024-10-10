@@ -10,5 +10,6 @@
     alpaca
     nextjs-ollama-llm-ui
     aichat
+    tgpt
   ];
 }

@@ -71,13 +71,13 @@ The showcased images do not reflect the latest version of the system's appearanc
 | Editor                | Helix                       |
 | Terminal              | WezTerm + Starship          |
 | OSD                   | Avizo                       |
-| Night Gamma           | Gammastep                   |
+| Night Gamma           | Wlsunset                    |
 | Fetch Utility         | Neofetch                    |
 | Theme                 | Catppuccin Macchiato        |
 | Icons                 | Colloid-teal-dark, Numix-Circle |
 | Font                  | JetBrains Mono + Nerd Font Patch |
 | Player                | Youtube Music + Spotify     |
-| File Browser          | Thunar                      |
+| File Browser          | Thunar + Yazi               |
 | Internet Browser      | Qutebrowser, Brave + Vimium + NightTab + Stylus |
 | Mimetypes             | MPV, Imv, Zathura            |
 | Image Editor          | Swappy                      |

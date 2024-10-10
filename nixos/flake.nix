@@ -31,6 +31,7 @@
         # ./auto-upgrade.nix
         ./linux-kernel.nix
         ./screen.nix
+        # ./location.nix
         ./display-manager.nix
         ./theme.nix
         ./internationalisation.nix

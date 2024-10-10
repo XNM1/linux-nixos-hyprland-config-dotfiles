@@ -8,6 +8,7 @@ color-modes = true
 auto-save = true
 idle-timeout = 0
 bufferline = "multiple"
+popup-border = "popup"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -18,8 +19,8 @@ select = "underline"
 render = true
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "separator", "total-line-numbers", "separator", "version-control"]
-right = ["diagnostics", "separator", "selections", "separator", "position", "position-percentage", "spacer", "separator", "file-encoding", "file-line-ending", "separator", "file-type"]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "separator", "total-line-numbers", "separator", "spacer", "version-control"]
+right = ["register", "spacer", "diagnostics", "separator", "selections", "separator", "position", "position-percentage", "spacer", "separator", "file-encoding", "file-line-ending", "separator", "file-type"]
 separator = "│"
 
 [editor.lsp]
@@ -33,4 +34,7 @@ display-inlay-hints = true
 enable = true
 
 [keys.normal]
-backspace = { w = ":w", c = ":bc", q = ":q", A-q = ":q!", A-c = ":bc!" }
+backspace = { w = ":w", d = ":bc", S-d = ":bca", q = ":q", A-q = ":q!", A-d = ":bc!", A-S-d = ":bca!" }
+S-l = ":bn"
+S-h = ":bp"
+A-w = ":w"

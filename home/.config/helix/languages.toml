@@ -1,5 +1,31 @@
-[language-server]
-emmet-lsp = {  command = "emmet-language-server",  args = ["--stdio"] }
+[language-server.hyprls]
+command = "hyprls"
+
+[[language]]
+name = "hyprlang"
+language-servers = [ "hyprls" ]
+
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[language-server.copilot]
+command = "helix-gpt"
+args = [
+    "--handler", "copilot",
+    "--copilotApiKey", "your_api_key", # TODO: write fixme
+  ]
+
+[language-server.lsp-ai]
+command = "lsp-ai"
+args = ["--stdio"]
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer", "copilot" ]
+
+[language-server.rust-analyzer.config]
+checkOnSave = { command = "clippy" }
 
 [[language]]
 name = "html"
@@ -8,21 +34,22 @@ language-servers = [ "emmet-lsp", "vscode-html-language-server" ]
 [[language]]
 name = "javascript"
 auto-format = true
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "jsx"
 auto-format = true
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "typescript"
 auto-format = true
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "tsx"
 auto-format = true
-
-[language-server.rust-analyzer.config]
-checkOnSave = { command = "clippy" }
+indent = { tab-width = 4, unit = "   " }
 
 [[language]]
 name = "config"

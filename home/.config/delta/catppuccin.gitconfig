@@ -1,0 +1,123 @@
+[delta "catppuccin-latte"]
+	blame-palette = "#eff1f5 #e6e9ef #dce0e8 #ccd0da #bcc0cc"
+	commit-decoration-style = box ul
+	light = true
+	file-decoration-style = "#4c4f69"
+	file-style = "#4c4f69"
+	hunk-header-decoration-style = box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#6c6f85"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#9ca0b0"
+	line-numbers-minus-style = bold "#d20f39"
+	line-numbers-plus-style = bold "#40a02b"
+	line-numbers-right-style = "#9ca0b0"
+	line-numbers-zero-style = "#9ca0b0"
+	# 25% red 75% base
+	minus-emph-style = bold syntax "#e8b9c6"
+	# 10% red 90% base
+	minus-style = syntax "#ecdae2"
+	# 25% green 75% base
+	plus-emph-style = bold syntax "#c3ddc3"
+	# 10% green 90% base
+	plus-style = syntax "#dee8e0"
+	map-styles = \
+		bold purple => syntax "#d5c3f4", \
+		bold blue => syntax "#bbcff5", \
+		bold cyan => syntax "#b4def1", \
+		bold yellow => syntax "#ebd9bf"
+	# Should match the name of the bat theme
+	syntax-theme = Catppuccin Latte
+
+[delta "catppuccin-frappe"]
+	blame-palette = "#303446 #292c3c #232634 #414559 #51576d"
+	commit-decoration-style = box ul
+	dark = true
+	file-decoration-style = "#c6d0f5"
+	file-style = "#c6d0f5"
+	hunk-header-decoration-style = box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#a5adce"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#737994"
+	line-numbers-minus-style = bold "#e78284"
+	line-numbers-plus-style = bold "#a6d189"
+	line-numbers-right-style = "#737994"
+	line-numbers-zero-style = "#737994"
+	# 25% red 75% base
+	minus-emph-style = bold syntax "#5e4855"
+	# 10% red 90% base
+	minus-style = syntax "#433c4c"
+	# 25% green 75% base
+	plus-emph-style = bold syntax "#4e5b56"
+	# 10% green 90% base
+	plus-style = syntax "#3c444d"
+	map-styles = \
+		bold purple => syntax "#574f6e", \
+		bold blue => syntax "#475270", \
+		bold cyan => syntax "#4a5b6b", \
+		bold yellow => syntax "#5d5958"
+	# Should match the name of the bat theme
+	syntax-theme = Catppuccin Frappe
+
+[delta "catppuccin-macchiato"]
+	blame-palette = "#24273a #1e2030 #181926 #363a4f #494d64"
+	commit-decoration-style = box ul
+	dark = true
+	file-decoration-style = "#cad3f5"
+	file-style = "#cad3f5"
+	hunk-header-decoration-style = box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#a5adcb"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#6e738d"
+	line-numbers-minus-style = bold "#ed8796"
+	line-numbers-plus-style = bold "#a6da95"
+	line-numbers-right-style = "#6e738d"
+	line-numbers-zero-style = "#6e738d"
+	# 25% red 75% base
+	minus-emph-style = bold syntax "#563f51"
+	# 10% red 90% base
+	minus-style = syntax "#383143"
+	# 25% green 75% base
+	plus-emph-style = bold syntax "#455450"
+	# 10% green 90% base
+	plus-style = syntax "#313943"
+	map-styles = \
+		bold purple => syntax "#4d4569", \
+		bold blue => syntax "#3e4868", \
+		bold cyan => syntax "#3f5364", \
+		bold yellow => syntax "#575253"
+	# Should match the name of the bat theme
+	syntax-theme = Catppuccin Macchiato
+
+[delta "catppuccin-mocha"]
+	blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+	commit-decoration-style = box ul
+	dark = true
+	file-decoration-style = "#cdd6f4"
+	file-style = "#cdd6f4"
+	hunk-header-decoration-style = box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#a6adc8"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#6c7086"
+	line-numbers-minus-style = bold "#f38ba8"
+	line-numbers-plus-style = bold "#a6e3a1"
+	line-numbers-right-style = "#6c7086"
+	line-numbers-zero-style = "#6c7086"
+	# 25% red 75% base
+	minus-emph-style = bold syntax "#53394c"
+	# 10% red 90% base
+	minus-style = syntax "#34293a"
+	# 25% green 75% base
+	plus-emph-style = bold syntax "#404f4a"
+	# 10% green 90% base
+	plus-style = syntax "#2c3239"
+	map-styles = \
+		bold purple => syntax "#494060", \
+		bold blue => syntax "#384361", \
+		bold cyan => syntax "#384d5d", \
+		bold yellow => syntax "#544f4e"
+	# Should match the name of the bat theme
+	syntax-theme = Catppuccin Mocha

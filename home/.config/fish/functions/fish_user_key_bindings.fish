@@ -7,4 +7,14 @@ function fish_user_key_bindings
     # resetting all bindings.
     # The argument specifies the initial mode (insert, "default" or visual).
     fish_vi_key_bindings --no-erase insert
+
+    bind \er fzf-history-widget -M insert
+    bind \ef fzf-file-preview-widget -M insert
+    bind \ec fzf-cd-preview-widget -M insert
+    bind \ep fzf-ps-widget -M insert
+
+    bind \e\f clear-op -M insert
+    bind \eb back-op -M insert
+    bind \eB backtrack-op -M insert
+    bind \e\\ list-op -M insert
 end
