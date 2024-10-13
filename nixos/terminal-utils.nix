@@ -41,6 +41,7 @@
     tokei
     fzf
     bat
+    hexyl
     mdcat
     pandoc
     lsd

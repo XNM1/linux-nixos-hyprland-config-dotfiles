@@ -1,6 +1,6 @@
 function list-op
     echo \n
-    lsd -al
-    echo ""
+    lsd -Alg
+    echo \n\n
     commandline -f repaint
 end
