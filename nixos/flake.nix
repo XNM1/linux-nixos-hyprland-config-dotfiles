@@ -46,6 +46,7 @@
         ./networking.nix
         # ./mac-randomize.nix
         # ./open-ssh.nix
+        ./mosh.nix
         ./firewall.nix
         ./dns.nix
         # ./vpn.nix
