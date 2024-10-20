@@ -3,16 +3,29 @@
 {
   # Enable Encrypted DNS
   networking = {
-    nameservers = [ "127.0.0.1" "::1" ];
+    nameservers = [ "127.0.0.1" "[::1]" ];
     # If using dhcpcd:
+    dhcpcd.enable = false; # disable, because enabled by default
     dhcpcd.extraConfig = "nohook resolv.conf";
+
     # If using NetworkManager:
     networkmanager.dns = "none";
+
+    # If using resolvconf:
+    resolvconf = {
+      enable = false; # FIXME remember to delete /etc/resolv.conf after applying this config
+      useLocalResolver = true;
+    };
+
+    # If using iwd:
+    wireless.iwd.settings.Network.NameResolvingService = "none";
   };
 
   services.dnscrypt-proxy2 = {
     enable = true;
     settings = {
+      listen_addresses = [ "127.0.0.1:53" "[::1]:53" ];
+
       ipv6_servers = true;
       require_dnssec = true;
 
