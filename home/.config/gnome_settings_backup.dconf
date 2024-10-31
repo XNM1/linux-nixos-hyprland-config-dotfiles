@@ -41,7 +41,7 @@ document-font-name='JetBrains Mono 11'
 font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='JetBrains Mono 11'
-gtk-theme='Catppuccin-Macchiato-Standard-Teal-Dark'
+gtk-theme='catppuccin-macchiato-teal-standard'
 icon-theme='Colloid-Teal-Dark'
 monospace-font-name='JetBrains Mono 11'
 
