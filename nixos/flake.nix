@@ -22,6 +22,7 @@
         ./yubikey.nix
         ./sound.nix
         ./usb.nix
+        ./keyboard.nix
         ./time.nix
         ./swap.nix
         ./bootloader.nix

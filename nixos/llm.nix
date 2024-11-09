@@ -11,5 +11,6 @@
     nextjs-ollama-llm-ui
     aichat
     tgpt
+    smartcat
   ];
 }
