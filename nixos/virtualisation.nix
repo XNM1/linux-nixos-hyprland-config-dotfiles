@@ -19,11 +19,14 @@
 
       # Create a `docker` alias for podman, to use it as a drop-in replacement
       dockerCompat = true;
+      dockerSocket.enable = true;
 
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+  environment.variables.DBX_CONTAINER_MANAGER = "podman";
+  users.extraGroups.podman.members = [ "xnm" ];
 
   environment.systemPackages = with pkgs; [
     # nerdctl
@@ -38,6 +41,7 @@
     podman-compose
     podman-tui
 
+    docker-compose
     # lazydocker
     # docker-credential-helpers
   ];

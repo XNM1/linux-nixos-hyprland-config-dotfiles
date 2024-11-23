@@ -20,7 +20,7 @@
     gopls
     delve
     emmet-language-server
-    buf-language-server
+    buf
     cmake-language-server
     docker-compose-language-service
     vscode-extensions.vadimcn.vscode-lldb
