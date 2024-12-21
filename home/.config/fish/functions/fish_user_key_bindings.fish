@@ -20,5 +20,5 @@ function fish_user_key_bindings
     bind \e\f clear-op -M insert
     bind \eb back-op -M insert
     bind \eB backtrack-op -M insert
-    bind \e\\ list-op -M insert
+    bind \e/ list-op -M insert
 end
