@@ -2,14 +2,16 @@
 
 {
   services.ollama.enable = true;
-  services.ollama.loadModels = [ "llama3.2:3b" "dolphin-llama3:8b" "qwen2.5-coder:7b" "llava-llama3:8b" "phi3.5:3.8b" ];
+  services.ollama.loadModels = [ "llama3.2:3b" "llama3.2-vision:11b" "phi4:14b" "qwq:32b" "dolphin3:8b" "smallthinker:3b" "nomic-embed-text" ];
   services.ollama.acceleration = "cuda";
   
   environment.systemPackages = with pkgs; [
-    oterm
+    oterm # my favorite TUI
     alpaca
     nextjs-ollama-llm-ui
-    aichat
+    open-webui # my favorite web GUI
+
+    aichat # my favorite CLI
     tgpt
     smartcat
   ];
