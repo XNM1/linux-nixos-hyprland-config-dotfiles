@@ -6,12 +6,14 @@
   services.ollama.acceleration = "cuda";
   
   environment.systemPackages = with pkgs; [
-    oterm # my favorite TUI
+    oterm
+    open-webui
     alpaca
     nextjs-ollama-llm-ui
-    open-webui # my favorite web GUI
 
-    aichat # my favorite CLI
+    aichat
+    aider-chat
+
     tgpt
     smartcat
   ];

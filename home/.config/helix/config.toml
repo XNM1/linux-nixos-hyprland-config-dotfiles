@@ -37,4 +37,6 @@ enable = true
 backspace = { w = ":w", d = ":bc", S-d = ":bca", q = ":q", A-q = ":q!", A-d = ":bc!", A-S-d = ":bca!" }
 S-l = ":bn"
 S-h = ":bp"
+S-right = ":bn"
+S-left = ":bp"
 A-w = ":w"
