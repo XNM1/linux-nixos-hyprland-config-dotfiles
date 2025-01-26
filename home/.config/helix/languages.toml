@@ -13,7 +13,7 @@ args = ["--stdio"]
 command = "helix-gpt"
 args = [
     "--handler", "copilot",
-    "--copilotApiKey", "your_api_key", # TODO: write fixme
+    "--copilotApiKey", "your_api_key", # FIXME
   ]
 
 [language-server.lsp-ai]
@@ -22,7 +22,7 @@ args = ["--stdio"]
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer", "copilot" ]
+language-servers = [ "rust-analyzer" ]
 
 [language-server.rust-analyzer.config]
 checkOnSave = { command = "clippy" }

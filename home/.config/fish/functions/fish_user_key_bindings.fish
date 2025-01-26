@@ -21,4 +21,6 @@ function fish_user_key_bindings
     bind \eb back-op -M insert
     bind \eB backtrack-op -M insert
     bind \e/ list-op -M insert
+
+    bind \ea aichat_fish -M insert
 end

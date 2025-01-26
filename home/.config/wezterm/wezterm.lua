@@ -157,5 +157,10 @@ return {
       mods = 'CTRL|SHIFT',
       action = act.ClearSelection
     },
+    {
+      key = 'Enter',
+      mods = 'ALT',
+      action = wezterm.action.DisableDefaultAssignment,
+    },
   },
 }

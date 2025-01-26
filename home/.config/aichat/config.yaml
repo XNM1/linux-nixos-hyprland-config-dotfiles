@@ -1,0 +1,48 @@
+# model: ollama:llama3.2:3b
+model: deepseek:deepseek-chat
+keybindings: vi
+function_calling: true
+rag_embedding_model: nomic-embed-text:latest
+clients:
+- type: openai-compatible
+  name: ollama
+  api_base: http://127.0.0.1:11434/v1
+  models:
+  - name: llama3.2:3b
+    max_input_tokens: 128000
+    supports_function_calling: true
+
+  - name: phi4:14b
+    max_input_tokens: 16000
+    supports_function_calling: true
+
+  - name: dolphin3:8b
+    max_input_tokens: 130000
+    supports_function_calling: true
+
+  - name: smallthinker:3b
+    max_input_tokens: 16384
+    supports_function_calling: true
+
+  - name: qwq:32b
+    max_input_tokens: 33000
+    supports_function_calling: true
+
+  - name: nomic-embed-text:latest
+    type: embedding
+
+- type: openai-compatible
+  name: deepseek
+  api_base: https://api.deepseek.com/v1
+  api_key: your_api_key # FIXME
+  models:
+    - name: deepseek-chat
+      max_input_tokens: 64000
+      supports_vision: true
+      supports_function_calling: true
+
+    - name: deepseek-reasoner
+      max_input_tokens: 64000
+      supports_vision: true
+      supports_function_calling: true
+
