@@ -14,17 +14,17 @@
 ![Showcase Gif](home/Pictures/Records/record.gif)
 
 ## Table of Contents
-- [About](<README#📖 About>)
-- [Showcase](<README#🌟 Showcase>)
-- [Components](<README#🔧 Components>)
-- [Features](<README#✨ Features>)
-- [Installation](<README#🚀 Installation>)
-- [Keybindings](<README#⌨️ Keybindings>)
-- [Useful aliases in Fish Shell](<README#🐟 Useful aliases in Fish Shell>)
-- [AI Tools and Services](<README#🤖 AI Tools and Services>)
-- [Useful info for Rustaceans](<README#🦀 Useful info for Rustaceans>)
-- [Yubikey on NixOS](<README#🔑 Yubikey on NixOS>)
-- [License](<README#📜 License>)
+- [About](#-about)
+- [Showcase](#-showcase)
+- [Components](#-components)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Keybindings](#️-keybindings)
+- [Useful aliases in Fish Shell](#-useful-aliases-in-fish-shell)
+- [AI Tools and Services](#-ai-tools-and-services>)
+- [Useful info for Rustaceans](#-useful-info-for-rustaceans)
+- [Yubikey on NixOS](#-yubikey-on-nixos)
+- [License](#-license)
 
 ## 📖 About
 
