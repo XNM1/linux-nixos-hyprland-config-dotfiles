@@ -21,7 +21,7 @@
 - [Installation](#-installation)
 - [Keybindings](#️-keybindings)
 - [Useful aliases in Fish Shell](#-useful-aliases-in-fish-shell)
-- [AI Tools and Services](#-ai-tools-and-services>)
+- [AI Tools and Services](#-ai-tools-and-services)
 - [Useful info for Rustaceans](#-useful-info-for-rustaceans)
 - [Yubikey on NixOS](#-yubikey-on-nixos)
 - [License](#-license)
