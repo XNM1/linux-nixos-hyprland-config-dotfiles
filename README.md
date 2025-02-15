@@ -118,35 +118,35 @@ And many other useful utilities. The full list can be found in the system config
 2. Temporarily install ripgrep and fish using the command: `nix-shell -p ripgrep fish --run fish`. You can also use classic bash and grep for the next step without installing fish and ripgrep.
 3. Run the command `rg --hidden FIXME` and change/add lines to match your device, swaps, partitions, peripherals, file systems, etc. in the configuration files. 
 
-   > [!IMPORTANT]
-   > Ensure that you configure USBGuard in the `nixos/usb.nix` file to avoid potential issues. By default, USBGuard blocks all USB devices, which can lead to the disabling of crucial hardware components such as the integrated camera, bluetooth, wifi, etc. To configure USBGuard properly, add your trusted USB devices to the configuration. You can obtain a list of all connected devices by using the `lsusb` command from the `usbutils` package.
+> [!IMPORTANT]
+> Ensure that you configure USBGuard in the `nixos/usb.nix` file to avoid potential issues. By default, USBGuard blocks all USB devices, which can lead to the disabling of crucial hardware components such as the integrated camera, bluetooth, wifi, etc. To configure USBGuard properly, add your trusted USB devices to the configuration. You can obtain a list of all connected devices by using the `lsusb` command from the `usbutils` package.
 
-   > [!WARNING]
-   > Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`. This step ensures that USBGuard is not actively blocking any USB devices.
+> [!WARNING]
+> Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`. This step ensures that USBGuard is not actively blocking any USB devices.
 
-   > [!IMPORTANT]
-   > Remember to update the monitor settings in the Hyprland configuration file located at `home/.config/hypr/hyprland.conf`.
+> [!IMPORTANT]
+> Remember to update the monitor settings in the Hyprland configuration file located at `home/.config/hypr/hyprland.conf`.
 
-   > [!IMPORTANT]
-   > Also, important: If you use disk encryption with LUKS and want to use encrypted swap, you need to enable swap on LUKS. This is usually auto-generated in `/etc/nixos/configuration.nix` as the `boot.initrd.luks.devices."luks-...".device = "/dev/disk/by-uuid/...";` code block, if you set this option up during the NixOS installation process. You can simply copy this snippet to either `nixos/swap.nix`, `nixos/hardware-configuration.nix`, or `nixos/configuration.nix` (Personally, I prefer to copy it to `hardware-configuration.nix`).
-   > Alternatively, you can set it up manually or use [swap encryption with a random key](https://nixos.wiki/wiki/Swap#Encrypt_swap_with_random_key).
+> [!IMPORTANT]
+> Also, important: If you use disk encryption with LUKS and want to use encrypted swap, you need to enable swap on LUKS. This is usually auto-generated in `/etc/nixos/configuration.nix` as the `boot.initrd.luks.devices."luks-...".device = "/dev/disk/by-uuid/...";` code block, if you set this option up during the NixOS installation process. You can simply copy this snippet to either `nixos/swap.nix`, `nixos/hardware-configuration.nix`, or `nixos/configuration.nix` (Personally, I prefer to copy it to `hardware-configuration.nix`).
+> Alternatively, you can set it up manually or use [swap encryption with a random key](https://nixos.wiki/wiki/Swap#Encrypt_swap_with_random_key).
 
 4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname.
-    > [!IMPORTANT]
-    > Make sure to change the username to match yours set during installation to avoid login issues.
+> [!IMPORTANT]
+> Make sure to change the username to match yours set during installation to avoid login issues.
 
-    > [!IMPORTANT]
-    > Also, don't forget to delete or change to my git settings in `home/.gitconfig`, `home/projects/.gitconfig.personal`, `home/.ssh/config`, and `home/work/.gitconfig.work` files, as they are configured for my personal use.
+> [!IMPORTANT]
+> Also, don't forget to delete or change to my git settings in `home/.gitconfig`, `home/projects/.gitconfig.personal`, `home/.ssh/config`, and `home/work/.gitconfig.work` files, as they are configured for my personal use.
 
 5. Enable `flake` support (more [here](https://nixos.wiki/wiki/Flakes#Enable_flakes_temporarily)) on your current system. Don't forget to run `sudo nixos-rebuild switch` after enabling `flake` in your `/etc/configuration.nix`.
 6. Copy or move all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
 7. Copy or move all files (with replacements and **sudo** permissions) from the `nixos` directory to `/etc/nixos/`.
 
-    > [!IMPORTANT]
-    > Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file.
+> [!IMPORTANT]
+> Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file.
 
-    > [!IMPORTANT]
-    > Also, for security reasons, ensure all files in the `/etc/nixos` directory are owned by **root**. If not, change ownership using the command: `sudo chown -R root:root /etc/nixos`.
+> [!IMPORTANT]
+> Also, for security reasons, ensure all files in the `/etc/nixos` directory are owned by **root**. If not, change ownership using the command: `sudo chown -R root:root /etc/nixos`.
 
 8. Run the command `sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#your-hostname --upgrade` or `nswitchu`. If you chose first command, replace `your-hostname` with your hostname before running the command; by default, hostname is set to `isitreal-laptop`.
 9. Post-installation configuration:
