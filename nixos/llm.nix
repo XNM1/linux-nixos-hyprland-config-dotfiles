@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
 
@@ -14,9 +14,13 @@
       server = {
         port = 7777;
         bind_address = "127.0.0.1";
-        secret_key = "your_key_here"; # FIXME: generate and paste your custom key here
+        secret_key = "@SEARX_SECRET_KEY@"; # FIXME: Set up this key in the .env file described below, name of variable `SEARX_SECRET_KEY`
+      };
+      search = {
+        formats = [ "html" "json" ];
       };
     };
+    environmentFile = "${config.users.users.xnm.home}/.config/.env.searxng"; # FIXME: The location of the `.env` file where you need to set up the key
   };
 
   services.open-webui = {

@@ -14,22 +14,24 @@
 ![Showcase Gif](home/Pictures/Records/record.gif)
 
 ## Table of Contents
-- [About](#-about)
-- [Showcase](#-showcase)
-- [Components](#-components)
-- [Features](#-features)
-- [Installation](#-installation)
-- [Keybindings](#️-keybindings)
-- [Useful aliases in Fish Shell](#-useful-aliases-in-fish-shell)
-- [Useful info for Rustaceans](#-useful-info-for-rustaceans)
-- [Yubikey on NixOS](#-yubikey-on-nixos)
-- [License](#-license)
+- [About](<README#📖 About>)
+- [Showcase](<README#🌟 Showcase>)
+- [Components](<README#🔧 Components>)
+- [Features](<README#✨ Features>)
+- [Installation](<README#🚀 Installation>)
+- [Keybindings](<README#⌨️ Keybindings>)
+- [Useful aliases in Fish Shell](<README#🐟 Useful aliases in Fish Shell>)
+- [AI Tools and Services](<README#🤖 AI Tools and Services>)
+- [Useful info for Rustaceans](<README#🦀 Useful info for Rustaceans>)
+- [Yubikey on NixOS](<README#🔑 Yubikey on NixOS>)
+- [License](<README#📜 License>)
 
 ## 📖 About
 
 This repository houses my NixOS Linux ❄️ flake configuration, featuring the Hyprland window manager and adorned with the stylish Catppuccin Macchiato theme. I rely on this setup as my daily driver for work and programming, primarily in Rust 🦀. Feel free to utilize it in its entirety or borrow specific components for your own configuration.
 
-🚨 It's essential to note that this configuration is not minimalistic or lightweight and may require some disk space and knowledge to understand. If you're looking for something simpler, this configuration may not be suitable for you.
+> [!NOTE]
+> It's essential to note that this configuration is not minimalistic or lightweight and may require some disk space and knowledge to understand. If you're looking for something simpler, this configuration may not be suitable for you.
 
 This system leverages cutting-edge channels and versions of software to provide you with the latest updates and features. Notably, it utilizes:
 
@@ -38,17 +40,22 @@ This system leverages cutting-edge channels and versions of software to provide 
 - **nixpkgs**: unstable
 - **rust**: nightly version
 
-This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly. 🚨 However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system.
+This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly.
+> [!WARNING]
+> However, it's important to note that this emphasis on bleeding-edge software may impact the stability of the system.
 
-🚨 Please note that the system utilizes **Podman** instead of **Docker** for containerization due to various reasons, primarily related to security (rootless and daemonless containers), easier migration to Kubernetes, availability of pods, compatibility with systemd, and better security for `distrobox`. If you prefer to use **Docker** instead of **Podman**, you can make the switch by commenting out the **Podman** section in the `nixos/virtualisation.nix` file and uncommenting the **Docker** section. More details on **Docker** configuration in NixOS can be found [here](https://nixos.wiki/wiki/Docker).
+> [!IMPORTANT]
+> Please note that the system utilizes **Podman** instead of **Docker** for containerization due to various reasons, primarily related to security (rootless and daemonless containers), easier migration to Kubernetes, availability of pods, compatibility with systemd, and better security for `distrobox`. If you prefer to use **Docker** instead of **Podman**, you can make the switch by commenting out the **Podman** section in the `nixos/virtualisation.nix` file and uncommenting the **Docker** section. More details on **Docker** configuration in NixOS can be found [here](https://nixos.wiki/wiki/Docker).
 
-The system also enables SELinux patches, as well as AppArmor and Tomoyo Linux Security Modules. It includes security daemons such as Fail2Ban and USBGuard, with Firejail preinstalled to meet your security requirements.
+> [!NOTE]
+> The system also enables SELinux patches, as well as AppArmor and Tomoyo Linux Security Modules. It includes security daemons such as Fail2Ban and USBGuard, with Firejail preinstalled to meet your security requirements.
 
 You have the flexibility to customize these configurations according to your needs by modifying the respective configuration files.
 
 ## 🌟 Showcase
 
-The showcased images do not reflect the latest version of the system's appearance. The final setup may vary slightly.
+> [!IMPORTANT]
+> The showcased images do not reflect the latest version of the system's appearance. The final setup may vary slightly.
 
 ![Screenshot 1](home/Pictures/Screenshots/screenshot-1.png)
 ![Screenshot 2](home/Pictures/Screenshots/screenshot-2.png)
@@ -111,21 +118,37 @@ And many other useful utilities. The full list can be found in the system config
 2. Temporarily install ripgrep and fish using the command: `nix-shell -p ripgrep fish --run fish`. You can also use classic bash and grep for the next step without installing fish and ripgrep.
 3. Run the command `rg --hidden FIXME` and change/add lines to match your device, swaps, partitions, peripherals, file systems, etc. in the configuration files. 
 
-   🚨 Ensure that you configure USBGuard in the `nixos/usb.nix` file to avoid potential issues. By default, USBGuard blocks all USB devices, which can lead to the disabling of crucial hardware components such as the integrated camera, bluetooth, wifi, etc. To configure USBGuard properly, add your trusted USB devices to the configuration. You can obtain a list of all connected devices by using the `lsusb` command from the `usbutils` package.
+   > [!IMPORTANT]
+   > Ensure that you configure USBGuard in the `nixos/usb.nix` file to avoid potential issues. By default, USBGuard blocks all USB devices, which can lead to the disabling of crucial hardware components such as the integrated camera, bluetooth, wifi, etc. To configure USBGuard properly, add your trusted USB devices to the configuration. You can obtain a list of all connected devices by using the `lsusb` command from the `usbutils` package.
 
-    Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`. This step ensures that USBGuard is not actively blocking any USB devices.
+   > [!WARNING]
+   > Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`. This step ensures that USBGuard is not actively blocking any USB devices.
 
-   🚨 Remember to update the monitor settings in the Hyprland configuration file located at `home/.config/hypr/hyprland.conf`.
+   > [!IMPORTANT]
+   > Remember to update the monitor settings in the Hyprland configuration file located at `home/.config/hypr/hyprland.conf`.
 
-   🚨 Also, important: If you use disk encryption with LUKS and want to use encrypted swap, you need to enable swap on LUKS. This is usually auto-generated in `/etc/nixos/configuration.nix` as the `boot.initrd.luks.devices."luks-...".device = "/dev/disk/by-uuid/...";` code block, if you set this option up during the NixOS installation process. You can simply copy this snippet to either `nixos/swap.nix`, `nixos/hardware-configuration.nix`, or `nixos/configuration.nix` (Personally, I prefer to copy it to `hardware-configuration.nix`).
+   > [!IMPORTANT]
+   > Also, important: If you use disk encryption with LUKS and want to use encrypted swap, you need to enable swap on LUKS. This is usually auto-generated in `/etc/nixos/configuration.nix` as the `boot.initrd.luks.devices."luks-...".device = "/dev/disk/by-uuid/...";` code block, if you set this option up during the NixOS installation process. You can simply copy this snippet to either `nixos/swap.nix`, `nixos/hardware-configuration.nix`, or `nixos/configuration.nix` (Personally, I prefer to copy it to `hardware-configuration.nix`).
+   > Alternatively, you can set it up manually or use [swap encryption with a random key](https://nixos.wiki/wiki/Swap#Encrypt_swap_with_random_key).
 
-   Alternatively, you can set it up manually or use [swap encryption with a random key](https://nixos.wiki/wiki/Swap#Encrypt_swap_with_random_key).
+4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname.
+    > [!IMPORTANT]
+    > Make sure to change the username to match yours set during installation to avoid login issues.
 
-4. To change the default username and/or hostname, run the command `rg --hidden 'xnm'` to find and fix all instances of the username, and `rg --hidden 'isitreal-laptop'` for the hostname. 🚨 Make sure to change the username to match yours set during installation to avoid login issues. 🚨 Also, don't forget to delete or change to yours the git settings in `home/.gitconfig`, `home/projects/.gitconfig.personal`, and `home/work/.gitconfig.work` files, as they are configured for my personal use.
+    > [!IMPORTANT]
+    > Also, don't forget to delete or change to my git settings in `home/.gitconfig`, `home/projects/.gitconfig.personal`, `home/.ssh/config`, and `home/work/.gitconfig.work` files, as they are configured for my personal use.
+
 5. Enable `flake` support (more [here](https://nixos.wiki/wiki/Flakes#Enable_flakes_temporarily)) on your current system. Don't forget to run `sudo nixos-rebuild switch` after enabling `flake` in your `/etc/configuration.nix`.
 6. Copy or move all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
-7. Copy or move all files (with replacements and **sudo** permissions) from the `nixos` directory to `/etc/nixos/`. 🚨 Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file. 🚨 Also, for security reasons, ensure all files in the `/etc/nixos` directory are owned by **root**. If not, change ownership using the command: `sudo chown -R root:root /etc/nixos`.
-8. Run the command `sudo nixos-rebuild switch --flake /etc/nixos#your-hostname --update-input nixpkgs --update-input rust-overlay --commit-lock-file --upgrade` or `nswitchu`. If you chose first command, replace `your-hostname` with your hostname before running the command; by default, hostname is set to `isitreal-laptop`.
+7. Copy or move all files (with replacements and **sudo** permissions) from the `nixos` directory to `/etc/nixos/`.
+
+    > [!IMPORTANT]
+    > Ensure that `system.stateVersion = "your_version";` is correctly set to the release version of the initial installation of your system in the `configuration.nix` file.
+
+    > [!IMPORTANT]
+    > Also, for security reasons, ensure all files in the `/etc/nixos` directory are owned by **root**. If not, change ownership using the command: `sudo chown -R root:root /etc/nixos`.
+
+8. Run the command `sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#your-hostname --upgrade` or `nswitchu`. If you chose first command, replace `your-hostname` with your hostname before running the command; by default, hostname is set to `isitreal-laptop`.
 9. Post-installation configuration:
 
  - Import GNOME settings along with the theme by executing the following command: `dconf load / < home/.config/gnome_settings_backup.dconf`. Additionally, you can use tools like **gnome-tweaks** or **themechanger** to fine-tune specific theme preferences to your liking.
@@ -145,6 +168,15 @@ And many other useful utilities. The full list can be found in the system config
    - In the General panel, click "Import" and select the file `home/.config/cool-retro-term-style.json`.
    - Select the imported profile named "catppuccin-theme".
    - Click "Load" and exit from "Settings".
+
+ - Apply Open-WebUI Settings
+    - Navigate to the Open-WebUI page: `http://localhost:8888`.
+    - Signup or signin if you haven't already done so.  
+    - Click on the user photo in the top-right corner.
+    - From the dropdown menu, select "Admin Panel".
+    - In the Admin Panel, go to the "Settings" tab.
+    - Under the Settings tab, locate and click on the "Database" section.
+    - Click "Import Config from JSON File" and select the configuration file: `home/.config/open-webui-config.json` from your file manager.
 
   - Login to your accounts.
 
@@ -231,6 +263,47 @@ NixOS-specific commands:
 
 You can customize this configuration by adding more aliases to the file and editing existing ones. This makes your experience more personalized and smoother.
 
+## 🤖 AI Tools and Services
+
+This configuration includes several AI/LLM tools and services for local development and experimentation:
+
+**Local AI Services:**
+- **Ollama** - Local LLM server with pre-loaded models:
+  - Accessible at `http://localhost:11434`
+  - Models: `llama3.2:3b`, `llama3.2-vision:11b`, `phi4:14b`, `deepseek-r1:7b`, `dolphin3:8b`, `smallthinker:3b`
+  - Text embedding model: `nomic-embed-text`
+  - CUDA acceleration enabled for GPU inference
+  
+- **SearXNG (Searx fork)** - Privacy-respecting meta search engine:
+  - Accessible at `http://localhost:7777`
+  - Supports HTML and JSON formats
+  - 🔒 Remember to set `SEARX_SECRET_KEY` in your environment file: `home/.config/.env.searxng`
+
+- **Open WebUI** - Local ChatGPT-style UI for Ollama:
+  - Accessible at `http://localhost:8888`
+  - Modern web interface with conversation history
+  - Supports model switching and prompt templates
+
+**AI Tools:**
+- `aichat` - ChatGPT-like CLI and REPL with lot of features
+- `aider-chat` - Code assistant/chat directly in the terminal
+- `alpaca` - GUI LLM client with markdown support
+- `oterm` - TUI LLM client with markdown support
+
+> [!NOTE]
+> These AI services are enabled by default.
+
+To disable them:
+1. Edit `nixos/llm.nix`
+2. Disable services by setting their `enable` attribute to `false`:
+   ```nix
+   services.ollama.enable = false;
+   services.searx.enable = false;
+   services.open-webui.enable = false;
+   ```
+3. Remove AI CLI tools from `environment.systemPackages` if desired
+4. Rebuild your configuration with `nswitch`
+
 ## 🦀 Useful info for Rustaceans
 
 Here are some tips to enhance your Rust experience on this system:
@@ -271,6 +344,8 @@ Here are some tips to enhance your Rust experience on this system:
    - `cargo-modules`
    - `cargo-bloat`
    - `cargo-unused-features`
+   - `cargo-feature`
+   - `cargo-features-manager`
    - `bacon`
 
 5. **Environment Setup:**
@@ -282,9 +357,11 @@ This repo contains a NixOS configuration file (`nixos/yubikey.nix`) enabling:
   - Yubikey authentication with pam_u2f
   - Passwordless login in greetd, sudo, ssh, and hyprlock
 
-🚨 Personal Recommendation:  While convenient, using a Yubikey for display managers (like greetd) and screen lockers (like hyprlock) without  additional two-factor or multi-factor authentication (2FA/MFA) has risks. If your Yubikey is lost or stolen, someone could gain full system access before you reset keys. Yubikeys excel at protecting against online attacks but are less secure against offline attacks.
+> [!WARNING]
+> While convenient, using a Yubikey for display managers (like greetd) and screen lockers (like hyprlock) without  additional two-factor or multi-factor authentication (2FA/MFA) has risks. If your Yubikey is lost or stolen, someone could gain full system access before you reset keys. Yubikeys excel at protecting against online attacks but are less secure against offline attacks.
 
-🛡️ For enhanced security and a passwordless experience:
+> [!TIP]
+> For enhanced security and a passwordless experience:
   You can consider a YubiKey Bio Series device. These keys support FIDO2/WebAuthn and FIDO U2F and has built in fingerprint scanner for strong authentication. Please note, they do not offer Smart card, OpenPGP, or OTP functionality.
 
 ## 📜 License

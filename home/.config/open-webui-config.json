@@ -1,0 +1,220 @@
+{
+  "version": 0,
+  "ui": {
+    "default_locale": "",
+    "prompt_suggestions": [
+      {
+        "title": [
+          "Help me study",
+          "vocabulary for a college entrance exam"
+        ],
+        "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option."
+      },
+      {
+        "title": [
+          "Give me ideas",
+          "for what to do with my kids' art"
+        ],
+        "content": "What are 5 creative things I could do with my kids' art? I don't want to throw them away, but it's also so much clutter."
+      },
+      {
+        "title": [
+          "Tell me a fun fact",
+          "about the Roman Empire"
+        ],
+        "content": "Tell me a random fun fact about the Roman Empire"
+      },
+      {
+        "title": [
+          "Show me a code snippet",
+          "of a website's sticky header"
+        ],
+        "content": "Show me a code snippet of a website's sticky header in CSS and JavaScript."
+      },
+      {
+        "title": [
+          "Explain options trading",
+          "if I'm familiar with buying and selling stocks"
+        ],
+        "content": "Explain options trading in simple terms if I'm familiar with buying and selling stocks."
+      },
+      {
+        "title": [
+          "Overcome procrastination",
+          "give me tips"
+        ],
+        "content": "Could you start by asking me about instances when I procrastinate the most and then give me some suggestions to overcome it?"
+      },
+      {
+        "title": [
+          "Grammar check",
+          "rewrite it for better readability "
+        ],
+        "content": "Check the following sentence for grammar and clarity: \"[sentence]\". Rewrite it for better readability while maintaining its original meaning."
+      }
+    ],
+    "enable_signup": false,
+    "default_user_role": "pending",
+    "enable_community_sharing": true,
+    "enable_message_rating": true
+  },
+  "rag": {
+    "embedding_engine": "ollama",
+    "embedding_model": "nomic-embed-text:latest",
+    "openai_api_base_url": "https://api.openai.com/v1",
+    "openai_api_key": "",
+    "ollama": {
+      "url": "http://localhost:11434",
+      "key": ""
+    },
+    "embedding_batch_size": 1,
+    "pdf_extract_images": false,
+    "file": {
+      "max_size": null,
+      "max_count": null
+    },
+    "CONTENT_EXTRACTION_ENGINE": "",
+    "tika_server_url": "http://tika:9998",
+    "text_splitter": "",
+    "chunk_size": 1000,
+    "chunk_overlap": 100,
+    "template": "### Task:\nRespond to the user query using the provided context, incorporating inline citations in the format [source_id] **only when the <source_id> tag is explicitly provided** in the context.\n\n### Guidelines:\n- If you don't know the answer, clearly state that.\n- If uncertain, ask the user for clarification.\n- Respond in the same language as the user's query.\n- If the context is unreadable or of poor quality, inform the user and provide the best possible answer.\n- If the answer isn't present in the context but you possess the knowledge, explain this to the user and provide the answer using your own understanding.\n- **Only include inline citations using [source_id] when a <source_id> tag is explicitly provided in the context.**  \n- Do not cite if the <source_id> tag is not provided in the context.  \n- Do not use XML tags in your response.\n- Ensure citations are concise and directly related to the information provided.\n\n### Example of Citation:\nIf the user asks about a specific topic and the information is found in \"whitepaper.pdf\" with a provided <source_id>, the response should include the citation like so:  \n* \"According to the study, the proposed method increases efficiency by 20% [whitepaper.pdf].\"\nIf no <source_id> is present, the response should omit the citation.\n\n### Output:\nProvide a clear and direct response to the user's query, including inline citations in the format [source_id] only when the <source_id> tag is present in the context.\n\n<context>\n{{CONTEXT}}\n</context>\n\n<user_query>\n{{QUERY}}\n</user_query>\n",
+    "top_k": 3,
+    "relevance_threshold": 0,
+    "enable_hybrid_search": false,
+    "youtube_loader_language": [
+      "en"
+    ],
+    "youtube_loader_proxy_url": "",
+    "enable_web_loader_ssl_verification": false,
+    "web": {
+      "search": {
+        "enable": true,
+        "engine": "searxng",
+        "searxng_query_url": "http://localhost:7777/search?q=<query>",
+        "google_pse_api_key": "",
+        "google_pse_engine_id": "",
+        "brave_search_api_key": "",
+        "kagi_search_api_key": "",
+        "mojeek_search_api_key": "",
+        "serpstack_api_key": "",
+        "serpstack_https": true,
+        "serper_api_key": "",
+        "serply_api_key": "",
+        "tavily_api_key": "",
+        "searchapi_api_key": "",
+        "searchapi_engine": "",
+        "jina_api_key": "",
+        "bing_search_v7_endpoint": "https://api.bing.microsoft.com/v7.0/search",
+        "bing_search_v7_subscription_key": "",
+        "result_count": 5,
+        "concurrent_requests": 10,
+        "exa_api_key": ""
+      }
+    }
+  },
+  "google_drive": {
+    "enable": false
+  },
+  "webhook_url": "",
+  "auth": {
+    "admin": {
+      "show": true
+    },
+    "api_key": {
+      "enable": false,
+      "endpoint_restrictions": false,
+      "allowed_endpoints": ""
+    },
+    "jwt_expiry": "-1"
+  },
+  "webui": {
+    "url": "http://localhost:8090"
+  },
+  "channels": {
+    "enable": false
+  },
+  "audio": {
+    "tts": {
+      "openai": {
+        "api_base_url": "https://api.openai.com/v1",
+        "api_key": ""
+      },
+      "api_key": "",
+      "engine": "transformers",
+      "model": "",
+      "voice": "",
+      "split_on": "punctuation",
+      "azure": {
+        "speech_region": "eastus",
+        "speech_output_format": "audio-24khz-160kbitrate-mono-mp3"
+      }
+    },
+    "stt": {
+      "openai": {
+        "api_base_url": "https://api.openai.com/v1",
+        "api_key": ""
+      },
+      "engine": "",
+      "model": "",
+      "whisper_model": "base"
+    }
+  },
+  "image_generation": {
+    "engine": "comfyui",
+    "enable": false,
+    "prompt": {
+      "enable": true
+    },
+    "openai": {
+      "api_base_url": "https://api.openai.com/v1",
+      "api_key": ""
+    },
+    "automatic1111": {
+      "base_url": "",
+      "api_auth": "",
+      "cfg_scale": null,
+      "sampler": null,
+      "scheduler": null
+    },
+    "comfyui": {
+      "base_url": "",
+      "workflow": "{\n  \"3\": {\n    \"inputs\": {\n      \"seed\": 0,\n      \"steps\": 20,\n      \"cfg\": 8,\n      \"sampler_name\": \"euler\",\n      \"scheduler\": \"normal\",\n      \"denoise\": 1,\n      \"model\": [\n        \"4\",\n        0\n      ],\n      \"positive\": [\n        \"6\",\n        0\n      ],\n      \"negative\": [\n        \"7\",\n        0\n      ],\n      \"latent_image\": [\n        \"5\",\n        0\n      ]\n    },\n    \"class_type\": \"KSampler\",\n    \"_meta\": {\n      \"title\": \"KSampler\"\n    }\n  },\n  \"4\": {\n    \"inputs\": {\n      \"ckpt_name\": \"model.safetensors\"\n    },\n    \"class_type\": \"CheckpointLoaderSimple\",\n    \"_meta\": {\n      \"title\": \"Load Checkpoint\"\n    }\n  },\n  \"5\": {\n    \"inputs\": {\n      \"width\": 512,\n      \"height\": 512,\n      \"batch_size\": 1\n    },\n    \"class_type\": \"EmptyLatentImage\",\n    \"_meta\": {\n      \"title\": \"Empty Latent Image\"\n    }\n  },\n  \"6\": {\n    \"inputs\": {\n      \"text\": \"Prompt\",\n      \"clip\": [\n        \"4\",\n        1\n      ]\n    },\n    \"class_type\": \"CLIPTextEncode\",\n    \"_meta\": {\n      \"title\": \"CLIP Text Encode (Prompt)\"\n    }\n  },\n  \"7\": {\n    \"inputs\": {\n      \"text\": \"\",\n      \"clip\": [\n        \"4\",\n        1\n      ]\n    },\n    \"class_type\": \"CLIPTextEncode\",\n    \"_meta\": {\n      \"title\": \"CLIP Text Encode (Prompt)\"\n    }\n  },\n  \"8\": {\n    \"inputs\": {\n      \"samples\": [\n        \"3\",\n        0\n      ],\n      \"vae\": [\n        \"4\",\n        2\n      ]\n    },\n    \"class_type\": \"VAEDecode\",\n    \"_meta\": {\n      \"title\": \"VAE Decode\"\n    }\n  },\n  \"9\": {\n    \"inputs\": {\n      \"filename_prefix\": \"ComfyUI\",\n      \"images\": [\n        \"8\",\n        0\n      ]\n    },\n    \"class_type\": \"SaveImage\",\n    \"_meta\": {\n      \"title\": \"Save Image\"\n    }\n  }\n}",
+      "nodes": [
+        {
+          "type": "prompt",
+          "key": "text",
+          "node_ids": []
+        },
+        {
+          "type": "model",
+          "key": "ckpt_name",
+          "node_ids": []
+        },
+        {
+          "type": "width",
+          "key": "width",
+          "node_ids": []
+        },
+        {
+          "type": "height",
+          "key": "height",
+          "node_ids": []
+        },
+        {
+          "type": "steps",
+          "key": "steps",
+          "node_ids": []
+        },
+        {
+          "type": "seed",
+          "key": "seed",
+          "node_ids": []
+        }
+      ]
+    },
+    "model": "",
+    "size": "512x512",
+    "steps": 50
+  }
+}

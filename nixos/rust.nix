@@ -24,6 +24,8 @@
     cargo-modules
     cargo-bloat
     cargo-unused-features
+    cargo-feature
+    cargo-features-manager
     bacon
     evcxr #rust repl
   ];
