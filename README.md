@@ -192,9 +192,11 @@ And many other useful utilities. The full list can be found in the system config
 |------------------------|------------------------------|
 | ALT + R                | Resize windows mode          |
 | ALT + M                | Move windows mode            |
-| SUPER + H, J, K, L     | Change window focus          |
-| SUPER + 1..0           | Change workspace             |
-| SUPER + SHIFT + 1..0   | Move window to workspace     |
+| SUPER + H, J, K, L/Arrows     | Change window focus   |
+| SUPER + 1..0           | Change workspace (1-10)      |
+| SUPER + ALT + 1..0     | Change workspace (11-20)|
+| SUPER + SHIFT + 1..0   | Move window to workspace (1-10) |
+| SUPER + SHIFT + ALT + 1..0   | Move window to workspace (11-20) |
 | SUPER + SHIFT + Q      | Kill active window           |
 | SUPER + SHIFT + F      | Toggle floating window       |
 | SUPER + CTRL + F       | Toggle full-screen           |
