@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  # Enable Kasm
+  # services.kasmweb = {
+  #   enable = true;
+  #   listenPort = 9999;
+  # };
+
   # Enable Containerd
   # virtualisation.containerd.enable = true;
 
@@ -14,6 +20,7 @@
   #   };
   # };
   # users.extraGroups.docker.members = [ "xnm" ];
+
 
   # Enable Podman
   virtualisation.podman = {
@@ -31,7 +38,7 @@
 
   environment.systemPackages = with pkgs; [
     nvidia-docker
-    # nerdctl
+    nerdctl
 
     # firecracker
     # firectl
@@ -39,6 +46,7 @@
 
     distrobox
     qemu
+    lima
 
     podman-compose
     podman-tui

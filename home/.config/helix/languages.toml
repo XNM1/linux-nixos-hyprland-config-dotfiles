@@ -22,7 +22,7 @@ args = ["--stdio"]
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer" ]
+language-servers = [ "rust-analyzer", "copilot" ]
 
 [language-server.rust-analyzer.config]
 checkOnSave = { command = "clippy" }
@@ -35,21 +35,25 @@ language-servers = [ "emmet-lsp", "vscode-html-language-server" ]
 name = "javascript"
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
+language-servers = [ "typescript-language-server", "copilot" ]
 
 [[language]]
 name = "jsx"
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
+language-servers = [ "typescript-language-server", "copilot" ]
 
 [[language]]
 name = "typescript"
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
+language-servers = [ "typescript-language-server", "copilot" ]
 
 [[language]]
 name = "tsx"
 auto-format = true
 indent = { tab-width = 4, unit = "   " }
+language-servers = [ "typescript-language-server", "copilot" ]
 
 [[language]]
 name = "config"

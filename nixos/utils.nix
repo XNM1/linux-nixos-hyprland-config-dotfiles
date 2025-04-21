@@ -14,5 +14,6 @@
     surrealdb-migrations
     surrealist
     trunk
+    sqlx-cli
   ];
 }

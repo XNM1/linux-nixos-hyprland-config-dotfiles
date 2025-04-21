@@ -7,5 +7,8 @@
 
   environment.systemPackages = with pkgs; [
     mullvad-closest
+
+    mullvad-browser
+    tor-browser
   ];
 }
