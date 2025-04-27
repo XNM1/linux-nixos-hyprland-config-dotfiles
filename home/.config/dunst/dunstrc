@@ -10,6 +10,7 @@ gap_size = 7
 frame_width = 2
 width = 300
 height = 100
+follow = keyboard
 
 [urgency_low]
 background = "#24273A"
