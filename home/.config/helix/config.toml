@@ -12,7 +12,7 @@ popup-border = "popup"
 
 [editor.cursor-shape]
 insert = "bar"
-normal = "block"
+normal = "bar"
 select = "underline"
 
 [editor.indent-guides]

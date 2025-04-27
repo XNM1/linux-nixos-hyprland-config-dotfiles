@@ -76,7 +76,7 @@ You have the flexibility to customize these configurations according to your nee
 | Notification          | Dunst                       |
 | Launcher              | Rofi-Wayland                |
 | Editor                | Helix                       |
-| Terminal              | WezTerm + Starship          |
+| Terminal              | Kitty + Starship          |
 | OSD                   | Avizo                       |
 | Night Gamma           | Wlsunset                    |
 | Fetch Utility         | Neofetch                    |
