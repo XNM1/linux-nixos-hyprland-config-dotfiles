@@ -3,13 +3,14 @@
 }
 
 window {
-  background-color: rgba(36, 39, 58, 0.9);
+  background-color: rgba(36, 39, 58, 0.7);
 }
 
 button {
   margin: 8px;
   color: #cad3f5;
   background-color: #363a4f;
+  border-radius: 20px;
   border-style: solid;
   border-width: 2px;
   background-repeat: no-repeat;
