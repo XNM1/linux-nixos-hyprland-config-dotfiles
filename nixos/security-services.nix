@@ -10,6 +10,11 @@
   # };
 
   # Enable Security Services
+  security.sudo-rs = {
+    enable = true;
+    execWheelOnly = true;
+  };
+  security.sudo.enable = false;
   users.users.root.hashedPassword = "!";
   security.tpm2 = {
     enable = true;
@@ -28,7 +33,7 @@
   security.pam.services = {
     login.enableAppArmor = true;
     sshd.enableAppArmor = true;
-    sudo.enableAppArmor = true;
+    sudo-rs.enableAppArmor = true;
     su.enableAppArmor = true;
     greetd.enableAppArmor = true;
     u2f.enableAppArmor = true;
