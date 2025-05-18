@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     file
     upx
+    dotenvx
     git
     lazygit
     delta
