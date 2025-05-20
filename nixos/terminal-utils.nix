@@ -13,6 +13,8 @@
     gitleaks
     git-secrets
     pass-git-helper
+    jujutsu
+    jjui
     just
     xh
     process-compose
