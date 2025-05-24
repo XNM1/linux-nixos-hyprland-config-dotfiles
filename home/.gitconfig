@@ -7,6 +7,9 @@
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig.work
 
+[includeIf "gitdir:~/radicle-local-hub/"]
+	path = ~/radicle-local-hub/.gitconfig.radicle
+
 [core]
 	excludesfile = ~/.gitignore
 	pager = delta

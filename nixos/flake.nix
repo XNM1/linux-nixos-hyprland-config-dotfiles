@@ -5,6 +5,7 @@
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       rust-overlay.url = "github:oxalica/rust-overlay";
       wezterm.url = "github:wez/wezterm?dir=nix";
+      radicle-tui.url = "git+https://seed.radicle.xyz/z39mP9rQAaGmERfUMPULfPUi473tY.git";
   };
 
   outputs = { nixpkgs, ... } @ inputs:
@@ -56,6 +57,7 @@
         ./programming-languages.nix
         ./lsp.nix
         ./rust.nix
+        ./radicle.nix
         ./wasm.nix
         ./info-fetchers.nix
         ./utils.nix

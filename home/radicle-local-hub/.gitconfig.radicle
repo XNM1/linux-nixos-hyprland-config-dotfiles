@@ -1,0 +1,7 @@
+[user]
+	email = artem.shv@proton.me
+	name = xnm
+	signingkey = ~/.radicle/keys/radicle.pub
+
+[core]
+	sshCommand = "ssh -i ~/.radicle/keys/radicle"

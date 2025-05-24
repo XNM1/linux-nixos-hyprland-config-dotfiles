@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 alias cl="clear"
+alias rad="rad-tui"
 alias lgit="lazygit"
 alias ldocker="lazydocker"
 alias conf="z ~/.config"
