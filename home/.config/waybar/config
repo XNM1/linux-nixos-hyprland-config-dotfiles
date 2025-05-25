@@ -287,8 +287,8 @@
         // "numlock": true,
         "format": "{name} {icon}",
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
+            "locked": "󰌾",
+            "unlocked": "󰍀"
         }
     },
 
@@ -343,7 +343,7 @@
     },
     
     "memory": {
-        "format": "{percentage}%",
+        "format": "󰍛{percentage}%",
         "tooltip-format": "Main: ({used} GiB/{total} GiB)({percentage}%), available {avail} GiB\nSwap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail} GiB",
         "states": {
             "high": 90,
