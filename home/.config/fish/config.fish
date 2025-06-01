@@ -4,6 +4,7 @@ end
 
 alias cl="clear"
 alias rad="rad-tui"
+alias ai="aichat"
 alias lgit="lazygit"
 alias ldocker="lazydocker"
 alias conf="z ~/.config"

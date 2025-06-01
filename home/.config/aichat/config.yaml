@@ -1,4 +1,4 @@
-# model: ollama:llama3.2:3b
+# model: ollama:gemma3:4b
 model: deepseek:deepseek-chat
 keybindings: vi
 function_calling: true
@@ -12,20 +12,38 @@ clients:
     max_input_tokens: 128000
     supports_function_calling: true
 
-  - name: phi4:14b
-    max_input_tokens: 16000
+  - name: phi4-reasoning:14b
+    max_input_tokens: 32000
     supports_function_calling: true
 
   - name: dolphin3:8b
-    max_input_tokens: 130000
+    max_input_tokens: 128000
     supports_function_calling: true
 
   - name: smallthinker:3b
-    max_input_tokens: 16384
+    max_input_tokens: 32000
     supports_function_calling: true
 
-  - name: qwq:32b
-    max_input_tokens: 33000
+  - name: gemma3:4b
+    max_input_tokens: 128000
+    supports_vision: true
+    supports_function_calling: true
+
+  - name: gemma3:12b
+    max_input_tokens: 128000
+    supports_vision: true
+    supports_function_calling: true
+
+  - name: gemma3:27b
+    max_input_tokens: 128000
+    supports_vision: true
+    supports_function_calling: true
+
+  - name: deepcoder:14b
+    max_input_tokens: 128000
+
+  - name: qwen3:14b
+    max_input_tokens: 40000
     supports_function_calling: true
 
   - name: nomic-embed-text:latest
