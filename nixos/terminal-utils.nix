@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    moreutils
     file
     upx
     dotenvx
@@ -30,11 +31,18 @@
     tealdeer
     # skim #fzf better alternative in rust
     monolith
+    # taskwarrior3
+    asciinema
+    asciinema-agg
     aria
+    # wormhole-william
+    magic-wormhole-rs
     # macchina #neofetch alternative in rust
+    dogdns
     sd
     ouch
     duf
+    ncdu
     du-dust
     fd
     jq
