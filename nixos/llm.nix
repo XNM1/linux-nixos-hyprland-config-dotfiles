@@ -23,6 +23,10 @@
     environmentFile = "${config.users.users.xnm.home}/.config/.env.searxng"; # FIXME: The location of the `.env` file where you need to set up the key
   };
 
+  services.n8n = {
+    enable = true;
+  };
+
   services.open-webui = {
     enable = true;
     port = 8888;
@@ -32,9 +36,12 @@
   environment.systemPackages = with pkgs; [
     oterm
     alpaca
+
     aichat
     fabric-ai
+
     aider-chat
+    opencode
 
     # tgpt
     # smartcat

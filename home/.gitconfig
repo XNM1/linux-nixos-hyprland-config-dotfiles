@@ -24,4 +24,94 @@
     diffFilter = delta --color-only
 
 [delta]
-	features = catppuccin-macchiato
+    side-by-side = true
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    hyperlinks-file-link-format = "file://{path}#{line}"
+    features = catppuccin-macchiato
+    whitespace-error-style = 22 reverse
+    conflict-style = zebibt
+
+    # Fancy visual enhancements
+    file-added-label = [added]
+    file-copied-label = [copied]
+    file-modified-label = [modified]
+    file-removed-label = [removed]
+    file-renamed-label = [renamed]
+
+    # Commit decorations
+    commit-decoration-style = bold box ul
+    commit-style = raw
+
+    # File decorations
+    file-decoration-style = bold yellow ul
+    file-style = bold blue
+
+    # Hunk headers
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = bold box ul
+
+    # Word diff highlighting
+    word-diff-regex = .
+    max-line-distance = 0.6
+    max-line-length = 512
+
+    # Line highlighting
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+    # Blame enhancements
+    blame-code-style = syntax
+    blame-format = "{author:<18} ({commit:>7}) {timestamp:<16} │ "
+    blame-timestamp-format = "%Y-%m-%d %H:%M"
+
+    # Performance
+    inspect-raw-lines = false
+
+    # Additional fancy features
+    color-moved = default
+    color-moved-ws = allow-indent-change
+
+    # Show line numbers in context
+    line-numbers-minus-style = bold red
+    line-numbers-plus-style = bold green
+    line-numbers-zero-style = dim
+
+    # Better context display
+    minus-empty-line-marker-style = normal
+    plus-empty-line-marker-style = normal
+
+    # File icons (if available)
+    file-icon = true
+
+    # Syntax highlighting improvements
+    syntax-theme = Catppuccin Macchiato
+    keep-plus-minus-markers = false
+
+    # Show commit stats
+    show-syntax-themes = false
+    show-themes = false
+
+    # Git integration
+    git-config = true
+
+[diff]
+    tool = delta
+
+[difftool]
+    prompt = false
+
+[difftool "delta"]
+    cmd = delta "$LOCAL" "$REMOTE"
+
+[merge]
+    tool = delta
+
+[mergetool]
+    prompt = false
+
+[mergetool "delta"]
+    cmd = delta "$LOCAL" "$MERGED" "$REMOTE" --side-by-side

@@ -74,9 +74,9 @@
         executable = "${lib.getBin pkgs.slack}/bin/slack";
         profile = "${pkgs.firejail}/etc/firejail/slack.profile";
       };
-      telegram-desktop = {
-        executable = "${lib.getBin pkgs.tdesktop}/bin/telegram-desktop";
-        profile = "${pkgs.firejail}/etc/firejail/telegram-desktop.profile";
+      Telegram = {
+        executable = "${lib.getBin pkgs.tdesktop}/bin/Telegram";
+        profile = "${pkgs.firejail}/etc/firejail/Telegram.profile";
       };
       brave = {
         executable = "${lib.getBin pkgs.brave}/bin/brave";

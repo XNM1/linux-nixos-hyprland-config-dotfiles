@@ -1,0 +1,90 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "moonshot/kimi-k2-0711-preview",
+  "theme": "catppuccin",
+  "provider": {
+    "moonshot": {
+      "name": "Moonshot",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://api.moonshot.ai/v1"
+      },
+      "models": {
+        "kimi-k2-0711-preview": {
+          "name": "Kimi-K2"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp"
+      ],
+      "enabled": true
+    },
+    "searxng": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-searxng"
+      ],
+      "enabled": true,
+      "environment": {
+        "SEARXNG_URL": "http://127.0.0.1:7777"
+      }
+    },
+    "mcp-server-git": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--python",
+        "/run/current-system/sw/bin/python",
+        "mcp-server-git"
+      ],
+      "enabled": true
+    },
+    "time": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--python",
+        "/run/current-system/sw/bin/python",
+        "mcp-server-time"
+      ],
+      "enabled": true
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled": true
+    },
+    "filesystem": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/xnm"
+      ],
+      "enabled": true
+    }
+  }
+}
