@@ -17,7 +17,7 @@ from kittens.tui.operations import (
 )
 from kitty.config import cached_values_for
 from kitty.key_encoding import EventType
-from kitty.typing import KeyEventType, ScreenSize
+from kitty.typing_compat import KeyEventType, ScreenSize
 
 NON_SPACE_PATTERN = re.compile(r"\S+")
 SPACE_PATTERN = re.compile(r"\s+")
