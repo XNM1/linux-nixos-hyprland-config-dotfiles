@@ -15,5 +15,6 @@
     surrealist
     trunk
     sqlx-cli
+    mermaid-cli
   ];
 }
