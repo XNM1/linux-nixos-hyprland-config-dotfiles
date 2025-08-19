@@ -6,7 +6,7 @@ function fish_user_key_bindings
     # Without --no-erase fish_vi_key_bindings will default to
     # resetting all bindings.
     # The argument specifies the initial mode (insert, "default" or visual).
-    fish_vi_key_bindings --no-erase insert
+    fish_helix_key_bindings --no-erase insert
 
     # Nullify fzf default keybindings
     bind \cT '' -M insert
