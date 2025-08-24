@@ -39,6 +39,7 @@ set -gx VOLUME_STEP 5
 set -gx BRIGHTNESS_STEP 5
 
 set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $HOME/.npm-packages/bin $PATH
 
 set fish_vi_force_cursor
 set fish_cursor_default block
