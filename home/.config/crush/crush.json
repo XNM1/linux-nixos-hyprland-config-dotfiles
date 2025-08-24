@@ -37,6 +37,13 @@
         "@playwright/mcp"
       ]
     },
+    "shadcn": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@heilgar/shadcn-ui-mcp-server"
+      ]
+    },
     "searxng": {
       "type": "stdio",
       "command": "npx",
@@ -55,6 +62,15 @@
         "--python",
         "/run/current-system/sw/bin/python",
         "mcp-server-git"
+      ]
+    },
+    "docker": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--python",
+        "/run/current-system/sw/bin/python",
+        "docker-mcp"
       ]
     },
     "time": {
@@ -98,6 +114,45 @@
         "@modelcontextprotocol/server-filesystem",
         "/home/xnm"
       ]
+    },
+    "n8n": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "n8n-mcp"
+      ],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "localhost:5678",
+        "N8N_API_KEY": "your-api-key"
+      }
+    },
+    "coolify": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@masonator/coolify-mcp"
+      ],
+      "env": {
+        "COOLIFY_ACCESS_TOKEN": "0|your-secret-token",
+        "COOLIFY_BASE_URL": "localhost:8000"
+      }
+    },
+    "appwrite": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-appwrite",
+        "--all"
+      ],
+      "env": {
+        "APPWRITE_PROJECT_ID": "your-project-id",
+        "APPWRITE_API_KEY": "your-api-key",
+        "APPWRITE_ENDPOINT": "localhost:8088/v1"
+      }
     }
   }
 }
