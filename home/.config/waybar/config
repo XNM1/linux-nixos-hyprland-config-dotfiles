@@ -223,7 +223,10 @@
 
     "custom/night_mode": {
         "return-type": "json",
-        "interval": 1,
+        "restart-interval": 1,
+        "on-scroll-down": "fish -c night_mode_temp_up",
+        "on-scroll-up": "fish -c night_mode_temp_down",
+        "smooth-scrolling-threshold": 2.0,
         "exec": "fish -c check_night_mode",
         "on-click": "fish -c night_mode_toggle",
     },

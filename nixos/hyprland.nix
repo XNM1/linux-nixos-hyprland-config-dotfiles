@@ -19,6 +19,7 @@
     hyprlock
     hypridle
     hyprpaper
+    hyprsunset
     hyprpolkitagent
 
     inputs.wezterm.packages.${pkgs.system}.default

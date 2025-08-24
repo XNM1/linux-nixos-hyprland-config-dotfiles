@@ -1,5 +1,5 @@
 function check_night_mode
-    set target_process wlsunset
+    set target_process hyprsunset
 
     if pgrep $target_process >/dev/null
         echo "{ \"text\":\"󱩌\", \"tooltip\": \"night-mode <span color='#a6da95'>on</span>\", \"class\": \"on\" }"
