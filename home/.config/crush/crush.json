@@ -125,7 +125,7 @@
         "MCP_MODE": "stdio",
         "LOG_LEVEL": "error",
         "DISABLE_CONSOLE_OUTPUT": "true",
-        "N8N_API_URL": "localhost:5678",
+        "N8N_API_URL": "http://localhost:5678",
         "N8N_API_KEY": "your-api-key"
       }
     },
@@ -138,7 +138,7 @@
       ],
       "env": {
         "COOLIFY_ACCESS_TOKEN": "0|your-secret-token",
-        "COOLIFY_BASE_URL": "localhost:8000"
+        "COOLIFY_BASE_URL": "http://localhost:8000"
       }
     },
     "appwrite": {
@@ -151,7 +151,7 @@
       "env": {
         "APPWRITE_PROJECT_ID": "your-project-id",
         "APPWRITE_API_KEY": "your-api-key",
-        "APPWRITE_ENDPOINT": "localhost:8088/v1"
+        "APPWRITE_ENDPOINT": "http://localhost:8088/v1"
       }
     }
   }
