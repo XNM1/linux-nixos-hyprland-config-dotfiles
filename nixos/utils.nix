@@ -14,7 +14,5 @@
     surrealdb-migrations
     surrealist
     trunk
-    sqlx-cli
-    mermaid-cli
   ];
 }

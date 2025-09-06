@@ -9,10 +9,12 @@
     git
     lazygit
     delta
+    sqlx-cli
+    mermaid-cli
     license-generator
     git-ignore
     gitleaks
-    git-secrets
+    # git-secrets
     pass-git-helper
     jujutsu
     jjui
