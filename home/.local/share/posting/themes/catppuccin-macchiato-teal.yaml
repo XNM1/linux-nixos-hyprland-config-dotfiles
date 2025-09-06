@@ -1,0 +1,38 @@
+name: "catppuccin-macchiato-teal"
+primary: "#8bd5ca" # buttons, fixed table columns
+secondary: "#8bd5ca"  # method selector, some minor labels
+accent: "#b1e3db"  # header text, scrollbars, cursors, focus highlights
+background: "#24273a" # background colors
+surface: "#363a4f"  # panels, etc
+error: "#ed8796"  # error messages
+success: "#a6da95"  # success messages
+warning: "#eed49f"  # warning messages
+dark: "true"
+
+text_area:
+  cursor: "reverse #f4dbd6"
+  cursor_line: "underline #cad3f5"
+  selection: "reverse #939ab7"
+  gutter: "bold #a6da95"
+  matched_bracket: "reverse #b8c0e0"
+
+url:
+  base: "italic #8aadf4"
+  protocol: "bold #8bd5ca"
+  separator: "#cad3f5"
+
+syntax:
+  json_key: "italic #8aadf4"
+  json_number: "#f5a97f"
+  json_string: "#a6da95"
+  json_boolean: "#91d7e3"
+  json_null: "#939ab7"
+
+method:
+  get: "bold #8aadf4"
+  post: "bold #a6da95"
+  put: "bold #eed49f"
+  delete: "bold #ed8796"
+  patch: "bold #8bd5ca"
+  options: "bold #b7bdf8"
+  head: "bold #c6a0f6"

@@ -11,6 +11,7 @@
     delta
     sqlx-cli
     mermaid-cli
+    posting
     license-generator
     git-ignore
     gitleaks
