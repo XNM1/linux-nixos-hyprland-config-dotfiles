@@ -42,6 +42,7 @@
 
     aider-chat
     opencode
+    codex
 
     # tgpt
     # smartcat
