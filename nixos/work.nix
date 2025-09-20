@@ -12,6 +12,8 @@
     cmake
     firebase-tools
     redli
+    postgresql_18
+    pspg
     android-studio
   ];
 }
