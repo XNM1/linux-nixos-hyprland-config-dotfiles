@@ -1,33 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "z/glm-4.5",
   "theme": "catppuccin",
-  "provider": {
-    "moonshot": {
-      "name": "Moonshot",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "https://api.moonshot.ai/v1"
-      },
-      "models": {
-        "kimi-k2-0711-preview": {
-          "name": "Kimi-K2"
-        }
-      }
-    },
-    "z": {
-      "name": "Z",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "https://api.z.ai/api/paas/v4"
-      },
-      "models": {
-        "glm-4.5": {
-          "name": "GLM-4.5"
-        }
-      }
-    }
-  },
   "mcp": {
     "context7": {
       "type": "local",
@@ -59,7 +32,7 @@
         "SEARXNG_URL": "http://127.0.0.1:7777"
       }
     },
-    "mcp-server-git": {
+    "git": {
       "type": "local",
       "command": [
         "uvx",
