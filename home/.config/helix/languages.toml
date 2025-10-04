@@ -56,6 +56,10 @@ indent = { tab-width = 4, unit = "   " }
 language-servers = [ "typescript-language-server", "copilot" ]
 
 [[language]]
+name = "json"
+comment-token = "//"
+
+[[language]]
 name = "config"
 scope = "source.conf"
 file-types = [ "conf" ]
