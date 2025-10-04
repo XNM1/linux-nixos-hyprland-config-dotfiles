@@ -27,20 +27,26 @@
     enable = true;
   };
 
-  services.open-webui = {
-    enable = true;
-    port = 8888;
-    host = "127.0.0.1";
+  systemd.services.n8n = {
+    serviceConfig = {
+      Environment = "PATH=/run/current-system/sw/bin";
+    };
   };
+
+  # services.open-webui = {
+  #   enable = true;
+  #   port = 8888;
+  #   host = "127.0.0.1";
+  # };
   
   environment.systemPackages = with pkgs; [
     oterm
-    alpaca
+    # alpaca
 
     aichat
     fabric-ai
 
-    aider-chat
+    # aider-chat
     opencode
     codex
 
@@ -49,7 +55,7 @@
     # nextjs-ollama-llm-ui
     # open-webui
 
-    chromium
-    playwright
+    # chromium
+    # playwright
   ];
 }
