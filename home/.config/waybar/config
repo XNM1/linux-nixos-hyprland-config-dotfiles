@@ -379,7 +379,7 @@
         "critical-threshold": 80,
         "format": "{icon}{temperatureC}󰔄",
         "format-critical": "🔥{icon}{temperatureC}󰔄",
-        "format-icons": [ "", "", "", "", "" ],
+        "format-icons": [ "", "" ],
     },
 
     "battery": {
