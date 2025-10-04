@@ -26,7 +26,6 @@
     vscode-extensions.vadimcn.vscode-lldb
     slint-lsp
     terraform-ls
-    ansible-language-server
     hyprls
     helix-gpt
   ];  
