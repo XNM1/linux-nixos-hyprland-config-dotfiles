@@ -16,9 +16,32 @@
       "command": [
         "npx",
         "-y",
-        "@playwright/mcp"
+        "@playwright/mcp@latest",
+        "--browser",
+        "chrome",
+        "--executable-path",
+        "/run/current-system/sw/bin/chromium",
+        "--headless"
       ],
       "enabled": true
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "chrome-devtools-mcp@latest",
+        "--executablePath",
+        "/run/current-system/sw/bin/chromium"
+      ],
+      "enabled": true
+    },
+    "browser-mcp": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@browsermcp/mcp@latest"
+      ],
+      "enabled": false
     },
     "searxng": {
       "type": "local",

@@ -55,7 +55,7 @@
     # nextjs-ollama-llm-ui
     # open-webui
 
-    # chromium
+    chromium
     # playwright
   ];
 }
