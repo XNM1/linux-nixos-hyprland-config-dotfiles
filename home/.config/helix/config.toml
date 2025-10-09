@@ -34,10 +34,22 @@ display-inlay-hints = true
 enable = true
 
 [keys.normal]
-backspace = { w = ":w", d = ":bc", S-d = ":bca", q = ":q", A-w = ":w!", A-q = ":q!", A-d = ":bc!", A-S-d = ":bca!" }
+backspace = { w = ":w", d = ":bc", S-d = ":bca", c = "wclose", q = ":q", A-w = ":w!", A-q = ":q!", A-d = ":bc!", A-S-d = ":bca!" }
 S-l = ":bn"
 S-h = ":bp"
 S-right = ":bn"
 S-left = ":bp"
 A-w = ":w"
 A-r = ":rl"
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+
+[keys.normal.C-y]
+# Open the file(s) in the current window
+y = ":sh zellij run -n Yazi -c -f -x 3%% -y 3%% --width 95%% --height 95%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
+# Open the file(s) in a vertical split
+v = ":sh zellij run -n Yazi -c -f -x 3%% -y 3%% --width 95%% --height 95%% -- bash ~/.config/helix/yazi-picker.sh vsplit %{buffer_name}"
+# Open the file(s) in a horizontal split
+h = ":sh zellij run -n Yazi -c -f -x 3%% -y 3%% --width 95%% --height 95%% -- bash ~/.config/helix/yazi-picker.sh hsplit %{buffer_name}"
