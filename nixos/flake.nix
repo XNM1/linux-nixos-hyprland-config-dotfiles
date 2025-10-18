@@ -61,8 +61,8 @@
         ./radicle.nix
         ./wasm.nix
         ./info-fetchers.nix
-        ./utils.nix
-        ./terminal-utils.nix
+        ./dev-tools.nix
+        ./terminal.nix
         ./llm.nix
         ./work.nix
       ];
