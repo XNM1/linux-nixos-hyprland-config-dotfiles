@@ -1,6 +1,8 @@
 { inputs, pkgs, ... }:
 
 {
+  programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
     inputs.wezterm.packages.${pkgs.system}.default
     kitty

@@ -7,9 +7,7 @@
   ];
   
   # Enable Services
-  programs.direnv.enable = true;
   services.upower.enable = true;
-  programs.fish.enable = true;
   programs.dconf.enable = true;
   services.dbus = {
     enable = true;
@@ -57,6 +55,5 @@
     avizo
     wlogout
     gifsicle
-    devenv
   ];
 }

@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  programs.direnv.enable = true;
+
   environment.systemPackages = with pkgs; [
     mold
     gcc
@@ -9,10 +11,13 @@
     lldb
     musl
     jdk11
+
     dioxus-cli
+    trunk
+    devenv
+
     surrealdb
     surrealdb-migrations
     surrealist
-    trunk
   ];
 }
