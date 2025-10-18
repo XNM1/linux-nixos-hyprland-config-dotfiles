@@ -6,6 +6,7 @@
     nodePackages_latest.nodemon
     nodePackages_latest.typescript
     nodePackages_latest.typescript-language-server
+    eslint
     nodePackages_latest.vscode-langservers-extracted
     nodePackages_latest.yaml-language-server
     nodePackages_latest.bash-language-server
