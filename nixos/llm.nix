@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ inputs, pkgs, config, ... }:
 
 {
 
@@ -40,6 +40,8 @@
   # };
   
   environment.systemPackages = with pkgs; [
+    inputs.nix-ai-tools.packages.${pkgs.system}.backlog-md
+
     oterm
     # alpaca
 
@@ -47,7 +49,7 @@
     fabric-ai
 
     # aider-chat
-    opencode
+    inputs.nix-ai-tools.packages.${pkgs.system}.opencode
     codex
 
     # tgpt
