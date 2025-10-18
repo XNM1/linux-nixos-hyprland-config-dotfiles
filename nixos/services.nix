@@ -53,5 +53,6 @@
     avizo
     wlogout
     gifsicle
+    devenv
   ];
 }
