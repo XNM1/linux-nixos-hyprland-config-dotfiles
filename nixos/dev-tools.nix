@@ -15,6 +15,19 @@
     dioxus-cli
     trunk
     devenv
+    dotenvx
+    git
+    lazygit
+    sqlx-cli
+    license-generator
+    git-ignore
+    gitleaks
+    pass-git-helper
+    jujutsu
+    jjui
+    just
+    mise
+    gh
 
     surrealdb
     surrealdb-migrations

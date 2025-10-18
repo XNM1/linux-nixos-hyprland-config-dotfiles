@@ -14,21 +14,9 @@
     moreutils
     file
     upx
-    dotenvx
-    git
-    lazygit
     delta
-    sqlx-cli
     mermaid-cli
     posting
-    license-generator
-    git-ignore
-    gitleaks
-    # git-secrets
-    pass-git-helper
-    jujutsu
-    jjui
-    just
     xh
     process-compose
     # mcfly # terminal history
@@ -58,7 +46,6 @@
     du-dust
     fd
     jq
-    gh
     trash-cli
     zoxide
     tokei
