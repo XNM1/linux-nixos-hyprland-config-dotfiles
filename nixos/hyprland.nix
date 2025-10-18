@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Enable Hyprland
@@ -21,13 +21,6 @@
     hyprpaper
     hyprsunset
     hyprpolkitagent
-
-    inputs.wezterm.packages.${pkgs.system}.default
-    kitty
-    cool-retro-term
-
-    starship
-    helix
 
     qutebrowser
     zathura

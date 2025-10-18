@@ -1,7 +1,14 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
+    inputs.wezterm.packages.${pkgs.system}.default
+    kitty
+    cool-retro-term
+
+    starship
+    helix
+
     moreutils
     file
     upx
