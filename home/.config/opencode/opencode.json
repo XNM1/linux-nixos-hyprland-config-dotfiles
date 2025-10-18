@@ -41,7 +41,7 @@
         "npx",
         "@browsermcp/mcp@latest"
       ],
-      "enabled": false
+      "enabled": true
     },
     "searxng": {
       "type": "local",
@@ -81,6 +81,15 @@
         "npx",
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled": true
+    },
+    "podman": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "podman-mcp-server"
       ],
       "enabled": true
     },
