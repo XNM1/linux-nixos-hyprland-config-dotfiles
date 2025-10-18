@@ -21,10 +21,5 @@
     hyprpaper
     hyprsunset
     hyprpolkitagent
-
-    qutebrowser
-    zathura
-    mpv
-    imv
   ];
 }

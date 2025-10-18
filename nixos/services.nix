@@ -29,6 +29,10 @@
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   environment.systemPackages = with pkgs; [
+    qutebrowser
+    zathura
+    mpv
+    imv
     at-spi2-atk
     qt6.qtwayland
     psi-notify
