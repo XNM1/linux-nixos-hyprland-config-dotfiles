@@ -93,6 +93,15 @@
       ],
       "enabled": true
     },
+    "backlog": {
+      "type": "local",
+      "command": [
+        "backlog",
+        "mcp",
+        "start"
+      ],
+      "enabled": true
+    },
     "filesystem": {
       "type": "local",
       "command": [
