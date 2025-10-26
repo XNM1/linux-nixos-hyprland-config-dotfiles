@@ -98,6 +98,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gnupg
+    openssl
+
     vulnix       #scan command: vulnix --system
     clamav       #scan command: sudo freshclam; clamscan [options] [file/directory/-]
 

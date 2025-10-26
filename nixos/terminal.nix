@@ -37,6 +37,7 @@
     aria
     # wormhole-william
     magic-wormhole-rs
+    croc
     # macchina #neofetch alternative in rust
     dogdns
     sd
@@ -61,11 +62,15 @@
     tre-command
     yazi
     chafa
+    jrnl
+    python313Packages.faker
 
     cmatrix
     pipes-rs
     rsclock
     cava
     figlet
+    lolcat
+    cbonsai
   ];
 }

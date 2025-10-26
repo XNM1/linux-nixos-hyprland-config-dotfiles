@@ -28,6 +28,8 @@
     just
     mise
     gh
+    hurl
+    grex
 
     surrealdb
     surrealdb-migrations
