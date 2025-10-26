@@ -54,3 +54,4 @@ set -Ux FZF_DEFAULT_OPTS "\
 starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
+mise activate fish | source
