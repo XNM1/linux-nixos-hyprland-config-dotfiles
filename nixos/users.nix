@@ -11,7 +11,7 @@
       spotify
       youtube-music
       discord
-      tdesktop
+      telegram-desktop
       vscodium
       brave
     ];
