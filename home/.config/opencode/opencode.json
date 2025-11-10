@@ -1,6 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "catppuccin",
+  "formatter": {
+    "rustfmt": {
+      "command": [
+        "rustfmt",
+        "$FILE"
+      ],
+      "extensions": [
+        ".rs"
+      ]
+    }
+  },
   "mcp": {
     "context7": {
       "type": "local",
