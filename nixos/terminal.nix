@@ -34,17 +34,18 @@
     # taskwarrior3
     asciinema
     asciinema-agg
-    aria
+    aria2
     # wormhole-william
     magic-wormhole-rs
     croc
     # macchina #neofetch alternative in rust
+    yt-dlp
     dogdns
     sd
     ouch
     duf
     ncdu
-    du-dust
+    dust
     fd
     jq
     trash-cli

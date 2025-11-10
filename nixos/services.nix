@@ -30,6 +30,7 @@
     qutebrowser
     zathura
     mpv
+    mpv-handler
     imv
     at-spi2-atk
     qt6.qtwayland
