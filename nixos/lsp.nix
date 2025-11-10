@@ -7,13 +7,15 @@
     nodePackages_latest.typescript
     nodePackages_latest.typescript-language-server
     eslint
+    biome
+    rubyPackages.htmlbeautifier
     nodePackages_latest.vscode-langservers-extracted
     nodePackages_latest.yaml-language-server
     nodePackages_latest.bash-language-server
     nodePackages_latest.graphql-language-service-cli
     dockerfile-language-server
     vue-language-server
-    sumneko-lua-language-server
+    lua-language-server
     marksman
     markdown-oxide
     nil
