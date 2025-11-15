@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   services.radicle = {
@@ -7,7 +7,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    inputs.radicle-tui.packages.${pkgs.system}.default
+    radicle-tui
+    radicle-job
+    radicle-native-ci
+    radicle-ci-broker
     radicle-node
   ];
 }
