@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     slack
-    aws-sam-cli
     google-cloud-sdk
     awscli2
     ssm-session-manager-plugin
@@ -15,5 +14,7 @@
     postgresql_18
     pspg
     android-studio
+    terragrunt
+    terraform
   ];
 }
