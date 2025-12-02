@@ -53,3 +53,6 @@ y = ":sh zellij run -n Yazi -c -f -x 3%% -y 3%% --width 95%% --height 95%% -- ba
 v = ":sh zellij run -n Yazi -c -f -x 3%% -y 3%% --width 95%% --height 95%% -- bash ~/.config/helix/yazi-picker.sh vsplit %{buffer_name}"
 # Open the file(s) in a horizontal split
 h = ":sh zellij run -n Yazi -c -f -x 3%% -y 3%% --width 95%% --height 95%% -- bash ~/.config/helix/yazi-picker.sh hsplit %{buffer_name}"
+
+[keys.normal.space]
+B = ":sh git blame -L %{cursor_line},+1 --no-progress %{buffer_name} | sed 's/).*/)/'"
