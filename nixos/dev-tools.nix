@@ -28,6 +28,8 @@
     just
     mise
     gh
+    gh-dash
+    diffnav
     hurl
     grex
 
