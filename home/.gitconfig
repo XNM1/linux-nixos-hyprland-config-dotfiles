@@ -25,13 +25,14 @@
 
 [delta]
     side-by-side = true
+    width = variable
     line-numbers = true
     navigate = true
     hyperlinks = true
     hyperlinks-file-link-format = "file://{path}#{line}"
     features = catppuccin-macchiato
     whitespace-error-style = 22 reverse
-    conflict-style = zebibt
+    merge-conflict-style = diff3
 
     # Fancy visual enhancements
     file-added-label = [added]
@@ -53,9 +54,10 @@
     hunk-header-decoration-style = bold box ul
 
     # Word diff highlighting
-    word-diff-regex = .
+    word-diff-regex = "\\w+"
     max-line-distance = 0.6
     max-line-length = 512
+    wrap-max-lines = unlimited
 
     # Line highlighting
     line-numbers-left-format = "{nm:>4}┊"
@@ -71,9 +73,8 @@
     # Performance
     inspect-raw-lines = false
 
-    # Additional fancy features
-    color-moved = default
-    color-moved-ws = allow-indent-change
+    # Paging behavior
+    paging = auto
 
     # Show line numbers in context
     line-numbers-minus-style = bold red
@@ -84,9 +85,6 @@
     minus-empty-line-marker-style = normal
     plus-empty-line-marker-style = normal
 
-    # File icons (if available)
-    file-icon = true
-
     # Syntax highlighting improvements
     syntax-theme = Catppuccin Macchiato
     keep-plus-minus-markers = false
@@ -95,23 +93,6 @@
     show-syntax-themes = false
     show-themes = false
 
-    # Git integration
-    git-config = true
-
 [diff]
-    tool = delta
-
-[difftool]
-    prompt = false
-
-[difftool "delta"]
-    cmd = delta "$LOCAL" "$REMOTE"
-
-[merge]
-    tool = delta
-
-[mergetool]
-    prompt = false
-
-[mergetool "delta"]
-    cmd = delta "$LOCAL" "$MERGED" "$REMOTE" --side-by-side
+    colorMoved = default
+    colorMovedWS = allow-indentation-change
