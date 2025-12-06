@@ -11,6 +11,7 @@
     rubyPackages.htmlbeautifier
     nodePackages_latest.vscode-langservers-extracted
     nodePackages_latest.yaml-language-server
+    taplo #toml formatter & lsp
     nodePackages_latest.bash-language-server
     nodePackages_latest.graphql-language-service-cli
     dockerfile-language-server

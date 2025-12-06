@@ -8,7 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
-    taplo #toml formatter & lsp
     cargo-watch
     cargo-deny
     cargo-audit
@@ -28,5 +27,6 @@
     cargo-features-manager
     bacon
     evcxr #rust repl
+    rust-script
   ];
 }
