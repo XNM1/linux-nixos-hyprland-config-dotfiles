@@ -3,9 +3,12 @@
 {
   environment.systemPackages = with pkgs; [
     wasmedge
-    wasmer
+    # wasmer
     lunatic
     wasmi
+    wrangler
+    fermyon-spin
+    wash-cli
     # wasm3
   ];
 }

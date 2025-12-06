@@ -25,6 +25,7 @@
     cargo-unused-features
     cargo-feature
     cargo-features-manager
+    worker-build
     bacon
     evcxr #rust repl
     rust-script
