@@ -5,7 +5,7 @@
   services.ollama = {
     enable = true;
     loadModels = [ "llama3.2:3b" "phi4-reasoning:14b" "dolphin3:8b" "smallthinker:3b" "gemma3n:e4b" "deepcoder:14b" "qwen3:14b" "qwen3-coder:30b" "gpt-oss:20b" "nomic-embed-text" ];
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
   };
 
   services.searx = {
