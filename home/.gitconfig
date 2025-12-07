@@ -24,12 +24,12 @@
     diffFilter = delta --color-only
 
 [delta]
-    side-by-side = true
+    # side-by-side = true
     width = variable
     line-numbers = true
     navigate = true
-    hyperlinks = true
-    hyperlinks-file-link-format = "file://{path}#{line}"
+    # hyperlinks = true
+    # hyperlinks-file-link-format = "file://{path}#{line}"
     features = catppuccin-macchiato
     whitespace-error-style = 22 reverse
     merge-conflict-style = diff3
