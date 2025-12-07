@@ -18,6 +18,7 @@
     dotenvx
     git
     lazygit
+    diffnav
     sqlx-cli
     license-generator
     git-ignore
@@ -29,7 +30,6 @@
     mise
     gh
     gh-dash
-    diffnav
     hurl
     grex
 
