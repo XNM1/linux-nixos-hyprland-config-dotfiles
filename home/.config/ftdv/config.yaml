@@ -1,0 +1,3 @@
+git:
+  paging:
+    pager: "delta --side-by-side --width {{diffAreaWidth}}"
