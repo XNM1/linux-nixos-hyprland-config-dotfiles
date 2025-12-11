@@ -21,14 +21,17 @@
   # };
   # users.extraGroups.docker.members = [ "xnm" ];
 
+  virtualisation.docker.enable = false;
 
   # Enable Podman
   virtualisation.podman = {
     enable = true;
 
     # Create a `docker` alias for podman, to use it as a drop-in replacement
-    dockerCompat = true;
-    dockerSocket.enable = true;
+    dockerCompat = false;
+    dockerSocket.enable = false;
+    # dockerCompat = true;
+    # dockerSocket.enable = true;
 
     # Required for containers under podman-compose to be able to talk to each other.
     defaultNetwork.settings.dns_enabled = true;
@@ -47,12 +50,14 @@
     distrobox
     qemu
     lima
+    lima-additional-guestagents
 
     podman-compose
     podman-tui
 
+    docker-client
     docker-compose
-    # lazydocker
-    # docker-credential-helpers
+    lazydocker
+    docker-credential-helpers
   ];
 }
