@@ -19,6 +19,7 @@ description: >-
   branch name without creating it.' <commentary>User specifically requested not
   to create the branch, so use the `brancher` agent with the show-only
   option.</commentary></example>
+model: opencode/glm-4.6
 mode: all
 tools:
   write: false
