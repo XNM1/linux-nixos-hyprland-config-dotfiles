@@ -28,7 +28,7 @@ description: >-
   assistant: 'I'll use the `grammer` agent to check the sentence correctness'
   <commentary>This is a grammar checking question, use the `grammer`
   agent.</commentary></example>
-model: opencode/glm-4.6
+model: opencode/gemini-3-flash
 mode: all
 tools:
   read: false
