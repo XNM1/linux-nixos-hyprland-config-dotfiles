@@ -36,6 +36,11 @@ clients:
   - name: deepcoder:14b
     max_input_tokens: 128000
 
+  - name: devstral-small-2:24b
+    supports_vision: true
+    supports_function_calling: true
+    max_input_tokens: 384000
+
   - name: qwen3:14b
     max_input_tokens: 40000
     supports_function_calling: true
@@ -44,7 +49,7 @@ clients:
     max_input_tokens: 256000
     supports_function_calling: true
 
-  - name: nomic-embed-text:latest
+  - name: nomic-embed-text-v2-moe:latest
     type: embedding
 
 - type: openai-compatible
