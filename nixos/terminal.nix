@@ -40,7 +40,7 @@
     croc
     # macchina #neofetch alternative in rust
     yt-dlp
-    dogdns
+    doggo
     sd
     ouch
     duf
