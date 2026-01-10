@@ -8,18 +8,21 @@ plugins = [
 ]
 
 [scratchpads.term]
-command = "wezterm start --always-new-process"
-class = "wezterm_dropdown"
+command = "kitty --class terminal-dropterm"
+class = "terminal-dropterm"
 animation = "fromTop"
 unfocus = "hide"
 excludes = "*"
 lazy = true
 multi = false
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
 
 [scratchpads.volume]
 command = "pavucontrol"
 animation = "fromLeft"
-class = "volume_sidemenu"
+class = "org.pulseaudio.pavucontrol"
 size = "40% 70%"
 unfocus = "hide"
 excludes = "*"
