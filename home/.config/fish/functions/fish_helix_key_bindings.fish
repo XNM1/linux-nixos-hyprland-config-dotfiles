@@ -74,7 +74,7 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
     # Closing a command substitution expands abbreviations
     bind -s --preset -M insert ")" self-insert expand-abbr
     # Ctrl-space inserts space without expanding abbrs
-    bind -s --preset -M insert nul 'commandline -i " "'
+    bind -s --preset -M insert ctrl-space 'commandline -i " "'
 
     # Switching to insert mode
     for mode in default visual
