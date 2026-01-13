@@ -26,3 +26,29 @@ gui:
 
   authorColors:
     '*': '#b7bdf8'
+
+os:
+  editInTerminal: false
+
+  # 'edit' is used when you press 'e' on a file
+  edit: >-
+    zellij action go-to-tab 1 &&
+    zellij action move-focus left &&
+    zellij action move-focus up &&
+    sleep 0.05 &&
+    zellij action write 27 &&
+    zellij action write-chars ":open {{filename}}" &&
+    zellij action write 13
+
+  # 'editAtLine' is used when you press 'e' inside a diff/hunk
+  editAtLine: >-
+    zellij action go-to-tab 1 &&
+    zellij action move-focus left &&
+    zellij action move-focus up &&
+    sleep 0.05 &&
+    zellij action write 27 &&
+    zellij action write-chars ":open {{filename}}:{{line}}" &&
+    zellij action write 13
+
+  # 'open' is used for non-text files (images, pdfs, etc)
+  open: xdg-open {{filename}} >/dev/null 2>&1 &
