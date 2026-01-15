@@ -3,6 +3,7 @@ git:
     - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 
 gui:
+  showIcons: true
   theme:
     activeBorderColor:
       - '#8bd5ca'
