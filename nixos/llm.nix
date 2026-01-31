@@ -49,6 +49,7 @@
     fabric-ai
 
     # aider-chat
+    inputs.nix-ai-tools.packages.${pkgs.system}.ccusage-opencode
     inputs.nix-ai-tools.packages.${pkgs.system}.opencode
     inputs.nix-ai-tools.packages.${pkgs.system}.openspec
     inputs.nix-ai-tools.packages.${pkgs.system}.openskills
