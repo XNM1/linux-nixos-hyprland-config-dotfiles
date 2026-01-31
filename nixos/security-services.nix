@@ -87,7 +87,7 @@
         profile = "${pkgs.firejail}/etc/firejail/qutebrowser.profile";
       };
       thunar = {
-        executable = "${lib.getBin pkgs.xfce.thunar}/bin/thunar";
+        executable = "${lib.getBin pkgs.thunar}/bin/thunar";
         profile = "${pkgs.firejail}/etc/firejail/thunar.profile";
       };
       vscodium = {

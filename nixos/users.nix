@@ -9,7 +9,7 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       spotify
-      youtube-music
+      pear-desktop
       discord
       telegram-desktop
       vscodium
