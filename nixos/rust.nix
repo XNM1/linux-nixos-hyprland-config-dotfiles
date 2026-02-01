@@ -22,6 +22,7 @@
     cargo-spellcheck
     cargo-modules
     cargo-bloat
+    cargo-sweep
     cargo-unused-features
     cargo-feature
     cargo-features-manager
