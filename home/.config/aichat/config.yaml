@@ -13,12 +13,6 @@ clients:
     max_input_tokens: 128000
     supports_function_calling: true
 
-  - name: phi4-reasoning:14b
-    max_input_tokens: 32000
-
-  - name: dolphin3:8b
-    max_input_tokens: 128000
-
   - name: smallthinker:3b
     max_input_tokens: 32000
 
@@ -26,28 +20,32 @@ clients:
     max_input_tokens: 32000
 
   - name: gemma3:4b
-    supports_vision: true
     max_input_tokens: 128000
+    supports_vision: true
 
   - name: gpt-oss:20b
     max_input_tokens: 128000
     supports_function_calling: true
+    supports_reasoning: true
 
-  - name: deepcoder:14b
+  - name: second_constantine/gpt-oss-u:20b
     max_input_tokens: 128000
-
-  - name: devstral-small-2:24b
-    supports_vision: true
-    supports_function_calling: true
-    max_input_tokens: 384000
+    supports_reasoning: true
 
   - name: qwen3:14b
     max_input_tokens: 40000
     supports_function_calling: true
+    supports_reasoning: true
 
-  - name: qwen3-coder:30b
-    max_input_tokens: 256000
+  - name: devstral-small-2:24b
+    max_input_tokens: 384000
+    supports_vision: true
     supports_function_calling: true
+
+  - name: glm-4.7-flash:latest
+    max_input_tokens: 198000
+    supports_function_calling: true
+    supports_reasoning: true
 
   - name: nomic-embed-text-v2-moe:latest
     type: embedding
