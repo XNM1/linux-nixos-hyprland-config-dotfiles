@@ -14,7 +14,7 @@
       # --- Power/Performance Strategy ---
 
       # ON AC: Max performance
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
       # ON BATTERY: Conservative for lifespan
