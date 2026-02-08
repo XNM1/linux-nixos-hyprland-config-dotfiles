@@ -25,6 +25,7 @@
     noti
     topgrade
     ripgrep
+    inputs.nix-ai-tools.packages.${pkgs.system}.ck
     rewrk
     wrk2
     procs

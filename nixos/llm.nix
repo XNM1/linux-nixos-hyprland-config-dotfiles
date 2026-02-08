@@ -42,6 +42,7 @@
   
   environment.systemPackages = with pkgs; [
     inputs.nix-ai-tools.packages.${pkgs.system}.backlog-md
+    inputs.nix-ai-tools.packages.${pkgs.system}.beads
 
     oterm
     # alpaca
@@ -63,5 +64,7 @@
 
     chromium
     # playwright
+
+    inputs.nix-ai-tools.packages.${pkgs.system}.agent-browser
   ];
 }

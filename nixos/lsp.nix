@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -41,7 +41,7 @@
     terraform-ls
     hyprls
     helix-gpt
-    copilot-language-server
+    inputs.nix-ai-tools.packages.${pkgs.system}.copilot-language-server
     fish-lsp
     wasm-language-tools
   ];  
