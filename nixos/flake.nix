@@ -40,6 +40,7 @@
         ./fonts.nix
         ./security-services.nix
         ./services.nix
+        ./power.nix
         # ./printing.nix
         # ./gnome.nix
         ./hyprland.nix
