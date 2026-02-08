@@ -88,5 +88,6 @@
     avizo
     wlogout
     gifsicle
+    libfido2
   ];
 }

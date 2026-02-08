@@ -15,8 +15,11 @@
     dioxus-cli
     trunk
     devenv
-    dotenvx
+    sops
+    rops
     git
+    pre-commit
+    pre-commit-hook-ensure-sops
     lazygit
     diffnav
     sqlx-cli

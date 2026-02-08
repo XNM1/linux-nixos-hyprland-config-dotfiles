@@ -37,6 +37,10 @@
     aria2
     # wormhole-william
     magic-wormhole-rs
+    rage
+    age-plugin-fido2-hmac
+    age-plugin-sss
+    ragenix
     croc
     # macchina #neofetch alternative in rust
     yt-dlp
