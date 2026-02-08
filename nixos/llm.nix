@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ pkgs, config, ... }:
 
 {
 
@@ -41,8 +41,8 @@
   # };
   
   environment.systemPackages = with pkgs; [
-    inputs.nix-ai-tools.packages.${pkgs.system}.backlog-md
-    inputs.nix-ai-tools.packages.${pkgs.system}.beads
+    nix-ai-tools.backlog-md
+    nix-ai-tools.beads
 
     oterm
     # alpaca
@@ -51,11 +51,11 @@
     fabric-ai
 
     # aider-chat
-    inputs.nix-ai-tools.packages.${pkgs.system}.ccusage-opencode
-    inputs.nix-ai-tools.packages.${pkgs.system}.opencode
-    inputs.nix-ai-tools.packages.${pkgs.system}.openspec
-    inputs.nix-ai-tools.packages.${pkgs.system}.openskills
-    # codex
+    nix-ai-tools.ccusage-opencode
+    nix-ai-tools.opencode
+    nix-ai-tools.openspec
+    nix-ai-tools.openskills
+    # nix-ai-tools.codex
 
     # tgpt
     # smartcat
@@ -65,6 +65,6 @@
     chromium
     # playwright
 
-    inputs.nix-ai-tools.packages.${pkgs.system}.agent-browser
+    nix-ai-tools.agent-browser
   ];
 }

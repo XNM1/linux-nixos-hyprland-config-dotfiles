@@ -1,10 +1,10 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
-    inputs.wezterm.packages.${pkgs.system}.default
+    wezterm-flake
     kitty
     cool-retro-term
 
@@ -25,7 +25,7 @@
     noti
     topgrade
     ripgrep
-    inputs.nix-ai-tools.packages.${pkgs.system}.ck
+    nix-ai-tools.ck
     rewrk
     wrk2
     procs
