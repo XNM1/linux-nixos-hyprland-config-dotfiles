@@ -18,7 +18,7 @@
     sops
     rops
     git
-    pre-commit
+    lefthook
     pre-commit-hook-ensure-sops
     lazygit
     diffnav

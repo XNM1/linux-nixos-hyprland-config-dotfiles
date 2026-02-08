@@ -1,0 +1,18 @@
+title = "gitleaks config for linux-nixos-hyprland-config-dotfiles"
+
+[extend]
+# Use the default gitleaks config as a base
+# https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml
+useDefault = true
+
+[allowlist]
+description = "Global allowlist"
+
+paths = [
+  '''flake\.lock''',
+]
+
+# DNSCrypt public minisign verification key (not a secret)
+regexes = [
+  '''RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3''',
+]
