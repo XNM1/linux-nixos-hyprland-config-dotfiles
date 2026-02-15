@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-paths=$(yazi "$2" --chooser-file=/dev/stdout | while read -r; do printf "%q " "$REPLY"; done)
+tmp="$(mktemp -t "yazi-chooser-XXXXXX")"
+trap 'rm -f "$tmp"' EXIT
 
-if [[ -n "$paths" ]]; then
-	zellij action toggle-floating-panes
+yazi "$2" --chooser-file="$tmp"
+zellij action toggle-floating-panes
+
+if [[ -s "$tmp" ]]; then
+	paths=$(while IFS= read -r line || [[ -n "$line" ]]; do printf "%q " "$line"; done < "$tmp")
 	zellij action write 27 # send <Escape> key
 	zellij action write-chars ":$1 $paths"
 	zellij action write 13 # send <Enter> key
-else
-	zellij action toggle-floating-panes
 fi
