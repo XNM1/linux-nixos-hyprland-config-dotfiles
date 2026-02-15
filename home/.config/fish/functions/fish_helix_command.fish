@@ -20,8 +20,18 @@ function fish_helix_command
                 commandline -C (math max\(0, (commandline -C) - $count\))
                 __fish_helix_extend_by_command $command
             case {move,extend}_char_right
-                commandline -C (math (commandline -C) + $count)
-                __fish_helix_extend_by_command $command
+                if string match -q 'move_*' -- $command
+                    and not commandline --paging-mode
+                    and commandline --showing-suggestion
+                    and test (commandline -C) -ge (string length -- (commandline))
+                    for i in (seq 1 $count)
+                        commandline -f forward-word
+                    end
+                    commandline -f begin-selection
+                else
+                    commandline -C (math (commandline -C) + $count)
+                    __fish_helix_extend_by_command $command
+                end
 
             case char_up
                 __fish_helix_char_up $fish_bind_mode $count
