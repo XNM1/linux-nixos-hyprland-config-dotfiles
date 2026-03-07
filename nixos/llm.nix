@@ -54,8 +54,8 @@
     fabric-ai
 
     # aider-chat
-    nix-ai-tools.pi
-    nix-ai-tools.ccusage-pi
+    # nix-ai-tools.pi
+    # nix-ai-tools.ccusage-pi
     nix-ai-tools.ccusage-opencode
     nix-ai-tools.opencode
     nix-ai-tools.openspec
