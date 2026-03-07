@@ -1,6 +1,8 @@
 git:
   pagers:
-    - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+    - pager: >-
+        delta --paging=never --hyperlinks
+        --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 
 gui:
   showIcons: true
@@ -24,31 +26,50 @@ gui:
       - '#cad3f5'
     searchingActiveBorderColor:
       - '#eed49f'
-
   authorColors:
     '*': '#b7bdf8'
 
 os:
   editInTerminal: false
-
   # 'edit' is used when you press 'e' on a file
-  edit: >-
-    zellij action go-to-tab 1 &&
-    zellij action move-focus left &&
-    zellij action move-focus up &&
-    sleep 0.05 &&
-    zellij action write 27 &&
-    zellij action write-chars ":open {{filename}}" &&
+  edit: |-
+    set -l lazygit_tab "main"
+    set -l target (string replace -r ':$' '' -- "{{filename}}")
+
+    if zellij action dump-layout 2>/dev/null | grep -q 'tab name="editor"'
+      set lazygit_tab "editor"
+    end
+
+    zellij action go-to-tab-name "$lazygit_tab"
+    sleep 0.1
+
+    if not zellij action dump-layout 2>/dev/null | grep -q "tab name=\"$lazygit_tab\".*hide_floating_panes=true"
+      zellij action toggle-floating-panes
+      sleep 0.1
+    end
+
+    zellij action write 27
+    zellij action write-chars ":open $target"
     zellij action write 13
 
   # 'editAtLine' is used when you press 'e' inside a diff/hunk
-  editAtLine: >-
-    zellij action go-to-tab 1 &&
-    zellij action move-focus left &&
-    zellij action move-focus up &&
-    sleep 0.05 &&
-    zellij action write 27 &&
-    zellij action write-chars ":open {{filename}}:{{line}}" &&
+  editAtLine: |-
+    set -l lazygit_tab "main"
+
+    if zellij action dump-layout 2>/dev/null | grep -q 'tab name="editor"'
+      set lazygit_tab "editor"
+    end
+
+    zellij action go-to-tab-name "$lazygit_tab"
+    sleep 0.1
+
+    if not zellij action dump-layout 2>/dev/null | grep -q "tab name=\"$lazygit_tab\".*hide_floating_panes=true"
+      zellij action toggle-floating-panes
+      sleep 0.1
+    end
+
+    zellij action write 27
+    zellij action write-chars ":open {{filename}}:{{line}}"
     zellij action write 13
 
   # 'open' is used for non-text files (images, pdfs, etc)
