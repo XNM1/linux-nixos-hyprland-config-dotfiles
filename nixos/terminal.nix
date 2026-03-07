@@ -60,6 +60,7 @@
     bat
     hexyl
     mdcat
+    treemd
     pandoc
     lsd
     lsof
