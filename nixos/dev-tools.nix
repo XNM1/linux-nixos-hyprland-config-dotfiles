@@ -21,6 +21,7 @@
     lefthook
     pre-commit-hook-ensure-sops
     lazygit
+    lazynpm
     diffnav
     sqlx-cli
     license-generator

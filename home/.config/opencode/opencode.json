@@ -1,32 +1,68 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "catppuccin",
-  "formatter": {
-    "rustfmt": {
-      "command": [
-        "rustfmt",
-        "$FILE"
-      ],
-      "extensions": [
-        ".rs"
-      ]
-    }
-  },
   "mcp": {
-    "context7": {
-      "type": "local",
+    "backlog": {
       "command": [
-        "npx",
-        "-y",
+        "backlog",
+        "mcp",
+        "start"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "browser-mcp": {
+      "command": [
+        "pnpm",
+        "dlx",
+        "@browsermcp/mcp@latest"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "chrome-devtools": {
+      "command": [
+        "pnpm",
+        "dlx",
+        "chrome-devtools-mcp@latest",
+        "--executablePath",
+        "/run/current-system/sw/bin/chromium"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "context7": {
+      "command": [
+        "pnpm",
+        "dlx",
         "@upstash/context7-mcp"
       ],
-      "enabled": true
+      "enabled": true,
+      "type": "local"
+    },
+    "filesystem": {
+      "command": [
+        "pnpm",
+        "dlx",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/xnm"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
+    "git": {
+      "command": [
+        "uvx",
+        "--python",
+        "/run/current-system/sw/bin/python",
+        "mcp-server-git"
+      ],
+      "enabled": false,
+      "type": "local"
     },
     "playwright": {
-      "type": "local",
       "command": [
-        "npx",
-        "-y",
+        "pnpm",
+        "dlx",
         "@playwright/mcp@latest",
         "--browser",
         "chrome",
@@ -34,94 +70,64 @@
         "/run/current-system/sw/bin/chromium",
         "--headless"
       ],
-      "enabled": true
+      "enabled": false,
+      "type": "local"
     },
-    "chrome-devtools": {
-      "type": "local",
+    "podman": {
       "command": [
-        "npx",
-        "chrome-devtools-mcp@latest",
-        "--executablePath",
-        "/run/current-system/sw/bin/chromium"
+        "pnpm",
+        "dlx",
+        "podman-mcp-server"
       ],
-      "enabled": true
-    },
-    "browser-mcp": {
-      "type": "local",
-      "command": [
-        "npx",
-        "@browsermcp/mcp@latest"
-      ],
-      "enabled": true
+      "enabled": false,
+      "type": "local"
     },
     "searxng": {
-      "type": "local",
       "command": [
-        "npx",
-        "-y",
+        "pnpm",
+        "dlx",
         "mcp-searxng"
       ],
       "enabled": true,
       "environment": {
         "SEARXNG_URL": "http://127.0.0.1:7777"
-      }
+      },
+      "type": "local"
     },
-    "git": {
-      "type": "local",
+    "sequential-thinking": {
       "command": [
-        "uvx",
-        "--python",
-        "/run/current-system/sw/bin/python",
-        "mcp-server-git"
+        "pnpm",
+        "dlx",
+        "@modelcontextprotocol/server-sequential-thinking"
       ],
-      "enabled": true
+      "enabled": false,
+      "type": "local"
     },
     "time": {
-      "type": "local",
       "command": [
         "uvx",
         "--python",
         "/run/current-system/sw/bin/python",
         "mcp-server-time"
       ],
-      "enabled": true
-    },
-    "sequential-thinking": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "enabled": true
-    },
-    "podman": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "podman-mcp-server"
-      ],
-      "enabled": true
-    },
-    "backlog": {
-      "type": "local",
-      "command": [
-        "backlog",
-        "mcp",
-        "start"
-      ],
-      "enabled": true
-    },
-    "filesystem": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/home/xnm"
-      ],
-      "enabled": true
+      "enabled": false,
+      "type": "local"
     }
-  }
+  },
+  "provider": {
+    "ollama": {
+      "models": {
+        "glm-4.7-flash:latest": {
+          "_launch": true,
+          "name": "glm-4.7-flash:latest"
+        }
+      },
+      "name": "Ollama (local)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      }
+    }
+  },
+  "theme": "catppuccin"
 }
