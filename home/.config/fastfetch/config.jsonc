@@ -1,0 +1,152 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "$HOME/.config/fastfetch/logo_nixos.png",
+    "width": 30,
+    "padding": {
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": ": ",
+    "key": {
+      "width": 16,
+      "type": "string"
+    },
+    "size": {
+      "binaryPrefix": "iec"
+    },
+    "bar": {
+      "width": 8,
+      "char": {
+        "elapsed": "■",
+        "total": "□"
+      }
+    }
+  },
+  "modules": [
+    "break",
+    "title",
+    "separator",
+    {
+      "type": "os",
+      "key": " OS",
+      "keyColor": "red"
+    },
+    {
+      "type": "host",
+      "key": "󰌢 Host",
+      "keyColor": "green"
+    },
+    {
+      "type": "kernel",
+      "key": " Kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "key": "↑ Uptime",
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": " Packages",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "shell",
+      "key": " Shell",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "display",
+      "key": "󰹑 Resolution",
+      "keyColor": "white"
+    },
+    {
+      "type": "wm",
+      "key": "󰖲 WM",
+      "keyColor": "light_black"
+    },
+    {
+      "type": "theme",
+      "key": "󱕕 Theme",
+      "keyColor": "light_yellow"
+    },
+    {
+      "type": "icons",
+      "key": "󱁹 Icons",
+      "keyColor": "light_blue"
+    },
+    {
+      "type": "terminal",
+      "key": " Terminal",
+      "keyColor": "light_magenta"
+    },
+    {
+      "type": "cpu",
+      "key": " CPU",
+      "keyColor": "light_white"
+    },
+    {
+      "type": "gpu",
+      "key": " GPU",
+      "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": " Memory",
+      "keyColor": "light_red",
+      "percent": {
+        "type": 3,
+        "green": 30,
+        "yellow": 70
+      }
+    },
+    {
+      "type": "disk",
+      "key": "󰋊 Disk",
+      "keyColor": "light_red",
+      "folders": "/",
+      "percent": {
+        "type": 3,
+        "green": 60,
+        "yellow": 80
+      }
+    },
+    {
+      "type": "battery",
+      "key": "󰂀 Battery",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "users",
+      "key": "󰀄 Users",
+      "keyColor": "light_green"
+    },
+    {
+      "type": "locale",
+      "key": "󰌌 Locale",
+      "keyColor": "light_yellow"
+    },
+    {
+      "type": "colors",
+      "key": "󰏘 Colors",
+      "keyColor": "white",
+      "block": {
+        "width": 2,
+        "range": [0, 7]
+      }
+    },
+    {
+      "type": "colors",
+      "key": " ",
+      "paddingLeft": 15,
+      "block": {
+        "width": 2,
+        "range": [8, 15]
+      }
+    }
+  ]
+}

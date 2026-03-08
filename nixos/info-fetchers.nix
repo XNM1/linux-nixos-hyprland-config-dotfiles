@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    neofetch
+    fastfetch
     onefetch
     ipfetch
     cpufetch

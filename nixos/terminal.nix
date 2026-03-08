@@ -43,7 +43,6 @@
     age-plugin-sss
     ragenix
     croc
-    # macchina #neofetch alternative in rust
     yt-dlp
     doggo
     sd
