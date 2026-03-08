@@ -1,4 +1,11 @@
 git:
+  branchLogCmd: >-
+    git log --no-show-signature --graph --color=always --abbrev-commit --decorate --date=relative
+    --pretty=format:'%C(auto)%h %s %C(green)(%cr) %C(blue)<%an>%Creset' {{branchName}} --
+  allBranchesLogCmds:
+    - >-
+      git log --no-show-signature --graph --all --color=always --abbrev-commit --decorate
+      --date=relative --pretty=format:'%C(auto)%h %s %C(green)(%cr) %C(blue)<%an>%Creset'
   pagers:
     - pager: >-
         delta --paging=never --hyperlinks
@@ -28,6 +35,34 @@ gui:
       - '#eed49f'
   authorColors:
     '*': '#b7bdf8'
+
+customCommands:
+  - key: 'G'
+    context: 'commits,subCommits,reflogCommits'
+    command: >-
+      git show --show-signature --no-patch {{.SelectedLocalCommit.Hash}}
+    description: 'Show signature details'
+    output: popup
+    outputTitle: 'Commit signature details'
+  - key: 'K'
+    context: 'commits,subCommits,reflogCommits'
+    command: >-
+      sh -c 'status=$(git log -1 --pretty=format:%G? {{.SelectedLocalCommit.Hash}});
+      case "$status" in
+        G) label="G (signed)" ;;
+        N) label="N (no signature)" ;;
+        B) label="B (bad signature)" ;;
+        U) label="U (unknown trust)" ;;
+        E) label="E (cannot verify)" ;;
+        X) label="X (signature expired)" ;;
+        Y) label="Y (signing key expired)" ;;
+        R) label="R (key revoked)" ;;
+        *) label="$status (unknown status)" ;;
+      esac;
+      git log -1 --pretty=format:"commit %H%nstatus: $label%nsigner: %GS%nauthor: %an <%ae>%n%n%s" {{.SelectedLocalCommit.Hash}}'
+    description: 'Show compact signature status'
+    output: popup
+    outputTitle: 'Commit signature status'
 
 os:
   editInTerminal: false
