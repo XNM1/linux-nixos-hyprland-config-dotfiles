@@ -187,7 +187,7 @@
     },
 
     "privacy": {
-        "icon-spacing": 1,
+        "icon-spacing": 4,
         "icon-size": 12,
         "transition-duration": 250,
         "modules": [
@@ -333,7 +333,7 @@
     },
 
     "cpu": {
-        "format": "󰻠{usage}%",
+        "format": "󰻠\u2009{usage}%",
         "states": {
             "high": 90,
             "upper-medium": 70,
@@ -346,7 +346,7 @@
     },
     
     "memory": {
-        "format": "󰍛{percentage}%",
+        "format": "󰍛\u2009{percentage}%",
         "tooltip-format": "Main: ({used} GiB/{total} GiB)({percentage}%), available {avail} GiB\nSwap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail} GiB",
         "states": {
             "high": 90,
@@ -360,7 +360,7 @@
     },
 
     "disk": {
-        "format": "󰋊{percentage_used}%",  
+        "format": "󰋊\u2009{percentage_used}%",
         "tooltip-format": "({used}/{total})({percentage_used}%) in '{path}', available {free}({percentage_free}%)",
         "states": {
             "high": 90,
@@ -377,9 +377,9 @@
         "tooltip": false,
         "thermal-zone": 8,
         "critical-threshold": 80,
-        "format": "{icon}{temperatureC}󰔄",
-        "format-critical": "🔥{icon}{temperatureC}󰔄",
-        "format-icons": [ "", "" ],
+        "format": "{icon}\u2009{temperatureC}󰔄",
+        "format-critical": "🔥\u2009{icon}\u2009{temperatureC}󰔄",
+        "format-icons": [ "", "", "", "", "" ],
     },
 
     "battery": {
@@ -390,16 +390,16 @@
             "lower-medium": 30,
             "low": 10,
         },
-        "format": "{icon}{capacity}%",
-        "format-charging": "󱐋{icon}{capacity}%",
-        "format-plugged": "󰚥{icon}{capacity}%",
+        "format": "{icon}\u2009{capacity}%",
+        "format-charging": "󱐋\u2009{icon}\u2009{capacity}%",
+        "format-plugged": "󰚥\u2009{icon}\u2009{capacity}%",
         "format-time": "{H} h {M} min",
         "format-icons": [ "󱃍", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
         "tooltip-format": "{timeTo}",
     },
     
     "backlight": {
-        "format": "{icon}{percent}%",
+        "format": "{icon}\u2009{percent}%",
         "format-icons": [
             "󰌶",
             "󱩎",
@@ -434,12 +434,12 @@
             "low": 10,
         },
         "tooltip-format": "{desc}",
-        "format": "{icon}{volume}%\n{format_source}",  
-        "format-bluetooth": "󰂱{icon}{volume}%\n{format_source}",
-        "format-bluetooth-muted": "󰂱󰝟{volume}%\n{format_source}",
-        "format-muted": "󰝟{volume}%\n{format_source}",
-        "format-source": "󰍬{volume}%",
-        "format-source-muted": "󰍭{volume}%",
+        "format": "{icon}\u2009{volume}%\n{format_source}",
+        "format-bluetooth": "󰂱\u2009{icon}\u2009{volume}%\n{format_source}",
+        "format-bluetooth-muted": "󰂱\u2009󰝟\u2009{volume}%\n{format_source}",
+        "format-muted": "󰝟\u2009{volume}%\n{format_source}",
+        "format-source": "󰍬\u2009{volume}%",
+        "format-source-muted": "󰍭\u2009{volume}%",
         "format-icons": {
             "headphone": "󰋋",
             "hands-free": "",

@@ -2,6 +2,7 @@
 
 * {
   border: none;
+  font-family: "JetBrains Mono", "Symbols Nerd Font", "Noto Color Emoji";
 }
 
 window.bottom_bar#waybar {
@@ -176,7 +177,7 @@ window.top_bar .modules-center {
 }
 
 #idle_inhibitor {
-  margin-right: 2;
+  margin-right: 6;
 }
 
 #idle_inhibitor.deactivated {
@@ -188,7 +189,7 @@ window.top_bar .modules-center {
 }
 
 #custom-airplane_mode {
-  margin-right: 2;
+  margin-right: 6;
 }
 
 #custom-airplane_mode.off {
@@ -196,7 +197,7 @@ window.top_bar .modules-center {
 }
 
 #custom-night_mode {
-  margin-right: 2;
+  margin-right: 6;
 }
 
 #custom-night_mode.off {
@@ -204,7 +205,11 @@ window.top_bar .modules-center {
 }
 
 #custom-dunst {
-  margin-right: 2;
+  margin-right: 6;
+}
+
+#custom-media {
+  margin-right: 6;
 }
 
 #custom-media.Paused {
@@ -213,27 +218,27 @@ window.top_bar .modules-center {
 
 #custom-webcam {
   color: @maroon;
-  margin-right: 3;
+  margin-right: 6;
 }
 
 #privacy-item.screenshare {
   color: @peach;
-  margin-right: 5;
+  margin-right: 6;
 }
 
 #privacy-item.audio-in {
   color: @pink;
-  margin-right: 4;
+  margin-right: 6;
 }
 
 #custom-recording {
   color: @red;
-  margin-right: 4;
+  margin-right: 6;
 }
 
 #custom-geo {
   color: @yellow;
-  margin-right: 4;
+  margin-right: 6;
 }
 
 #custom-logout_menu {
