@@ -8,11 +8,11 @@ plugins = [
 ]
 
 [scratchpads.term]
-command = "kitty --class terminal-dropterm"
+command = "kitty --class terminal-dropterm fish --features no-query-term -i -l"
 class = "terminal-dropterm"
 animation = "fromTop"
 unfocus = "hide"
-excludes = "*"
+excludes = ["volume"]
 lazy = true
 multi = false
 size = "75% 60%"
@@ -25,7 +25,7 @@ animation = "fromLeft"
 class = "org.pulseaudio.pavucontrol"
 size = "40% 70%"
 unfocus = "hide"
-excludes = "*"
+excludes = ["term"]
 lazy = true
 margin = 90
 multi = false
