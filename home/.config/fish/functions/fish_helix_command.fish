@@ -24,9 +24,7 @@ function fish_helix_command
                     and not commandline --paging-mode
                     and commandline --showing-suggestion
                     and test (commandline -C) -ge (string length -- (commandline))
-                    for i in (seq 1 $count)
-                        commandline -f forward-word
-                    end
+                    __fish_helix_repeat_commandline $count forward-word
                     commandline -f begin-selection
                 else
                     commandline -C (math (commandline -C) + $count)
@@ -189,15 +187,20 @@ function __fish_helix_extend_by_mode
     end
 end
 
+function __fish_helix_repeat_commandline -a repeat_count
+    while test $repeat_count -gt 0
+        commandline -f $argv[2..-1]
+        set repeat_count (math "$repeat_count - 1")
+    end
+end
+
 function __fish_helix_find_char -a mode count fish_cmdline till
     # FIXME don't reset selection if N/A
     if test $mode = default
         commandline -f begin-selection
     end
     commandline -f $till $fish_cmdline
-    for i in (seq 2 $count)
-        commandline -f $till repeat-jump
-    end
+    __fish_helix_repeat_commandline (math "$count - 1") $till repeat-jump
 end
 
 function __fish_helix_find_next_cr -a mode count skip
@@ -212,13 +215,10 @@ function __fish_helix_find_next_cr -a mode count skip
     if test $mode = default -a -n "$chars"
         commandline -f begin-selection
     end
-    for i in (seq 1 (string length -- "$chars"))
-        commandline -f forward-char
-    end
+    __fish_helix_repeat_commandline (string length -- "$chars") forward-char
 end
 
 function __fish_helix_find_prev_cr -a mode count skip
-    set -l cursor (commandline -C)
     commandline --cut-at-cursor |
         sed -z 's/.\{'$skip'\}\n$//' |
         read -zl buffer
@@ -232,9 +232,7 @@ function __fish_helix_find_prev_cr -a mode count skip
     if test $mode = default -a $n_chars != 0
         commandline -f begin-selection
     end
-    for i in (seq 1 $n_chars)
-        commandline -f backward-char
-    end
+    __fish_helix_repeat_commandline $n_chars backward-char
 end
 
 function __fish_helix_goto_line_end
@@ -252,52 +250,42 @@ end
 function __fish_helix_goto_line -a number
     set -l lines (math min\($number, (commandline | wc -l)\))
     commandline -f beginning-of-buffer
-    for i in (seq 2 $lines)
-        commandline -f down-line
-    end
+    __fish_helix_repeat_commandline (math "$lines - 1") down-line
     __fish_helix_extend_by_mode
 end
 
-function __fish_helix_char_up -a mode count
+function __fish_helix_char_up
+    set -l count $argv[2]
+
     if commandline --paging-mode && not commandline --search-mode
-        for i in (seq 1 $count)
-            commandline -f up-line
-        end
+        __fish_helix_repeat_commandline $count up-line
         return
     end
     set -l line (commandline -L)
     if commandline --search-mode || test $line = 1
-        for i in (seq 1 (math min \($count, (count $history)\)))
-            commandline -f history-search-backward
-        end
+        __fish_helix_repeat_commandline (math min \($count, (count $history)\)) history-search-backward
         return
     end
     set -l count (math min\($count, $line-1\))
-    for i in (seq 1 $count)
-        commandline -f up-line
-    end
+    __fish_helix_repeat_commandline $count up-line
     __fish_helix_extend_by_mode
 end
 
-function __fish_helix_char_down -a mode count
+function __fish_helix_char_down
+    set -l count $argv[2]
+
     if commandline --paging-mode && not commandline --search-mode
-        for i in (seq 1 $count)
-            commandline -f down-line
-        end
+        __fish_helix_repeat_commandline $count down-line
         return
     end
     set -l line (commandline -L)
     set -l total (count (commandline))
     if commandline --search-mode || test $line = $total
-        for i in (seq 1 (math min \($count, (count $history)\)))
-            commandline -f history-search-forward
-        end
+        __fish_helix_repeat_commandline (math min \($count, (count $history)\)) history-search-forward
         return
     end
     set -l count (math min\($count, $total - $line\))
-    for i in (seq 1 $count)
-        commandline -f down-line
-    end
+    __fish_helix_repeat_commandline $count down-line
     __fish_helix_extend_by_mode
 end
 
@@ -313,9 +301,7 @@ function __fish_helix_next_word -a mode count regex
     if test $mode = default
         commandline -C (math $cursor + $left)
         commandline -f begin-selection
-        for i in (seq $left (math $right - 2))
-            commandline -f forward-char
-        end
+        __fish_helix_repeat_commandline (math max\(0, $right - $left - 1\)) forward-char
     else
         commandline -C (math $cursor + $right - 1)
     end
@@ -324,7 +310,9 @@ end
 function __fish_helix_prev_word -a mode count regex
     set -f left (math (commandline -C) + 1)
     set -f updated 0
-    for i in (seq 1 $count)
+    set -l remaining $count
+
+    while test $remaining -gt 0
         commandline |
             perl -e '
             use open qw(:std :utf8);
@@ -335,14 +323,14 @@ function __fish_helix_prev_word -a mode count regex
         set -f left $l
         set -f right $r
         set -f updated 1
+        set remaining (math "$remaining - 1")
     end
+
     test $updated -eq 0; and return
     if test $mode = default
         commandline -C (math $right - 1)
         commandline -f begin-selection
-        for i in (seq $left (math $right - 2))
-            commandline -f backward-char
-        end
+        __fish_helix_repeat_commandline (math max\(0, $right - $left - 1\)) backward-char
     else
         commandline -C (math $left)
     end
@@ -365,9 +353,7 @@ function __fish_helix_yank
     set -l cursor (commandline -C)
     commandline -f kill-selection yank backward-char
 
-    for i in (seq $cursor (math $end - 2))
-        commandline -f backward-char
-    end
+    __fish_helix_repeat_commandline (math max\(0, $end - $cursor - 1\)) backward-char
 end
 
 function __fish_helix_paste_before -a cmd_paste
@@ -378,9 +364,7 @@ function __fish_helix_paste_before -a cmd_paste
     commandline -C $start
     $cmd_paste
     commandline -f begin-selection
-    for i in (seq $start (math $end - 2))
-        commandline -f forward-char
-    end
+    __fish_helix_repeat_commandline (math max\(0, $end - $start - 1\)) forward-char
     if test $cursor = $start
         commandline -f swap-selection-start-stop
     end
@@ -397,14 +381,10 @@ function __fish_helix_paste_after -a cmd_paste
     if test "$argv[2]" = --clip
         commandline -C (math $end - 1)
     else
-        for i in (seq 0 (string length "$fish_killring[1]"))
-            commandline -f backward-char
-        end
+        __fish_helix_repeat_commandline (math 1 + (string length "$fish_killring[1]")) backward-char
     end
     commandline -f begin-selection
-    for i in (seq $start (math $end - 2))
-        commandline -f backward-char
-    end
+    __fish_helix_repeat_commandline (math max\(0, $end - $start - 1\)) backward-char
     if test $cursor != $start
         commandline -f swap-selection-start-stop
     end
@@ -425,17 +405,13 @@ function __fish_helix_replace_selection -a replacement cmd_paste
 
     if test "$argv[3]" = --clip
         commandline -f backward-char begin-selection
-        for i in (seq (math $start + 2) (commandline -C))
-            commandline -f backward-char
-        end
+        __fish_helix_repeat_commandline (math max\(0, (commandline -C) - $start - 1\)) backward-char
         if test $cursor != $start
             commandline -f swap-selection-start-stop
         end
     else
         commandline -f begin-selection
-        for i in (seq 2 (string length "$replacement"))
-            commandline -f forward-char
-        end
+        __fish_helix_repeat_commandline (math max\(0, (string length "$replacement") - 1\)) forward-char
         if test $cursor = $start
             commandline -f swap-selection-start-stop
         end

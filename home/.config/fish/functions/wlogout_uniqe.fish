@@ -1,5 +1,5 @@
 function wlogout_uniqe
-    if [ -z $(pidof wlogout) ]
+    if not pidof wlogout >/dev/null
         wlogout
     end
 end

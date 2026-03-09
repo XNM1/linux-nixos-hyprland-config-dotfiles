@@ -282,6 +282,6 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
     fish_vi_cursor
     set -g fish_cursor_selection_mode inclusive
 
-    set fish_bind_mode $init_mode
+    set -g fish_bind_mode $init_mode
 
 end
