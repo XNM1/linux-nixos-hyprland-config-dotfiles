@@ -7,7 +7,7 @@
 ![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
 ![linux kernel](https://img.shields.io/badge/kernel-zen-informational.svg?style=flat&logo=linux&logoColor=f4dbd6&colorA=24273A&colorB=b7bdf8)
 ![hyprland](https://img.shields.io/badge/hyprland-stable-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
-![rust](https://img.shields.io/badge/rust-nightly-informational.svg?style=flat&logo=rust&logoColor=f5a97f&colorA=24273A&colorB=f5a97f)
+![rust](https://img.shields.io/badge/rust-stable-informational.svg?style=flat&logo=rust&logoColor=f5a97f&colorA=24273A&colorB=f5a97f)
 
 </div>
 
@@ -38,7 +38,7 @@ This system leverages cutting-edge channels and versions of software to provide 
 - **flake** (An experimental feature of the Nix package manager)
 - ~~**nur** (The Nix User Repository)~~ *currently disabled
 - **nixpkgs**: unstable
-- **rust**: nightly version
+- **rust**: stable version
 
 This approach ensures that you stay on the forefront of technology, receiving the most recent software advancements promptly.
 > [!WARNING]
@@ -48,7 +48,7 @@ This approach ensures that you stay on the forefront of technology, receiving th
 > Please note that the system utilizes **Podman** instead of **Docker** for containerization due to various reasons, primarily related to security (rootless and daemonless containers), easier migration to Kubernetes, availability of pods, compatibility with systemd, and better security for `distrobox`. If you prefer to use **Docker** instead of **Podman**, you can make the switch by commenting out the **Podman** section in the `nixos/virtualisation.nix` file and uncommenting the **Docker** section. More details on **Docker** configuration in NixOS can be found [here](https://nixos.wiki/wiki/Docker).
 
 > [!NOTE]
-> The system also enables SELinux patches, as well as AppArmor and Tomoyo Linux Security Modules. It includes security daemons such as Fail2Ban and USBGuard, with Firejail preinstalled to meet your security requirements.
+> The system enables AppArmor and additional hardening through kernel LSMs, along with security services such as Fail2Ban and USBGuard. Firejail is also preinstalled for sandboxing desktop applications.
 
 You have the flexibility to customize these configurations according to your needs by modifying the respective configuration files.
 
@@ -78,12 +78,12 @@ You have the flexibility to customize these configurations according to your nee
 | Editor                | Helix                       |
 | Terminal              | Kitty + Starship          |
 | OSD                   | Avizo                       |
-| Night Gamma           | Wlsunset                    |
-| Fetch Utility         | Neofetch                    |
+| Night Gamma           | Hyprsunset                  |
+| Fetch Utility         | Fastfetch                   |
 | Theme                 | Catppuccin Macchiato        |
 | Icons                 | Colloid-teal-dark, Numix-Circle |
 | Font                  | JetBrains Mono + Nerd Font Patch |
-| Player                | Youtube Music + Spotify     |
+| Player                | Pear Desktop + Spotify      |
 | File Browser          | Thunar + Yazi               |
 | Internet Browser      | Qutebrowser, Brave + Vimium + NightTab + Stylus |
 | Mimetypes             | MPV, Imv, Zathura            |
@@ -138,7 +138,7 @@ And many other useful utilities. The full list can be found in the system config
 > [!IMPORTANT]
 > Also, don't forget to delete or change to my git settings in `home/.gitconfig`, `home/projects/.gitconfig.personal`, `home/.ssh/config`, and `home/work/.gitconfig.work` files, as they are configured for my personal use.
 
-5. Enable `flake` support (more [here](https://nixos.wiki/wiki/Flakes#Enable_flakes_temporarily)) on your current system. Don't forget to run `sudo nixos-rebuild switch` after enabling `flake` in your `/etc/configuration.nix`.
+5. For the first rebuild, enable `nix-command` and `flakes` temporarily if your current system does not already have them (more [here](https://nixos.wiki/wiki/Flakes#Enable_flakes_temporarily)). After the first successful rebuild, this repo keeps both features enabled through `nixos/nix-settings.nix`.
 6. Copy or move all files (with replacements) from the `home` directory to your `$HOME` directory in Linux.
 7. Copy or move all files (with replacements and **sudo** permissions) from the `nixos` directory to `/etc/nixos/`.
 
@@ -169,7 +169,7 @@ And many other useful utilities. The full list can be found in the system config
    - Select the imported profile named "catppuccin-theme".
    - Click "Load" and exit from "Settings".
 
- - Apply Open-WebUI Settings
+  - Apply Open-WebUI Settings (only if you enable `services.open-webui.enable = true` in `nixos/llm.nix`)
     - Navigate to the Open-WebUI page: `http://localhost:8888`.
     - Signup or signin if you haven't already done so.  
     - Click on the user photo in the top-right corner.
@@ -190,8 +190,8 @@ And many other useful utilities. The full list can be found in the system config
 
 | Key Combination        | Action                       |
 |------------------------|------------------------------|
-| ALT + R                | Resize windows mode          |
-| ALT + M                | Move windows mode            |
+| SUPER + ALT + R        | Resize windows mode          |
+| SUPER + ALT + M        | Move windows mode            |
 | SUPER + H, J, K, L/Arrows     | Change window focus   |
 | SUPER + 1..0           | Change workspace (1-10)      |
 | SUPER + ALT + 1..0     | Change workspace (11-20)|
@@ -202,20 +202,19 @@ And many other useful utilities. The full list can be found in the system config
 | SUPER + CTRL + F       | Toggle full-screen           |
 | SUPER + SHIFT + O      | Toggle split                 |
 | SUPER + SHIFT + P      | Toggle pseudo                |
-| SUPER + SHIFT + M      | Exit from `hyprland`         |
 | SUPER + CTRL + E       | Expose all windows using `pyprland` |
 | SUPER + CTRL + M       | Expose all minimized windows using `pyprland` |
 | SUPER + M              | Minimize or restore a window using `pyprland` |
-| SUPER + CTRL + T       | Launch scratchpad with `wezterm` using `pyprland` |
+| SUPER + CTRL + T       | Launch scratchpad with `kitty` using `pyprland` |
 | SUPER + CTRL + V       | Launch scratchpad with `pavucontrol` using `pyprland` |
-| SUPER + T              | Launch `wezterm`             |
-| SUPER + D              | Launch `rofi -drun`          |
+| SUPER + T              | Launch `kitty`               |
+| SUPER + D              | Launch `rofi -show drun`     |
 | SUPER + B              | Launch `qutebrowser`         |
 | SUPER + SHIFT + B      | Launch `brave`               |
 | SUPER + F              | Launch `thunar`              |
 | SUPER + ESCAPE         | Launch `wlogout`             |
 | SUPER + S              | Launch `spotify`             |
-| SUPER + Y              | Launch `youtube-music`       |
+| SUPER + Y              | Launch `pear-desktop`        |
 | SUPER + SHIFT + D      | Launch `discord`             |
 | SUPER + SHIFT + T      | Launch `telegram`            |
 | SUPER + SHIFT + L      | Launch `hyprlock`            |
@@ -223,7 +222,7 @@ And many other useful utilities. The full list can be found in the system config
 | SUPER + E              | Launch `swappy` to edit last taken screenshot |
 | SUPER + R              | Record screen area (MP4)     |
 | SUPER + SHIFT + R      | Record screen area (GIF)     |
-| SUPER + C              | Launch color picker (using `hyperpicer`) |
+| SUPER + C              | Launch color picker (using `hyprpicker`) |
 | SUPER + Z              | Toggle Zoom (with `pyprland`)|
 | SUPER + V              | Launch clipboard menu (`rofi -dmenu`) |
 | SUPER + SHIFT + V      | Launch clipboard menu (`rofi -dmenu`) (copy to clipboard) |
@@ -272,28 +271,30 @@ This configuration includes several AI/LLM tools and services for local developm
 **Local AI Services:**
 - **Ollama** - Local LLM server with pre-loaded models:
   - Accessible at `http://localhost:11434`
-  - Models: `llama3.2:3b`, `llama3.2-vision:11b`, `phi4:14b`, `deepseek-r1:7b`, `dolphin3:8b`, `smallthinker:3b`
-  - Text embedding model: `nomic-embed-text`
+  - Current defaults include `llama3.2:3b`, `smallthinker:3b`, `gemma3n:e4b`, `gemma3:4b`, `gpt-oss:20b`, `second_constantine/gpt-oss-u:20b`, `qwen3:14b`, `devstral-small-2:24b`, `glm-4.7-flash`, `x/z-image-turbo`, `x/flux2-klein:4b`, and `x/flux2-klein:9b`
+  - Text embedding model: `nomic-embed-text-v2-moe`
   - CUDA acceleration enabled for GPU inference
+  - See `nixos/llm.nix` for the current model list
   
 - **SearXNG (Searx fork)** - Privacy-respecting meta search engine:
   - Accessible at `http://localhost:7777`
   - Supports HTML and JSON formats
   - 🔒 Remember to set `SEARX_SECRET_KEY` in your environment file: `home/.config/.env.searxng`
 
-- **Open WebUI** - Local ChatGPT-style UI for Ollama:
-  - Accessible at `http://localhost:8888`
-  - Modern web interface with conversation history
-  - Supports model switching and prompt templates
+- **Open WebUI** - Optional local ChatGPT-style UI for Ollama:
+  - Configured for `http://localhost:8888`
+  - Disabled by default in `nixos/llm.nix`
+  - Supports model switching and prompt templates when enabled
 
 **AI Tools:**
-- `aichat` - ChatGPT-like CLI and REPL with lot of features
-- `aider-chat` - Code assistant/chat directly in the terminal
-- `alpaca` - GUI LLM client with markdown support
+- `aichat` - ChatGPT-like CLI and REPL with lots of features
 - `oterm` - TUI LLM client with markdown support
+- `fabric-ai` - Prompt and workflow toolkit for local AI usage
+- `opencode` - Terminal coding agent powered by local and remote models
+- `agent-browser` - Browser automation tool for AI workflows
 
 > [!NOTE]
-> These AI services are enabled by default.
+> Ollama and SearXNG are enabled by default. Open WebUI is available in the configuration, but disabled by default.
 
 To disable them:
 1. Edit `nixos/llm.nix`
@@ -357,7 +358,7 @@ Here are some tips to enhance your Rust experience on this system:
 This repo contains a NixOS configuration file (`nixos/yubikey.nix`) enabling:
 
   - Yubikey authentication with pam_u2f
-  - Passwordless login in greetd, sudo, ssh, and hyprlock
+  - Passwordless login in greetd, sudo, and hyprlock
 
 > [!WARNING]
 > While convenient, using a Yubikey for display managers (like greetd) and screen lockers (like hyprlock) without  additional two-factor or multi-factor authentication (2FA/MFA) has risks. If your Yubikey is lost or stolen, someone could gain full system access before you reset keys. Yubikeys excel at protecting against online attacks but are less secure against offline attacks.
