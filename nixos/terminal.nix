@@ -61,6 +61,9 @@
     mdcat
     treemd
     pandoc
+    tabiew
+    tidy-viewer
+    qsvlite
     lsd
     lsof
     gping
