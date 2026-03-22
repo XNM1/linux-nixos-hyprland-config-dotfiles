@@ -56,7 +56,7 @@
         "/run/current-system/sw/bin/python",
         "mcp-server-git"
       ],
-      "enabled": false,
+      "enabled": true,
       "type": "local"
     },
     "playwright": {
