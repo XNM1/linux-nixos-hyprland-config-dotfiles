@@ -1,6 +1,6 @@
 # model: ollama:gemma3n:e4b
 # model: ollama:gpt-oss:20b
-model: opencode-zen:minimax-m2.1
+model: opencode-zen:minimax-m2.5
 keybindings: vi
 function_calling: true
 rag_embedding_model: nomic-embed-text:latest
@@ -55,6 +55,6 @@ clients:
   api_base: https://opencode.ai/zen/v1
   api_key: your_api_key # FIXME
   models:
-    - name: minimax-m2.1
+    - name: minimax-m2.5
       max_input_tokens: 200000
       supports_function_calling: true
