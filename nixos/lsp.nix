@@ -5,20 +5,20 @@
     python313Packages.python-lsp-server
     ty
     ruff
-    nodePackages_latest.nodemon
-    nodePackages_latest.typescript
-    nodePackages_latest.typescript-language-server
+    nodemon
+    typescript
+    typescript-language-server
     eslint
     biome
     rubyPackages.htmlbeautifier
-    nodePackages_latest.vscode-langservers-extracted
+    vscode-langservers-extracted
     superhtml
     jsonnet-language-server
-    nodePackages_latest.yaml-language-server
+    yaml-language-server
     taplo #toml formatter & lsp
     tombi
-    nodePackages_latest.bash-language-server
-    nodePackages_latest.graphql-language-service-cli
+    bash-language-server
+    graphql-language-service-cli
     dockerfile-language-server
     vue-language-server
     lua-language-server
