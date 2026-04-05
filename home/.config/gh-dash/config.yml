@@ -8,6 +8,10 @@ prSections:
 - title: Involved
   filters: is:open involves:@me -author:@me
   type: null
+- title: All Open PRs
+  filters: is:open
+  limit: 100
+  type: null
 issuesSections:
 - title: My Issues
   filters: is:open author:@me
@@ -66,7 +70,8 @@ keybindings:
   issues: []
   prs: []
   branches: []
-repoPaths: {}
+repoPaths:
+  XNM1/*: ~/projects/*
 theme:
   ui:
     sectionsShowCount: true
