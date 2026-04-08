@@ -2,7 +2,7 @@
   "$schema": "https://opencode.ai/tui.json",
   "keybinds": {
     "theme_list": "ctrl+t",
-    "variant_cycle": "<leader>t"
+    "variant_list": "<leader>t"
   },
   "theme": "catppuccin"
 }
