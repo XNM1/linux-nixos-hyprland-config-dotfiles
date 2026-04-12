@@ -4,7 +4,7 @@
 
   services.ollama = {
     enable = true;
-    loadModels = [ "llama3.2:3b" "smallthinker:3b" "gemma3n:e4b" "gemma3:4b" "gpt-oss:20b" "second_constantine/gpt-oss-u:20b" "qwen3:14b" "devstral-small-2:24b" "glm-4.7-flash" "nomic-embed-text-v2-moe" "x/z-image-turbo" "x/flux2-klein:4b" "x/flux2-klein:9b" ];
+    loadModels = [ "gemma4:e2b" "gemma4:e4b" "gpt-oss:20b" "jaahas/qwen3.5-uncensored:4b" "jaahas/qwen3.5-uncensored:9b" "devstral-small-2:24b" "glm-4.7-flash" "nomic-embed-text-v2-moe" "x/z-image-turbo" "x/flux2-klein:4b" "x/flux2-klein:9b" ];
     syncModels = true;
     package = pkgs.ollama-cuda;
   };

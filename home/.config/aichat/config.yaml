@@ -1,39 +1,39 @@
-# model: ollama:gemma3n:e4b
+# model: ollama:gemma4:e4b
+# model: ollama:devstral-small-2:24b
 # model: ollama:gpt-oss:20b
 model: opencode-zen:minimax-m2.5
 keybindings: vi
 function_calling: true
-rag_embedding_model: nomic-embed-text:latest
+rag_embedding_model: ollama:nomic-embed-text-v2-moe
 clients:
 - type: openai-compatible
   name: ollama
   api_base: http://127.0.0.1:11434/v1
   models:
-  - name: llama3.2:3b
-    max_input_tokens: 128000
-    supports_function_calling: true
-
-  - name: smallthinker:3b
-    max_input_tokens: 32000
-
-  - name: gemma3n:e4b
-    max_input_tokens: 32000
-
-  - name: gemma3:4b
+  - name: gemma4:e2b
     max_input_tokens: 128000
     supports_vision: true
+    supports_function_calling: true
+    supports_reasoning: true
+
+  - name: gemma4:e4b
+    max_input_tokens: 128000
+    supports_vision: true
+    supports_function_calling: true
+    supports_reasoning: true
 
   - name: gpt-oss:20b
     max_input_tokens: 128000
     supports_function_calling: true
     supports_reasoning: true
 
-  - name: second_constantine/gpt-oss-u:20b
-    max_input_tokens: 128000
+  - name: jaahas/qwen3.5-uncensored:4b
+    max_input_tokens: 256000
+    supports_function_calling: true
     supports_reasoning: true
 
-  - name: qwen3:14b
-    max_input_tokens: 40000
+  - name: jaahas/qwen3.5-uncensored:9b
+    max_input_tokens: 256000
     supports_function_calling: true
     supports_reasoning: true
 
@@ -42,19 +42,20 @@ clients:
     supports_vision: true
     supports_function_calling: true
 
-  - name: glm-4.7-flash:latest
+  - name: glm-4.7-flash
     max_input_tokens: 198000
     supports_function_calling: true
     supports_reasoning: true
 
-  - name: nomic-embed-text-v2-moe:latest
+  - name: nomic-embed-text-v2-moe
     type: embedding
+    max_tokens_per_chunk: 512
 
 - type: openai
   name: opencode-zen
   api_base: https://opencode.ai/zen/v1
   api_key: your_api_key # FIXME
   models:
-    - name: minimax-m2.5
-      max_input_tokens: 200000
-      supports_function_calling: true
+  - name: minimax-m2.5
+    max_input_tokens: 200000
+    supports_function_calling: true
