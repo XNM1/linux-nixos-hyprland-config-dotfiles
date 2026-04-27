@@ -18,6 +18,7 @@
     sops
     rops
     git
+    git-lfs
     lefthook
     pre-commit-hook-ensure-sops
     lazygit
