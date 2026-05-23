@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    python313Packages.python-lsp-server
+    python314Packages.python-lsp-server
     ty
     ruff
     nodemon

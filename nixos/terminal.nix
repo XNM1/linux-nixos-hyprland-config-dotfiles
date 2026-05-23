@@ -72,7 +72,7 @@
     yazi
     chafa
     jrnl
-    python313Packages.faker
+    python314Packages.faker
 
     cmatrix
     pipes-rs
