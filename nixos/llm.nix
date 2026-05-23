@@ -56,7 +56,7 @@
     # aider-chat
     # nix-ai-tools.pi
     # nix-ai-tools.ccusage-pi
-    nix-ai-tools.ccusage-opencode
+    nix-ai-tools.ccusage
     nix-ai-tools.opencode
     nix-ai-tools.openspec
     nix-ai-tools.openskills
