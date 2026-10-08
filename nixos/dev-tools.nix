@@ -13,7 +13,7 @@
     jdk17
 
     dioxus-cli
-    trunk
+    # trunk # broken: libdeflate-sys 1.23.1 vs gcc-16 (evex512 target attr removed)
     devenv
     sops
     rops
