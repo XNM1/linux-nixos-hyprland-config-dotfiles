@@ -8,8 +8,8 @@
   environment.variables.HYPRCURSOR_THEME = "Catppuccin-Macchiato-Teal";
   environment.variables.HYPRCURSOR_SIZE = "24";
   qt.enable = true;
-  qt.platformTheme = "gtk2";
-  qt.style = "gtk2";
+  qt.platformTheme = "gnome";
+  qt.style = "adwaita";
   console = {
     earlySetup = true;
     colors = [
