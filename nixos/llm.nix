@@ -4,7 +4,23 @@
 
   services.ollama = {
     enable = true;
-    loadModels = [ "gemma4:e2b" "gemma4:e4b" "gpt-oss:20b" "jaahas/qwen3.5-uncensored:4b" "jaahas/qwen3.5-uncensored:9b" "devstral-small-2:24b" "glm-4.7-flash" "nomic-embed-text-v2-moe" "x/z-image-turbo" "x/flux2-klein:4b" "x/flux2-klein:9b" ];
+    loadModels = [
+      # small/laptop (multimodal, audio on E2B/E4B)
+      "gemma4:e2b"                              # 4.6 GB
+      "gemma4:e4b"                              # 6.6 GB
+      # medium ~27B, 2-bit Qwen3.8-27B (Ollama-runnable stand-in for
+      # Bonsai 2 / Saluki, which need Prism's llama.cpp fork / Underdog engine)
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ2_XXS"  # 7.27 GB
+      # medium, max quality: q4 17.7 GB, CPU-offloaded; hybrid linear
+      # attention (48/64 layers) keeps KV small so it stays usable
+      "qwen3.8:27b"
+      # System One (Jev-like) open decision models, /v1/systemone (Ollama >= 0.35)
+      "nimble:9b"                               # Bespoke Labs, 9B
+      "laya"                                    # Convai 421M, Apache 2.0
+      # embeddings
+      "qwen3-embedding:8b"                      # 4.7 GB q4
+      "embeddinggemma"                          # 622 MB, 300M
+    ];
     syncModels = true;
     package = pkgs.ollama-cuda;
   };
