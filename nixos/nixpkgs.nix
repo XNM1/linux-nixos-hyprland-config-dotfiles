@@ -8,6 +8,8 @@
     (final: prev: {
       nix-ai-tools = inputs.nix-ai-tools.packages.${final.stdenv.hostPlatform.system};
       wezterm-flake = inputs.wezterm.packages.${final.stdenv.hostPlatform.system}.default;
+      omp = inputs.omp.packages.${final.stdenv.hostPlatform.system}.omp;
+      herdr = inputs.herdr.packages.${final.stdenv.hostPlatform.system}.herdr;
     })
   ];
   

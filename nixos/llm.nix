@@ -47,6 +47,9 @@
     nix-ai-tools.mcporter
     nix-ai-tools.rtk
 
+    omp
+    herdr
+
     oterm
     # alpaca
 

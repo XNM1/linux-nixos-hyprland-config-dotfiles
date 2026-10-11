@@ -10,6 +10,10 @@
       nix-ai-tools.url = "github:numtide/nix-ai-tools";
       nix-ai-tools.inputs.systems.follows = "systems";
       nix-ai-tools.inputs.blueprint.inputs.systems.follows = "systems";
+      omp.url = "github:can1357/oh-my-pi";
+      omp.inputs.nixpkgs.follows = "nixpkgs";
+      herdr.url = "github:herdrdev/herdr";
+      herdr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, ... } @ inputs:
