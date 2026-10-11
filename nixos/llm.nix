@@ -39,10 +39,10 @@
     port = 8888;
     host = "127.0.0.1";
   };
-  
+
   environment.systemPackages = with pkgs; [
     nix-ai-tools.backlog-md
-    nix-ai-tools.beads-rust
+    # nix-ai-tools.beads-rust
     nix-ai-tools.tuicr
     nix-ai-tools.mcporter
     nix-ai-tools.rtk
@@ -71,8 +71,13 @@
     # open-webui
 
     chromium
-    # playwright
+    # google-chrome
 
     nix-ai-tools.agent-browser
+
+    # playwright-mcp
+    # mcp-nixos
+    # mcp-k8s-go
+    # github-mcp-server
   ];
 }
