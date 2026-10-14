@@ -71,6 +71,12 @@ os:
     set -l lazygit_tab "main"
     set -l target (string replace -r ':$' '' -- "{{filename}}")
 
+    # Herdr workspace manager: delegate to the helix in the "editor" tab.
+    if test "$HERDR_ENV" = 1
+      fish ~/.config/lazygit/herdr-edit.fish "$target"
+      exit
+    end
+
     if zellij action dump-layout 2>/dev/null | grep -q 'tab name="editor"'
       set lazygit_tab "editor"
     end
@@ -89,6 +95,12 @@ os:
 
   # 'editAtLine' is used when you press 'e' inside a diff/hunk
   editAtLine: |-
+    # Herdr workspace manager: delegate to the helix in the "editor" tab.
+    if test "$HERDR_ENV" = 1
+      fish ~/.config/lazygit/herdr-edit.fish "{{filename}}:{{line}}"
+      exit
+    end
+
     set -l lazygit_tab "main"
 
     if zellij action dump-layout 2>/dev/null | grep -q 'tab name="editor"'
