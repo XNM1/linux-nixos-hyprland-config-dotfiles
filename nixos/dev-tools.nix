@@ -37,6 +37,7 @@
     gh-dash
     hurl
     grex
+    ast-grep
 
     surrealdb
     surrealdb-migrations
