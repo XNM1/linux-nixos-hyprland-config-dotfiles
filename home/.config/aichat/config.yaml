@@ -1,11 +1,20 @@
-# model: ollama:gemma4:e4b
-# model: ollama:devstral-small-2:24b
-# model: ollama:gpt-oss:20b
-model: opencode-zen:minimax-m2.5
+# Default: remote DGX vLLM (see clients below); fall back to local ollama for offline work.
+model: vllm:qwen3.8-flash-next
 keybindings: vi
 function_calling: true
-rag_embedding_model: ollama:nomic-embed-text-v2-moe
+rag_embedding_model: ollama:embeddinggemma:latest
 clients:
+- type: openai-compatible
+  name: vllm
+  api_base: http://<DGX_TAILSCALE_IP>:8000/v1 # FIXME: set your DGX Tailscale IP (the host running vLLM)
+  api_key: <DGX_VLLM_API_KEY> # FIXME: set your DGX vLLM API key
+  models:
+  - name: qwen3.8-flash-next
+    max_input_tokens: 262144
+    supports_vision: true
+    supports_function_calling: true
+    supports_reasoning: true
+
 - type: openai-compatible
   name: ollama
   api_base: http://127.0.0.1:11434/v1
@@ -22,40 +31,28 @@ clients:
     supports_function_calling: true
     supports_reasoning: true
 
-  - name: gpt-oss:20b
-    max_input_tokens: 128000
-    supports_function_calling: true
-    supports_reasoning: true
-
-  - name: jaahas/qwen3.5-uncensored:4b
+  - name: qwen3.8:27b
     max_input_tokens: 256000
+    supports_vision: true
     supports_function_calling: true
     supports_reasoning: true
 
-  - name: jaahas/qwen3.5-uncensored:9b
+  - name: hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ2_XXS
     max_input_tokens: 256000
-    supports_function_calling: true
-    supports_reasoning: true
-
-  - name: devstral-small-2:24b
-    max_input_tokens: 384000
     supports_vision: true
     supports_function_calling: true
 
-  - name: glm-4.7-flash
-    max_input_tokens: 198000
+  - name: openbmb/minicpm-v4.7:35b-a3b
+    max_input_tokens: 262144
+    supports_vision: true
     supports_function_calling: true
     supports_reasoning: true
 
-  - name: nomic-embed-text-v2-moe
+  - name: embeddinggemma:latest
     type: embedding
     max_tokens_per_chunk: 512
 
-- type: openai
-  name: opencode-zen
-  api_base: https://opencode.ai/zen/v1
-  api_key: your_api_key # FIXME
-  models:
-  - name: minimax-m2.5
-    max_input_tokens: 200000
-    supports_function_calling: true
+  - name: qwen3-embedding:8b
+    type: embedding
+    max_tokens_per_chunk: 2048
+

@@ -1,5 +1,5 @@
 ---
-model: ollama:gemma3:4b
+model: ollama:gemma4:e2b
 
 ---
 # Emoji Conversion Prompt
