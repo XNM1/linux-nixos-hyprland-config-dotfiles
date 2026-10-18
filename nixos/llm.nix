@@ -14,6 +14,8 @@
       # medium, max quality: q4 17.7 GB, CPU-offloaded; hybrid linear
       # attention (48/64 layers) keeps KV small so it stays usable
       "qwen3.8:27b"
+      # multimodal MoE, 35B total / 3B active, q4 (ollama.com/openbmb/minicpm-v4.7)
+      "openbmb/minicpm-v4.7:35b-a3b"            # 22 GB
       # System One (Jev-like) open decision models, /v1/systemone (Ollama >= 0.35)
       "nimble:9b"                               # Bespoke Labs, 9B
       "laya"                                    # Convai 421M, Apache 2.0
