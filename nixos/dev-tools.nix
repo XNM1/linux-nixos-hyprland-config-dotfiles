@@ -40,6 +40,7 @@
     ast-grep
     opengrep
     trivy
+    colgrep
 
     surrealdb
     surrealdb-migrations

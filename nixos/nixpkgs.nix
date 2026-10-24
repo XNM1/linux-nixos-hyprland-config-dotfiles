@@ -32,6 +32,31 @@
           platforms = [ "x86_64-linux" ];
         };
       };
+      # cargo-dist release binary; runtime downloads (encoder weights, agent 2B model,
+      # llama.cpp) all go to ~/.cache/colgrep, CPU/Vulkan inference, no telemetry.
+      colgrep = final.stdenvNoCC.mkDerivation rec {
+        pname = "colgrep";
+        version = "1.8.5";
+        src = final.fetchurl {
+          url = "https://github.com/lightonai/next-plaid/releases/download/v${version}/colgrep-x86_64-unknown-linux-gnu.tar.xz";
+          sha256 = "sha256-Uy4dpzn2tdSJza79IMWRj6G7D/n0VsiQmOtJpjea4gU=";
+        };
+        dontBuild = true;
+        nativeBuildInputs = [ final.autoPatchelfHook final.makeWrapper ];
+        buildInputs = [ final.openssl final.libgcc ];
+        # the downloaded ONNX Runtime gpu build dlopen()s libstdc++ at runtime
+        installPhase = ''
+          runHook preInstall
+          install -Dm755 colgrep $out/lib/colgrep/colgrep
+          makeWrapper $out/lib/colgrep/colgrep $out/bin/colgrep \
+            --prefix LD_LIBRARY_PATH : "${final.gcc.cc.lib}/lib"
+          runHook postInstall
+        '';
+        meta = {
+          mainProgram = "colgrep";
+          platforms = [ "x86_64-linux" ];
+        };
+      };
     })
   ];
   
