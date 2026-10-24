@@ -1,3 +1,16 @@
+# AI endpoint settings; see .env.llm.example (0600, not in the nix store).
+if test -f ~/.config/.env.llm
+    while read -l line
+        # Read only supported, literal values; never evaluate shell code.
+        set -l kv (string split -m1 = -- "$line")
+        test (count $kv) -eq 2; or continue
+        switch $kv[1]
+            case VLLM_API_BASE VLLM_API_KEY
+                set -gx $kv[1] "$kv[2]"
+        end
+    end <~/.config/.env.llm
+end
+
 if status is-interactive
     set --global fish_key_bindings fish_helix_key_bindings
     fish_user_key_bindings

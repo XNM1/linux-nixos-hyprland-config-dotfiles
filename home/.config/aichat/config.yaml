@@ -3,11 +3,17 @@ model: vllm:qwen3.8-flash-next
 keybindings: vi
 function_calling: true
 rag_embedding_model: ollama:embeddinggemma:latest
+# vllm connection supplied via VLLM_API_BASE and VLLM_API_KEY in .env.llm.
 clients:
 - type: openai-compatible
   name: vllm
-  api_base: http://<DGX_TAILSCALE_IP>:8000/v1 # FIXME: set your DGX Tailscale IP (the host running vLLM)
-  api_key: <DGX_VLLM_API_KEY> # FIXME: set your DGX vLLM API key
+  patch:
+    chat_completions:
+      '.*':
+        body:
+          temperature: 0.3
+          chat_template_kwargs:
+            enable_thinking: false
   models:
   - name: qwen3.8-flash-next
     max_input_tokens: 262144
@@ -55,4 +61,3 @@ clients:
   - name: qwen3-embedding:8b
     type: embedding
     max_tokens_per_chunk: 2048
-

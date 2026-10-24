@@ -25,4 +25,10 @@ function fish_user_key_bindings
     bind \e/ list-op -M insert
 
     bind \ea aichat_fish -M insert
+
+    # aichat codify/explain (Ctrl+P) and fzf suggestions (Ctrl+Space).
+    # Named key, not \c@: that expands to an empty sequence, which fish
+    # matches before any keystroke (picker fired on plain typing).
+    bind \cp aichat_fish -M insert
+    bind ctrl-space aichat_suggest -M insert
 end

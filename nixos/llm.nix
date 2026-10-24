@@ -72,6 +72,7 @@
     # alpaca
 
     aichat
+    gum # Progress UI for the fish AIChat bindings
     fabric-ai
 
     # aider-chat

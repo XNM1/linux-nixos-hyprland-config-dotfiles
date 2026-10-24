@@ -300,7 +300,19 @@ This configuration includes several AI/LLM tools and services for local developm
   - Supports model switching and prompt templates when enabled
 
 **AI Tools:**
-- `aichat` - ChatGPT-like CLI and REPL with lots of features
+- `aichat` - ChatGPT-like CLI and REPL; also the fish shell assistant:
+  **Ctrl+P** (or Alt+A) turns a `# comment` into a command and a command into
+  a comment, **Ctrl+Space** suggests up to five command completions via fzf
+  using recent history as context while preserving the typed command prefix.
+  With empty input, it suggests likely next commands from history.
+  All backed by the remote DGX vLLM. AIChat's model and request options
+  are configured in `home/.config/aichat/config.yaml`.
+  Both shortcuts show progress using `gum`; generated commands are placed
+  on the shell command line for review, not executed automatically.
+  Copy `home/.config/.env.llm.example` to `~/.config/.env.llm`, run
+  `chmod 600 ~/.config/.env.llm`, and set `VLLM_API_BASE` and `VLLM_API_KEY`
+  as literal, unquoted values without inline comments. For AIChat outside fish, run
+  `ln -s ../.env.llm ~/.config/aichat/.env` if that path does not exist.
 - `oterm` - TUI LLM client with markdown support
 - `fabric-ai` - Prompt and workflow toolkit for local AI usage
 - `opencode` - Terminal coding agent powered by local and remote models
