@@ -2,3 +2,5 @@ pre-commit:
   commands:
     gitleaks:
       run: gitleaks git --pre-commit --redact --staged --verbose
+    opengrep:
+      run: opengrep scan --config auto --error {staged_files}
