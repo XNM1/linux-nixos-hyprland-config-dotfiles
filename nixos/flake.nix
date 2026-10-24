@@ -71,6 +71,7 @@
         ./wasm.nix
         ./info-fetchers.nix
         ./dev-tools.nix
+        ./colgrep.nix
         ./terminal.nix
         ./llm.nix
         ./work.nix
