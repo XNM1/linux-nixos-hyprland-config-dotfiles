@@ -38,6 +38,7 @@
     hurl
     grex
     ast-grep
+    opengrep
 
     surrealdb
     surrealdb-migrations
