@@ -51,7 +51,26 @@
           install -Dm755 llama-server $out/lib/colgrep-llama-server/llama-server
           cp -a --no-dereference lib*.so* $out/lib/colgrep-llama-server/
           mkdir -p $out/bin
-          ln -s ../lib/colgrep-llama-server/llama-server $out/bin/colgrep-llama-server
+          cat > $out/bin/colgrep-llama-server <<'EOF'
+          #!/bin/bash
+          # colgrep picks the Vulkan device with most free memory, which is the
+          # iGPU when it advertises shared RAM. Strip that choice, force dGPU.
+          # Vulkan0 = NVIDIA with current ICD order; COLGREP_VULKAN_DEVICE overrides.
+          declare -a args=("$@") out=()
+          i=0
+          while [ $i -lt ''${#args[@]} ]; do
+            case "''${args[$i]}" in
+              --device) ((i++));;
+              --device=*) ;;
+              *) out+=("''${args[$i]}");;
+            esac
+            ((i++))
+          done
+          exec "$(dirname "$0")/../lib/colgrep-llama-server/llama-server" \
+            --device "''${COLGREP_VULKAN_DEVICE-Vulkan0}" "''${out[@]}"
+          EOF
+          sed -i "1c #!${final.bash}/bin/bash" $out/bin/colgrep-llama-server
+          chmod +x $out/bin/colgrep-llama-server
           runHook postInstall
         '';
         meta = {
