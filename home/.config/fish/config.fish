@@ -5,10 +5,14 @@ if test -f ~/.config/.env.llm
         set -l kv (string split -m1 = -- "$line")
         test (count $kv) -eq 2; or continue
         switch $kv[1]
-            case VLLM_API_BASE VLLM_API_KEY
+            case VLLM_API_BASE VLLM_API_KEY _PR_AI_MODEL _PR_AI_EXTRA_BODY
                 set -gx $kv[1] "$kv[2]"
         end
     end <~/.config/.env.llm
+    if set -q VLLM_API_BASE
+        set -gx _PR_AI_URL (string trim --right --chars=/ -- "$VLLM_API_BASE")/chat/completions
+    end
+    set -q VLLM_API_KEY; and set -gx _PR_AI_API_KEY "$VLLM_API_KEY"
 end
 
 if status is-interactive

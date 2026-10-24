@@ -317,6 +317,13 @@ This configuration includes several AI/LLM tools and services for local developm
 - `fabric-ai` - Prompt and workflow toolkit for local AI usage
 - `opencode` - Terminal coding agent powered by local and remote models
 - `agent-browser` - Browser automation tool for AI workflows
+- `pay-respects` - thefuck-style fixer for the last failed command (`f` or
+  **Ctrl+X Ctrl+X**, also auto-offers a fix on command-not-found). Rules run
+  locally; when no rule provides a fix, it requests AI suggestions from the
+  self-hosted DGX vLLM, remote from this machine. Fish derives `_PR_AI_URL`
+  and `_PR_AI_API_KEY` from the shared endpoint and key in `~/.config/.env.llm`,
+  and loads `_PR_AI_MODEL` and `_PR_AI_EXTRA_BODY` from the same file.
+  These settings override the upstream hosted defaults.
 
 > [!NOTE]
 > Ollama and SearXNG are enabled by default. Open WebUI is available in the configuration, but disabled by default.

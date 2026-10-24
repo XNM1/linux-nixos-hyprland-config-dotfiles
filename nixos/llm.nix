@@ -73,6 +73,7 @@
 
     aichat
     gum # Progress UI for the fish AIChat bindings
+    pay-respects
     fabric-ai
 
     # aider-chat

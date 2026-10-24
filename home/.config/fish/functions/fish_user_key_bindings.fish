@@ -31,4 +31,10 @@ function fish_user_key_bindings
     # matches before any keystroke (picker fired on plain typing).
     bind \cp aichat_fish -M insert
     bind ctrl-space aichat_suggest -M insert
+
+    # pay-respects (thefuck successor) fix: `f` + Ctrl-X Ctrl-X inline +
+    # command-not-found hook, AI pointed at the DGX vLLM via _PR_AI_*
+    if command -q pay-respects
+        pay-respects fish | source
+    end
 end
