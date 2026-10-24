@@ -39,6 +39,7 @@
     grex
     ast-grep
     opengrep
+    trivy
 
     surrealdb
     surrealdb-migrations
