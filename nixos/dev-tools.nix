@@ -41,6 +41,7 @@
     opengrep
     trivy
     colgrep
+    colgrep-llama-server
 
     surrealdb
     surrealdb-migrations

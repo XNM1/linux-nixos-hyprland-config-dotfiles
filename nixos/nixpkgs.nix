@@ -32,6 +32,33 @@
           platforms = [ "x86_64-linux" ];
         };
       };
+      # llama.cpp build colgrep pins for its managed agent server (same tarball
+      # + sha colgrep itself downloads); ubuntu binaries repatched for NixOS.
+      # Bump together with a colgrep update when the pinned build changes.
+      colgrep-llama-server = final.stdenvNoCC.mkDerivation rec {
+        pname = "colgrep-llama-server";
+        version = "b11476";
+        src = final.fetchurl {
+          url = "https://github.com/ggml-org/llama.cpp/releases/download/${version}/llama-${version}-bin-ubuntu-vulkan-x64.tar.gz";
+          sha256 = "sha256-W7QwbXkX8z6B79oC5veRrmqC6GvuEhIno6srTo5AQn8=";
+        };
+        sourceRoot = "llama-${version}";
+        dontBuild = true;
+        nativeBuildInputs = [ final.autoPatchelfHook ];
+        buildInputs = [ final.openssl final.gcc.cc.lib final.vulkan-loader ];
+        installPhase = ''
+          runHook preInstall
+          install -Dm755 llama-server $out/lib/colgrep-llama-server/llama-server
+          cp -a --no-dereference lib*.so* $out/lib/colgrep-llama-server/
+          mkdir -p $out/bin
+          ln -s ../lib/colgrep-llama-server/llama-server $out/bin/colgrep-llama-server
+          runHook postInstall
+        '';
+        meta = {
+          mainProgram = "colgrep-llama-server";
+          platforms = [ "x86_64-linux" ];
+        };
+      };
       # cargo-dist release binary; runtime downloads (encoder weights, agent 2B model,
       # llama.cpp) all go to ~/.cache/colgrep, CPU/Vulkan inference, no telemetry.
       colgrep = final.stdenvNoCC.mkDerivation rec {
