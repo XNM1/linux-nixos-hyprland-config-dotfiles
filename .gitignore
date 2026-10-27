@@ -2,3 +2,9 @@
 .env
 .env.llm
 home/.config/fish/fish_variables
+home/.omp/agent/node_modules/
+home/.omp/plugins/
+home/.caveman/
+*.db
+*.db-shm
+*.db-wal

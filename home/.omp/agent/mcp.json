@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
+  "mcpServers": {
+    "backlog": {
+      "type": "stdio",
+      "command": "backlog",
+      "args": [
+        "mcp",
+        "start"
+      ]
+    },
+    "browser-mcp": {
+      "enabled": false,
+      "type": "stdio",
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@browsermcp/mcp@latest"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "chrome-devtools-mcp@latest",
+        "--executablePath",
+        "/run/current-system/sw/bin/chromium"
+      ]
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "git": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--python",
+        "/run/current-system/sw/bin/python",
+        "mcp-server-git"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+providers:
+  vllm:
+    baseUrl: http://<DGX_TAILSCALE_IP>:8000/v1 # FIXME: set your DGX TAILSCALE IP (the host running vLLM)
+    api: openai-completions
+    # Key lives in ~/.omp/agent/.env as VLLM_API_KEY; apiKey resolves env-var names.
+    apiKey: VLLM_API_KEY
+    models:
+      - id: qwen3.8-flash-next
+        name: Qwen3.8 Flash Next — DGX
+        reasoning: true
+        input: [text, image]
+        contextWindow: 262144
+        maxTokens: 32768
+        compat:
+          thinkingFormat: qwen-chat-template
+          qwenTemplateReasoningEffort: true
+          reasoningContentField: reasoning
+          supportsDeveloperRole: false
+          supportsStore: false
+          maxTokensField: max_tokens
+  system-one:
+    baseUrl: http://<DGX_TAILSCALE_IP>:8002 # FIXME: set your DGX Tailscale IP (the host running the D1 judge)
+    api: typesafe
+    # Key lives in ~/.omp/agent/.env as D1_API_KEY; apiKey resolves env-var names.
+    apiKey: D1_API_KEY
+    models:
+      - id: d1-3b
+        name: Liquid D1-3B Q8
+        contextWindow: 32768

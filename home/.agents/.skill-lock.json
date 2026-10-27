@@ -1,0 +1,426 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-02-09T17:12:49.475Z",
+      "updatedAt": "2026-03-22T15:46:42.504Z"
+    },
+    "webapp-testing": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/webapp-testing/SKILL.md",
+      "skillFolderHash": "5ffb7dc66b9fd4c25c3e400a4c00da99a349b714",
+      "installedAt": "2026-02-09T19:50:08.881Z",
+      "updatedAt": "2026-05-23T16:24:07.444Z"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
+      "installedAt": "2026-02-09T19:50:11.091Z",
+      "updatedAt": "2026-02-09T19:50:11.091Z"
+    },
+    "theme-factory": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/theme-factory/SKILL.md",
+      "skillFolderHash": "e05534d132fb1b21f9917840874758e30f0a9b1a",
+      "installedAt": "2026-02-09T19:50:14.033Z",
+      "updatedAt": "2026-05-23T16:24:09.366Z"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
+      "installedAt": "2026-02-09T19:50:16.287Z",
+      "updatedAt": "2026-05-23T16:24:10.530Z"
+    },
+    "marketing-psychology": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/marketing-psychology/SKILL.md",
+      "skillFolderHash": "0a527bd6cff5ab2fe2b5a60b97d86013a385326a",
+      "installedAt": "2026-02-09T19:50:20.446Z",
+      "updatedAt": "2026-05-23T16:24:12.515Z"
+    },
+    "copywriting": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/copywriting/SKILL.md",
+      "skillFolderHash": "dec39a2d87a7cc4c7e50e4efee937a9df7d81a05",
+      "installedAt": "2026-02-09T19:50:22.188Z",
+      "updatedAt": "2026-05-23T16:24:14.476Z"
+    },
+    "marketing-ideas": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/marketing-ideas/SKILL.md",
+      "skillFolderHash": "5a9b8bbe71338ccc0f5c882228585e7aa3b2b532",
+      "installedAt": "2026-02-09T19:50:24.089Z",
+      "updatedAt": "2026-05-23T16:24:16.490Z"
+    },
+    "content-strategy": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/content-strategy/SKILL.md",
+      "skillFolderHash": "8a2387b41d046b1b5a72a346103120b3c28e8bf5",
+      "installedAt": "2026-02-09T19:50:30.003Z",
+      "updatedAt": "2026-05-23T16:24:18.646Z"
+    },
+    "terraform-module-library": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/cloud-infrastructure/skills/terraform-module-library/SKILL.md",
+      "skillFolderHash": "06e4f4e3295990a5829735db832044925a85e222",
+      "installedAt": "2026-02-09T19:50:41.385Z",
+      "updatedAt": "2026-03-22T15:47:25.908Z"
+    },
+    "rust-async-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/systems-programming/skills/rust-async-patterns/SKILL.md",
+      "skillFolderHash": "3624037dbe3d96e2e55ecb6988afeaffbbb9ad1b",
+      "installedAt": "2026-02-09T19:50:43.625Z",
+      "updatedAt": "2026-05-23T16:24:24.545Z"
+    },
+    "mermaid-diagrams": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+      "skillPath": "skills/mermaid-diagrams/SKILL.md",
+      "skillFolderHash": "1b7a962715838d762fe4b34701d797d1d57496cd",
+      "installedAt": "2026-02-09T19:50:49.043Z",
+      "updatedAt": "2026-02-09T19:50:49.043Z"
+    },
+    "skill-judge": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+      "skillPath": "skills/skill-judge/SKILL.md",
+      "skillFolderHash": "7e98bf10ccdbd7e9293e9f59564e6dc949999f85",
+      "installedAt": "2026-02-09T19:50:53.043Z",
+      "updatedAt": "2026-02-09T19:50:53.043Z"
+    },
+    "crafting-effective-readmes": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+      "skillPath": "skills/crafting-effective-readmes/SKILL.md",
+      "skillFolderHash": "72e2a4d89c5a14b762cfc58e3bbd7fd63e9642b0",
+      "installedAt": "2026-02-09T19:50:55.140Z",
+      "updatedAt": "2026-02-09T19:50:55.140Z"
+    },
+    "humanizer": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+      "skillPath": "skills/humanizer/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:50:57.291Z",
+      "updatedAt": "2026-02-09T19:50:57.291Z"
+    },
+    "professional-communication": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+      "skillPath": "skills/professional-communication/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:07.787Z",
+      "updatedAt": "2026-02-09T19:51:07.787Z"
+    },
+    "podman": {
+      "source": "knoopx/pi",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/knoopx/pi.git",
+      "skillPath": "agent/skills/podman/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:13.789Z",
+      "updatedAt": "2026-02-09T19:51:13.789Z"
+    },
+    "coding-guidelines": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/coding-guidelines/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:29.590Z",
+      "updatedAt": "2026-02-09T19:51:29.590Z"
+    },
+    "domain-cli": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-cli/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:29.695Z",
+      "updatedAt": "2026-02-09T19:51:29.695Z"
+    },
+    "domain-cloud-native": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-cloud-native/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:29.782Z",
+      "updatedAt": "2026-02-09T19:51:29.782Z"
+    },
+    "domain-embedded": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-embedded/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:29.885Z",
+      "updatedAt": "2026-02-09T19:51:29.885Z"
+    },
+    "domain-fintech": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-fintech/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:29.990Z",
+      "updatedAt": "2026-02-09T19:51:29.990Z"
+    },
+    "domain-iot": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-iot/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.084Z",
+      "updatedAt": "2026-02-09T19:51:30.084Z"
+    },
+    "domain-ml": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-ml/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.183Z",
+      "updatedAt": "2026-02-09T19:51:30.183Z"
+    },
+    "domain-web": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/domain-web/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.284Z",
+      "updatedAt": "2026-02-09T19:51:30.284Z"
+    },
+    "m01-ownership": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m01-ownership/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.366Z",
+      "updatedAt": "2026-02-09T19:51:30.366Z"
+    },
+    "m02-resource": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m02-resource/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.447Z",
+      "updatedAt": "2026-02-09T19:51:30.447Z"
+    },
+    "m03-mutability": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m03-mutability/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.528Z",
+      "updatedAt": "2026-02-09T19:51:30.528Z"
+    },
+    "m04-zero-cost": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m04-zero-cost/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.611Z",
+      "updatedAt": "2026-02-09T19:51:30.611Z"
+    },
+    "m05-type-driven": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m05-type-driven/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.693Z",
+      "updatedAt": "2026-02-09T19:51:30.693Z"
+    },
+    "m06-error-handling": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m06-error-handling/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.777Z",
+      "updatedAt": "2026-02-09T19:51:30.777Z"
+    },
+    "m07-concurrency": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m07-concurrency/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.858Z",
+      "updatedAt": "2026-02-09T19:51:30.858Z"
+    },
+    "m09-domain": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m09-domain/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:30.940Z",
+      "updatedAt": "2026-02-09T19:51:30.940Z"
+    },
+    "m10-performance": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m10-performance/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:31.024Z",
+      "updatedAt": "2026-02-09T19:51:31.024Z"
+    },
+    "m11-ecosystem": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m11-ecosystem/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:31.104Z",
+      "updatedAt": "2026-02-09T19:51:31.104Z"
+    },
+    "m12-lifecycle": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m12-lifecycle/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:31.183Z",
+      "updatedAt": "2026-02-09T19:51:31.183Z"
+    },
+    "m13-domain-error": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m13-domain-error/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:31.264Z",
+      "updatedAt": "2026-02-09T19:51:31.264Z"
+    },
+    "m14-mental-model": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m14-mental-model/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:31.355Z",
+      "updatedAt": "2026-02-09T19:51:31.355Z"
+    },
+    "m15-anti-pattern": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/m15-anti-pattern/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:31.438Z",
+      "updatedAt": "2026-02-09T19:51:31.438Z"
+    },
+    "rust-router": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/rust-router/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:32.089Z",
+      "updatedAt": "2026-02-09T19:51:32.089Z"
+    },
+    "unsafe-checker": {
+      "source": "actionbook/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/actionbook/rust-skills.git",
+      "skillPath": "skills/unsafe-checker/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-09T19:51:32.423Z",
+      "updatedAt": "2026-02-09T19:51:32.423Z"
+    },
+    "emails": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/emails/SKILL.md",
+      "skillFolderHash": "9863177059fadf5d7fe657b83e1b702597a631fa",
+      "installedAt": "2026-10-24T17:23:20.000Z",
+      "updatedAt": "2026-10-24T17:23:20.000Z"
+    },
+    "pricing": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/pricing/SKILL.md",
+      "skillFolderHash": "edc3a5cb4d66a821797b53be118f6d01c3c5863a",
+      "installedAt": "2026-10-24T17:23:20.000Z",
+      "updatedAt": "2026-10-24T17:23:20.000Z"
+    },
+    "launch": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/launch/SKILL.md",
+      "skillFolderHash": "18c433e769a6906bc91f98574f3b7b233a778068",
+      "installedAt": "2026-10-24T17:23:20.000Z",
+      "updatedAt": "2026-10-24T17:23:20.000Z"
+    },
+    "social": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/social/SKILL.md",
+      "skillFolderHash": "0baa70e209fdc5275c8eaaa7094c3280fd300d9a",
+      "installedAt": "2026-10-24T17:23:20.000Z",
+      "updatedAt": "2026-10-24T17:23:20.000Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp"
+  ]
+}

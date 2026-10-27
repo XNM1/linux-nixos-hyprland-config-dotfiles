@@ -1,0 +1,7 @@
+{
+  "maxBytes": 20971520,
+  "maxSeconds": 60,
+  "maxVideos": 2,
+  "maxRequestBytes": 41943040,
+  "models": ["vllm/qwen3.8-flash-next"]
+}

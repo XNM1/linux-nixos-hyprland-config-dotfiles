@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@caveman-ai/cli": "^4.0.1"
+  }
+}

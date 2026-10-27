@@ -1,0 +1,81 @@
+modelRoles:
+  default: vllm/qwen3.8-flash-next:medium
+  plan: vllm/qwen3.8-flash-next:xhigh
+  slow: vllm/qwen3.8-flash-next:xhigh
+  task: vllm/qwen3.8-flash-next:medium
+  smol: vllm/qwen3.8-flash-next:low
+  tiny: vllm/qwen3.8-flash-next:low
+  commit: vllm/qwen3.8-flash-next:low
+  web: web/searxng
+  judge: system-one/d1-3b
+disabledProviders:
+  - openai
+  - openai-codex
+  - ollama
+  - llama.cpp
+  - lm-studio
+searxng:
+  endpoint: http://<DGX_TAILSCALE_IP>:8080 # FIXME: set your DGX Tailscale IP (the host running SearXNG)
+retry:
+  fallbackChains:
+    web:
+      []
+    judge:
+      []
+lsp:
+  enabled: true
+  lazy: true
+  diagnosticsOnWrite: true
+  diagnosticsOnEdit: true
+  formatOnWrite: false
+browser:
+  enabled: false
+symbolPreset: nerd
+composer:
+  shape: claude
+  tokenRate: false
+theme:
+  dark: dark-catppuccin
+  light: light-catppuccin
+setupVersion: 2
+extendedContext: true
+magicKeywords:
+  jevify: true
+tui:
+  vimMode: true
+  textSizing: true
+  hyperlinks: auto
+  vimModeDisplay: icon
+statusLine:
+  preset: nerd
+  separator: powerline-thin
+  contextLine: embedded
+  transparent: false
+terminal:
+  showProgress: false
+display:
+  shimmer: classic
+  subagentLivePreview: true
+  showTurnTime: true
+defaultThinkingLevel: auto
+externalThinking: true
+providers:
+  autoThinkingMaxEffort: xhigh
+doubleEscapeAction: rewind
+stt:
+  enabled: true
+startup:
+  showSplash: false
+features:
+  unexpectedStopDetection: smart
+autolearn:
+  enabled: true
+memory:
+  backend: hindsight
+hindsight:
+  apiUrl: http://<DGX_TAILSCALE_IP>:8888 # FIXME: set your DGX Tailscale IP (the host running Hindsight)
+  # Token comes from agent/.env as HINDSIGHT_API_TOKEN; env overrides config.
+astGrep:
+  enabled: true
+security:
+  enabled: false

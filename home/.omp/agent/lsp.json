@@ -1,0 +1,11 @@
+{
+  "idleTimeoutMs": 300000,
+  "servers": {
+    "nixd": {
+      "command": "nixd"
+    },
+    "nil": {
+      "disabled": true
+    }
+  }
+}
