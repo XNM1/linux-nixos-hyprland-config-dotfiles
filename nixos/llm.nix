@@ -68,7 +68,7 @@
     omp
     herdr
 
-    oterm
+    # oterm  # broken on nixpkgs 2026-10-23: fastmcp-slim 3.4.7 imports McpError, mcp 2.2.0 renamed it to MCPError. Re-enable when nixpkgs fixes fastmcp.
     # alpaca
 
     aichat
@@ -82,7 +82,7 @@
     nix-ai-tools.ccusage
     nix-ai-tools.opencode2
     nix-ai-tools.openspec
-    nix-ai-tools.openskills
+    nix-ai-tools.skills
     # nix-ai-tools.codex
 
     # tgpt
