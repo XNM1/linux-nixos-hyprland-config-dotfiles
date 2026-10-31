@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, expect, test } from "bun:test";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, utimes, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { MediaStore, injectVideos, parseCommand } from "../media";
@@ -91,4 +91,25 @@ test("animated GIF preserves motion as video; static GIF remains an image", asyn
   const still = await store.attach(staticGif, dir);
   expect(still.image?.mimeType).toBe("image/gif");
   expect(still.text).not.toContain("[omp-video:");
+});
+
+test("prune deletes old unreferenced pairs and keeps transcript-referenced media", async () => {
+  const root = join(dir, "prune");
+  const store = new MediaStore(root);
+  const a = await store.attach(clip, dir);
+  const orphan = "f".repeat(64);
+  await writeFile(join(root, `${orphan}.media`), "x");
+  await writeFile(join(root, `${orphan}.json`), "{}");
+  const fresh = "e".repeat(64);
+  await writeFile(join(root, `${fresh}.media`), "x");
+  await writeFile(join(root, `${fresh}.json`), "{}");
+  const past = new Date(2020);
+  for (const id of [a.id, orphan]) await utimes(join(root, `${id}.media`), past, past);
+  await mkdir(join(dir, "sessions"), { recursive: true });
+  await writeFile(join(dir, "sessions", "s.jsonl"), a.text);
+  await store.prune();
+  expect(await Bun.file(join(root, `${a.id}.media`)).exists()).toBe(true);
+  expect(await Bun.file(join(root, `${orphan}.media`)).exists()).toBe(false);
+  expect(await Bun.file(join(root, `${orphan}.json`)).exists()).toBe(false);
+  expect(await Bun.file(join(root, `${fresh}.media`)).exists()).toBe(true);
 });

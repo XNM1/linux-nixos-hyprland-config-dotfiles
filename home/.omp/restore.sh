@@ -6,6 +6,7 @@ cd "$(dirname "$0")"
 [ -f agent/.env ] || cp agent/.env.example agent/.env
 (cd agent && npm ci)                                    # caveman-engine wrapper
 omp plugin install caveman                              # npm plugin, not a marketplace one
+if command -v tuios >/dev/null; then tuios integration install omp; fi   # regenerates the tuios-* extension
 omp plugin marketplace add https://github.com/mattpocock/skills && omp plugin install mattpocock-skills@mattpocock
 omp plugin marketplace add DietrichGebert/ponytail     && omp plugin install ponytail@ponytail
 

@@ -18,6 +18,9 @@ export default function videoExtension(pi: ExtensionAPI) {
     if (ctx.hasUI) ctx.ui.notify(message, "error");
     else console.error(message);
   };
+  // Sweep at startup too: a deleted video session leaks its media until some
+  // later attachment would sweep it; prune early-exits when nothing is stale.
+  pi.on("session_start", () => { void store().then(media => media.prune()).catch(() => {}); });
   pi.on("input", async (event, ctx) => {
     if (!event.images?.length && !/\[Video #\d+/.test(event.text)) return;
     try { return await transformVideoInput(event, ctx.model, await store(), ctx.cwd); }

@@ -1,12 +1,13 @@
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { mkdir, mkdtemp, open, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, open, readFile, readdir, rename, rm, stat, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { basename, join, resolve } from "node:path";
 import { promisify } from "node:util";
 
 const exec = promisify(execFile);
 const marker = /^\[omp-video:([a-f0-9]{64})\]$/gm;
+let prunedOnce = false;
 export interface Limits {
   maxBytes: number;
   maxSeconds: number;
@@ -136,8 +137,43 @@ export class MediaStore {
       await writeFile(join(work, "metadata.json"), JSON.stringify(meta), { mode: 0o600 });
       await rename(prepared, join(this.root, `${id}.media`));
       await rename(join(work, "metadata.json"), join(this.root, `${id}.json`));
+      // shortcut: once per process, best-effort; 24h age guard covers transcripts
+      // not yet flushed by concurrent sessions sharing this store.
+      if (!prunedOnce) { prunedOnce = true; void this.prune(); }
       return { id, text: `[Video: ${name} · ${seconds.toFixed(2)}s · ${(bytes.length / 1024 / 1024).toFixed(2)} MiB · visual content only]\n[omp-video:${id}]` };
     } finally { await rm(work, { recursive: true, force: true }); }
+  }
+
+  async prune(keepHours = 24): Promise<void> {
+    try {
+      const cutoff = Date.now() - keepHours * 3600_000;
+      const stale = new Set<string>();
+      for (const file of await readdir(this.root).catch(() => [])) {
+        const m = /^([a-f0-9]{64})\.(?:media|json)$/.exec(file);
+        if (!m || stale.has(m[1])) continue;
+        const info = await stat(join(this.root, `${m[1]}.media`)).catch(() => undefined);
+        if (!info || info.mtimeMs < cutoff) stale.add(m[1]);
+      }
+      if (!stale.size) return;
+      const refs = new Set<string>();
+      const scan = async (dir: string): Promise<void> => {
+        for (const entry of await readdir(dir, { withFileTypes: true }).catch(() => [])) {
+          const path = join(dir, entry.name);
+          if (entry.isDirectory()) await scan(path);
+          else if (/\.(jsonl|json)$/.test(entry.name)) {
+            const text = await readFile(path, "utf8").catch(() => "");
+            for (const m of text.matchAll(/\[omp-video:([a-f0-9]{64})\]/g)) refs.add(m[1]);
+          }
+        }
+      };
+      await scan(join(this.root, "..", "sessions"));
+      await scan(join(this.root, "..", "terminal-sessions"));
+      for (const id of stale) {
+        if (refs.has(id)) continue;
+        await rm(join(this.root, `${id}.media`), { force: true });
+        await rm(join(this.root, `${id}.json`), { force: true });
+      }
+    } catch { /* best-effort background cleanup */ }
   }
 
   async load(id: string) {

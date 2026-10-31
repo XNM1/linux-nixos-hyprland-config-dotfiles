@@ -82,33 +82,11 @@ not the base64 data. Resume, retries, and retained turns resolve that reference;
 the original file or URL is no longer needed. Missing or altered cached media
 aborts the request rather than silently dropping the attachment.
 
-### Automatic pruning
-
-An entry is deleted when its `omp-video` reference appears in no session
-transcript and its media file is older than 24 hours; a missing media file
-counts as stale, so dangling metadata is cleaned too. The 24-hour grace period
-protects attachments whose transcript a concurrent process has not flushed
-yet. Media referenced by a retained transcript is never pruned.
-
-Triggers, both async and neither blocking the attachment or the UI:
-
-- `session_start` — every new session, `/new`, `/resume` switch, and fork.
-- First successful attachment per omp process.
-
-Cost per sweep:
-
-| Store state | Work |
-|---|---|
-| Empty, or every entry younger than 24 h | One `readdir` of the store plus a `stat` per pair; transcripts are never read (~13 ms) |
-| Any entry older than 24 h | Full scan of `sessions/` and `terminal-sessions/` transcripts for `omp-video` references, then unreferenced pairs are deleted |
-
-Consequences: deleting a session frees its media at the next sweep; one-shot
-(`-p`) attachments never persist a transcript, so their media is orphaned at
-birth and prunable after 24 hours. Compaction can replace old video turns with
-summaries, as it does for other conversation history; once the reference is
-gone, the media becomes prunable too. To move sessions to another machine,
-copy these attachments and install the extension there too. Session
-sharing/export alone does not carry the videos.
+Retain this directory while sessions need their videos. It is persistent local
+storage, not managed by omp's built-in garbage collector. To move sessions to
+another machine, copy these attachments and install the extension there too.
+Session sharing/export alone does not carry the videos. Compaction can replace
+old video turns with summaries, as it does for other conversation history.
 
 `PI_CODING_AGENT_DIR` overrides the extension's configuration/storage root. When
 using an isolated profile, set this variable to its agent directory as well.
