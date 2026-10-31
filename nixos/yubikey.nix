@@ -9,6 +9,9 @@
   security.pam.u2f = {
     enable = true;
     settings.cue = true;
+    # Emit a real PAM prompt before the challenge; otherwise pam_u2f fires a
+    # silent key blink hyprlock's conversation never surfaces.
+    settings.interactive = true;
     control = "sufficient";
   };
 
