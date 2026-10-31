@@ -39,10 +39,23 @@ if test -z "$pane"
 	herdr pane run "$pane" "hx "(string escape -- "$target")
 else if test "$helix" = yes
 	herdr tab focus "$editor_tab"
-	herdr pane send-keys "$pane" esc
-	sleep 0.05
-	herdr pane send-text "$pane" ":open $target"
-	herdr pane send-keys "$pane" enter
+	if test "$TUIOS_ENV" = 1
+		# tuios's herdr shim types with a bracketed paste, which helix
+		# inserts as buffer text instead of running as :open keys.
+		# Type natively; -w takes the 8-hex short id from the pane id
+		# (w<session>:p<window-uuid-no-dashes>) and -s defaults to this
+		# pane's session.
+		set -l win (string replace -r '.*:p' '' -- "$pane" | string sub -l 8)
+		tuios send-keys -w "$win" Escape
+		sleep 0.05
+		tuios send-text -w "$win" ":open $target"
+		tuios send-keys -w "$win" Enter
+	else
+		herdr pane send-keys "$pane" esc
+		sleep 0.05
+		herdr pane send-text "$pane" ":open $target"
+		herdr pane send-keys "$pane" enter
+	end
 else
 	herdr tab focus "$editor_tab"
 	herdr pane run "$pane" "hx "(string escape -- "$target")
