@@ -14,12 +14,12 @@
 
   users.users.greeter = {
     isNormalUser = false;
-    description  = "greetd greeter user";
+    description  = "tuigreet greeter user";
     extraGroups  = [ "video" "audio" ];
     linger        = true;
   };
 
   environment.systemPackages = with pkgs; [
-    greetd.tuigreet
+    tuigreet
   ];
 }
