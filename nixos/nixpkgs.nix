@@ -10,6 +10,7 @@
       wezterm-flake = inputs.wezterm.packages.${final.stdenv.hostPlatform.system}.default;
       omp = inputs.omp.packages.${final.stdenv.hostPlatform.system}.omp;
       herdr = inputs.herdr.packages.${final.stdenv.hostPlatform.system}.herdr;
+      tuios = inputs.tuios.packages.${final.stdenv.hostPlatform.system}.tuios;
       # Core release tarball (static engine, no self-extracting bundle). Upstream flake
       # unusable here: opam-nix breaks pure eval and impure ('url' too short); no overlay output.
       # Bump version+hash together: nix hash file --type sha256 --base16 opengrep-core_linux_x86.tar.gz

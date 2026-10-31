@@ -1,0 +1,222 @@
+# TUIOS Configuration File
+# This file allows you to customize appearance and keybindings
+#
+# Configuration location: /home/xnm/.config/tuios/config.toml
+# Documentation: https://github.com/Gaurav-Gosain/tuios
+# For keybindings documentation, run: tuios keybinds list
+
+# ============================================================================
+# APPEARANCE SETTINGS
+# ============================================================================
+# border_style: Window border style
+#   Options: rounded, normal, thick, double, hidden, block, ascii,
+#            outer-half-block, inner-half-block
+#   Default: rounded
+#
+# dockbar_position: Position of the dockbar
+#   Options: bottom, top, hidden
+#   Default: bottom
+#
+# hide_window_buttons: Hide window control buttons (minimize, maximize, close)
+#   Options: true, false
+#   Default: false
+#
+# scrollback_lines: Number of lines to keep in scrollback buffer
+#   Range: 100 to 1000000
+#   Default: 10000
+# ============================================================================
+
+[appearance]
+border_style = "rounded"
+hide_window_buttons = false
+scrollback_lines = 10000
+dockbar_position = "bottom"
+preferred_shell = ''
+calm = false
+theme = "catppuccin_macchiato"
+glyphs = "default"
+window_title_style = "pill"
+show_clock = true
+show_cpu = true
+show_ram = true
+dock_mode_pill = "tiling"
+window_title_position = "top"
+
+[keybindings]
+leader_key = ""
+[keybindings.window_management]
+close_window = ['w', 'x']
+minimize_window = ['m']
+new_window = ['n']
+next_window = ['tab']
+prev_window = ['shift+tab']
+rename_window = ['r']
+restore_all = ['M']
+select_window_1 = ['1']
+select_window_2 = ['2']
+select_window_3 = ['3']
+select_window_4 = ['4']
+select_window_5 = ['5']
+select_window_6 = ['6']
+select_window_7 = ['7']
+select_window_8 = ['8']
+select_window_9 = ['9']
+
+[keybindings.workspaces]
+move_and_follow_1 = ['alt+shift+1']
+move_and_follow_2 = ['alt+shift+2']
+move_and_follow_3 = ['alt+shift+3']
+move_and_follow_4 = ['alt+shift+4']
+move_and_follow_5 = ['alt+shift+5']
+move_and_follow_6 = ['alt+shift+6']
+move_and_follow_7 = ['alt+shift+7']
+move_and_follow_8 = ['alt+shift+8']
+move_and_follow_9 = ['alt+shift+9']
+switch_workspace_1 = ['alt+1']
+switch_workspace_2 = ['alt+2']
+switch_workspace_3 = ['alt+3']
+switch_workspace_4 = ['alt+4']
+switch_workspace_5 = ['alt+5']
+switch_workspace_6 = ['alt+6']
+switch_workspace_7 = ['alt+7']
+switch_workspace_8 = ['alt+8']
+switch_workspace_9 = ['alt+9']
+
+[keybindings.layout]
+resize_height_grow = ['}', 'shift+]']
+resize_height_grow_top = [']']
+resize_height_shrink = ['{', 'shift+[']
+resize_height_shrink_top = ['[']
+resize_master_grow = ['>', 'shift+.']
+resize_master_grow_left = ['.']
+resize_master_shrink = ['<', 'shift+,']
+resize_master_shrink_left = [',']
+snap_corner_1 = ['1']
+snap_corner_2 = ['2']
+snap_corner_3 = ['3']
+snap_corner_4 = ['4']
+snap_fullscreen = ['f']
+snap_left = ['h']
+snap_right = ['l']
+swap_down = ['J', 'ctrl+down']
+swap_left = ['H', 'ctrl+left']
+swap_right = ['L', 'ctrl+right']
+swap_up = ['K', 'ctrl+up']
+toggle_tiling = ['t']
+unsnap = ['u']
+
+[keybindings.mode_control]
+enter_terminal_mode = ['i', 'enter']
+enter_window_mode = ['esc']
+quit = ['q']
+toggle_help = ['?']
+
+[keybindings.system]
+
+[keybindings.navigation]
+extend_down = ['shift+down']
+extend_left = ['shift+left']
+extend_right = ['shift+right']
+extend_up = ['shift+up']
+nav_down = ['down']
+nav_left = ['left']
+nav_right = ['right']
+nav_up = ['up']
+
+[keybindings.restore_minimized]
+restore_minimized_1 = ['shift+1', '!']
+restore_minimized_2 = ['shift+2', '@']
+restore_minimized_3 = ['shift+3', '#']
+restore_minimized_4 = ['shift+4', '$']
+restore_minimized_5 = ['shift+5', '%']
+restore_minimized_6 = ['shift+6', '^']
+restore_minimized_7 = ['shift+7', '&']
+restore_minimized_8 = ['shift+8', '*']
+restore_minimized_9 = ['shift+9', '(']
+
+[keybindings.prefix_mode]
+prefix_close_window = ['x']
+prefix_debug = ['D']
+prefix_detach = ['d', 'esc']
+prefix_fullscreen = ['z']
+prefix_help = ['?']
+prefix_minimize = ['m']
+prefix_new_window = ['c']
+prefix_next_window = ['n', 'tab']
+prefix_prev_window = ['p', 'shift+tab']
+prefix_quit = ['q']
+prefix_rename_window = [',', 'r']
+prefix_select_0 = ['0']
+prefix_select_1 = ['1']
+prefix_select_2 = ['2']
+prefix_select_3 = ['3']
+prefix_select_4 = ['4']
+prefix_select_5 = ['5']
+prefix_select_6 = ['6']
+prefix_select_7 = ['7']
+prefix_select_8 = ['8']
+prefix_select_9 = ['9']
+prefix_selection = ['[']
+prefix_toggle_tiling = ['space']
+prefix_window = ['t']
+prefix_workspace = ['w']
+
+[keybindings.window_prefix]
+window_prefix_cancel = ['esc']
+window_prefix_close = ['x']
+window_prefix_new = ['n']
+window_prefix_next = ['tab']
+window_prefix_prev = ['shift+tab']
+window_prefix_rename = ['r']
+window_prefix_tiling = ['t']
+
+[keybindings.minimize_prefix]
+minimize_prefix_cancel = ['esc']
+minimize_prefix_focused = ['m']
+minimize_prefix_restore_1 = ['1']
+minimize_prefix_restore_2 = ['2']
+minimize_prefix_restore_3 = ['3']
+minimize_prefix_restore_4 = ['4']
+minimize_prefix_restore_5 = ['5']
+minimize_prefix_restore_6 = ['6']
+minimize_prefix_restore_7 = ['7']
+minimize_prefix_restore_8 = ['8']
+minimize_prefix_restore_9 = ['9']
+minimize_prefix_restore_all = ['M']
+
+[keybindings.workspace_prefix]
+workspace_prefix_cancel = ['esc']
+workspace_prefix_move_1 = ['!']
+workspace_prefix_move_2 = ['@']
+workspace_prefix_move_3 = ['#']
+workspace_prefix_move_4 = ['$']
+workspace_prefix_move_5 = ['%']
+workspace_prefix_move_6 = ['^']
+workspace_prefix_move_7 = ['&']
+workspace_prefix_move_8 = ['*']
+workspace_prefix_move_9 = ['(']
+workspace_prefix_switch_1 = ['1']
+workspace_prefix_switch_2 = ['2']
+workspace_prefix_switch_3 = ['3']
+workspace_prefix_switch_4 = ['4']
+workspace_prefix_switch_5 = ['5']
+workspace_prefix_switch_6 = ['6']
+workspace_prefix_switch_7 = ['7']
+workspace_prefix_switch_8 = ['8']
+workspace_prefix_switch_9 = ['9']
+
+[keybindings.debug_prefix]
+debug_prefix_cache = ['c']
+debug_prefix_cancel = ['esc']
+debug_prefix_logs = ['l']
+
+[startup]
+tiled = true
+layout = "bsp"
+start_in_terminal_mode = false
+
+[spotlight]
+enabled = false
+
+[agents]
+enabled = true

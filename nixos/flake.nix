@@ -14,6 +14,8 @@
       omp.inputs.nixpkgs.follows = "nixpkgs";
       herdr.url = "github:herdrdev/herdr";
       herdr.inputs.nixpkgs.follows = "nixpkgs";
+      tuios.url = "github:Gaurav-Gosain/tuios";
+      tuios.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, ... } @ inputs:

@@ -21,6 +21,7 @@
     process-compose
     # mcfly # terminal history
     zellij
+    tuios
     progress
     noti
     topgrade
